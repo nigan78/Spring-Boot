@@ -1,0 +1,203 @@
+
+
+button, html [type="button"], [type="reset"], [type="submit"] {
+    -webkit-appearance: button;
+    appearance: button;
+}
+img { border-style: none;
+}
+::selection {
+    background-color: #b3d4fc;
+    color: #000000;
+    text-shadow: none;
+}
+*,::before,::after {
+    background-repeat: no-repeat;
+    box-sizing: inherit;
+}
+div {
+    display: block;
+}
+img {
+    overflow-clip-margin: content-box;
+    overflow: clip;
+}
+* {
+    outline: none;
+    font-family: inherit;
+}
+audio, canvas, iframe, img, svg, video {
+    vertical-align: middle;
+}
+button {
+    cursor: pointer;
+}
+a, area, button, input, label, select, textarea, [tabindex] {
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+}
+button, select {
+    text-transform: none;
+}
+button, input {
+    overflow: visible;
+}
+button, input, select, textarea {
+    background-color: transparent;
+    border-style: none;
+    color: inherit;
+    font-size: 1em;
+    margin: 0;
+}
+h2 {
+    margin: 0px;
+    padding: 0px;
+}
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+p, label {
+    margin: 0px;
+}
+/* ----------------------------------------------------------------------------------------------------------- */
+#app {
+    background-color: white;
+    min-height: 100%;
+    min-width: 100%;
+}
+.appWrapper{
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    min-height: 100vh;
+}
+.PageWrapper{
+    display: flex;
+    flex-flow: column;
+    align-content: flex-start;
+    margin: 0px auto;
+    max-width: 808px;
+    width: 100%;
+    padding: 0px;
+    min-height: 653px;
+}
+.IntroPage{
+    width: 100%;
+    max-width: 360px;
+    margin: 70px auto;
+    padding: 30px 50px;
+    text-align: center;
+}
+
+/* --------------------------------------------------------------------------------------------- */
+
+/* 1. 타이틀 */
+.IntroPage-Title{
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 36px;
+    letter-spacing: -0.72px;
+    color: rgb(51, 51, 51);
+    margin: 13px 0px;
+
+}
+
+
+/* 2. p태그 작은글씨 */
+.IntroPage-Description{
+    margin-top: 5px;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: -0.42px;
+    color: rgb(153, 153, 153);
+}
+
+
+/* 3. 일반 회원가입 */
+.IntroPage-Button{
+    width: 100%;
+    height: 48px;
+    line-height: 24px;
+    padding: 0px 13px;
+    background-color: rgb(255, 255, 255);
+    border: 1.5px solid rgb(238, 238, 238);
+    text-align: center;
+    cursor: pointer;
+    border-radius: 10px;
+    color: rgb(51, 51, 51);
+    font-size: 16px;
+    font-weight: 500;
+    margin: 25px 0px 9px 0px;
+}
+
+/* 4. 공식계정 회원가입 */
+.IntroPage-Button2{
+    width: 100%;
+    height: 48px;
+    line-height: 24px;
+    padding: 0px 13px;
+    background-color: rgb(255, 255, 255);
+    border: 1.5px solid rgb(238, 238, 238);
+    text-align: center;
+    cursor: pointer;
+    border-radius: 10px;
+    color: rgb(51, 51, 51);
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0px 0px 9px 0px;
+}
+
+/* 5. Sub Button 하위버튼 */
+.IntroPage-SubButton{
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+}
+
+.kakaoButton{
+    height: 48px;
+    line-height: normal;
+    padding: 0px 13px;
+    background-color: rgb(251, 232, 80);
+    text-align: center;
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+.loginButton{
+    width: 177px;
+    height: 48px;
+    line-height: 20px;
+    padding: 0px 13px;
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid rgb(238, 238, 238);
+    border-radius: 10px;
+    color: rgb(51, 51, 51);
+    font-size: 14px;
+}
+
+
+input:focus{
+    border: 1px solid #21BAF3;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

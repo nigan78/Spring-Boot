@@ -1,0 +1,309 @@
+.main {
+    display: flex;
+    flex-flow: column;
+    align-content: flex-start;
+    margin: 0px auto;
+    max-width: 808px;
+    width: 100%;
+    padding: 0px 20px;
+    min-height: 1px;
+}
+.mainh1 {
+    margin: 30px 0px 20px;
+    line-height: 24px;
+    font-size: 24px;
+    font-weight: bold;
+}
+.maindiv {
+    /*   border-bottom: 1px solid rgb(238, 238, 238); */
+    padding: 20px 0px;
+    white-space: nowrap;
+    overflow: auto;
+}
+.maindiv > span {
+    margin-right: 20px;
+}
+.select {
+    color: #21BAF3;
+    cursor: pointer;
+}
+.other {
+    color: black;
+    cursor: pointer;
+}
+.listdiv {
+    width: auto;
+    height: auto;
+    transition: opacity 200ms ease-in-out 0s;
+    display: none;
+    opacity: 0;
+    min-width: 0px;
+    min-height: 1px;
+    opacity: 1;
+    display: block;
+}
+.listul {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+.lidiv {
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    min-height: 60px;
+    line-height: 24px;
+    padding: 18px 0px;
+    font-size: 14px;
+    cursor: pointer;
+    border-bottom: 1px solid rgb(230, 230, 230);
+}
+.img {
+    margin-left: 0px;
+    margin-right: 21px;
+    height: 20px;
+    line-height: 20px;
+    border-radius: 5px;
+    padding: 0px 6px;
+    font-size: 10px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+
+    -webkit-box-flex: 0;
+    flex: 0 0 auto;
+}
+.img.enroll{
+
+    background-color: #21baf3;
+}
+.img.accept{
+    margin-right: 42px;
+    background-color: #ffb029;
+}
+.img.end{
+    background-color: #939393;
+}
+
+
+
+
+
+
+
+.lititle {
+    -webkit-box-flex: 1;
+    flex: 1 1 auto;
+}
+.check {
+    margin-left: 5px;
+    color: rgb(255, 102, 102);
+    font-weight: bold;
+}
+.time {
+    -webkit-box-flex: 0;
+    flex: 0 0 auto;
+    margin-left: 10px;
+    color: rgb(155, 155, 155);
+    font-size: 12px;
+    font-weight: normal;
+}
+body {
+    font-size: 14px;
+}
+.tab-con>div{display: none}
+
+
+
+/* 나의 작성글 ----------------------------------------------------------------------------*/
+#app {
+    background-color: white;
+    min-height: 100%;
+    min-width: 100%;
+}
+.appWrapper {
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    min-height: 100vh;
+}
+.SocialFeedPage {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 768px;
+    margin: 0px auto;
+}
+
+.SocialFeedPage-Content {
+    width: auto;
+    height: auto;
+    transition: opacity 200ms ease-in-out 0s;
+    min-width: 0px;
+    min-height: 1px;
+}
+.FeedList {
+    display: flex;
+    flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    justify-content: flex-start;
+    overflow-x: hidden;
+}
+.FeedList > div {
+    width: 33.3333%;
+    padding: 30px 20px;
+    border-bottom: 1px solid rgb(238, 238, 238);
+    border-left: 1px solid rgb(238, 238, 238);
+    margin-left: -1px;
+}
+
+
+
+/* 수락 신청완료 인원마감 필터 ----------------*/
+.sub-main-filer{overflow-x: scroll; -ms-overflow-style: none; /* 인터넷 익스플로러 */ scrollbar-width: none; /* 파이어폭스 */}
+.sub-main-filer::-webkit-scrollbar{display: none; /* 크롬, 사파리, 오페라, 엣지 */}
+.sub-main-filer ul{display: flex;width: 100%; margin-bottom: 10px;}
+.sub-main-filer ul li button{padding: 6px 10px; font-size: 12px; font-weight: 500; line-height: 14px; border-radius: 5px; color: #333; background-color: rgb(245, 245, 245);}
+.sub-main-filer ul li.active button{color: #21BAF3; background-color: #F2F8FB;}
+.sub-main-filer ul li + li{margin-left: 10px;}
+
+/* 밑에 피드리스트 양식----------------------- */
+
+.post .user-wrap {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+.post .user-wrap a {
+    display: flex;
+    align-items: center;
+}
+.post .user-img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #f7f7f7;
+    margin-right: 10px;
+}
+.post .user-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.post .user-name {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+.post .post-date {
+    font-size: 12px;
+    color: #707070;
+}
+.post .img-wrap {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    position: relative;
+    left: 0;
+    top: 0;
+}
+.post .img-wrap .thumb-ul {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    left: 0;
+    top: 0;
+    transition: all 0.2s;
+}
+.post .img-wrap .thumb-ul li {
+    width: 100%;
+}
+.post .img-wrap .thumb-ul li img {
+    /* width: 100%; */
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+.post .img-wrap .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.post .img-wrap .arrow.left {
+    left: 5px;
+}
+.post .img-wrap .arrow.left img {
+    transform: rotate(180deg);
+}
+.post .img-wrap .arrow.right {
+    right: 5px;
+}
+.post .img-wrap .page {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    left: 50%;
+    bottom: 20px;
+    transform: translateX(-50%);
+    height: 5px;
+}
+.post .img-wrap .page li {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #fff;
+    opacity: 0.5;
+}
+.post .img-wrap .page li.active {
+    opacity: 1;
+}
+.post .img-wrap .page li + li {
+    margin-left: 5px;
+}
+
+.post .con-wrap {
+    width: 100%;
+    margin-bottom: 20px;
+}
+.post .con-wrap .tit {
+    font-weight: 500;
+    letter-spacing: 0px;
+    margin-bottom: 14px;
+}
+.post .con-wrap .content {
+    font-size: 12px;
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    max-height: 48px;
+    color: #707070;
+    line-height: 16px;
+}
+
+.post .util-wrap {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.post .util-wrap > div {
+    display: flex;
+    align-items: center;
+}
+.post .util-wrap > div + div {
+    margin-left: 15px;
+}
+.post .icon-wrap {
+    width: 22px;
+    margin-right: 5px;
+}
+.post .count {
+    line-height: 22px;
+    margin-left: 3px;
+    margin-bottom: 5px;
+}

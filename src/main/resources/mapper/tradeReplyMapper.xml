@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.app.teamProject.mapper.TradeReplyMapper">
+    <!--  댓글 출력  -->
+    <select id="selectReplies" resultType="tradeReplyDTO">
+        <!-- 최종 결과를 가져오기 위한 외부 쿼리 -->
+        SELECT R, MEMBER_NAME, MEMBER_IMG, MEMBER_ID, ID, REPLY_CONTENT, REPLY_REGISTER_DATE, REPLY_DEPTH, REPLY_GROUP, TRADE_ID
+        FROM
+        (
+        <!-- 페이징 처리를 위한 중간 쿼리 -->
+        SELECT ROWNUM R, MEMBER_NAME, MEMBER_IMG, MEMBER_ID, ID, REPLY_CONTENT, REPLY_REGISTER_DATE, REPLY_DEPTH, REPLY_GROUP, TRADE_ID
+        FROM
+        (
+        <!-- 실제 데이터를 가져오는 내부 쿼리 -->
+        SELECT
+        m.NAME AS MEMBER_NAME,
+        m.IMG AS MEMBER_IMG,
+        m.id AS MEMBER_ID,
+        tr.ID,
+        tr.REPLY_CONTENT,
+        tr.REPLY_REGISTER_DATE,
+        tr.REPLY_DEPTH,
+        tr.REPLY_GROUP,
+        tr.TRADE_ID,
+        tr.STATUS
+        FROM TBL_MEMBER m
+        JOIN TBL_TRADE_REPLY tr ON m.ID = tr.MEMBER_ID
+        WHERE tr.TRADE_ID = #{tradeId} AND tr.REPLY_DEPTH = 1
+        ORDER BY tr.REPLY_REGISTER_DATE
+        )
+        <![CDATA[
+        WHERE ROWNUM <= #{pagination.page} * #{pagination.rowCount}
+        )]]>
+    </select>
+
+    <!-- 2댑스  -->
+    <select id="selectRereplies" resultType="tradeReplyDTO2">
+        SELECT m.NAME AS MEMBER_NAME, m.IMG AS MEMBER_IMG, m.id AS MEMBER_ID,
+        tr.ID, tr.REPLY_CONTENT, tr.REPLY_REGISTER_DATE, tr.REPLY_DEPTH, tr.REPLY_GROUP, tr.TRADE_ID, tr.STATUS
+        FROM TBL_MEMBER m JOIN TBL_TRADE_REPLY tr
+        ON TRADE_ID = #{tradeId} AND M.ID = tr.MEMBER_ID WHERE tr.REPLY_DEPTH  = 2 AND tr.REPLY_GROUP = #{replyGroup}
+        ORDER BY tr.REPLY_REGISTER_DATE
+    </select>
+
+<!--  댓글 등록  -->
+    <insert id="replyInsert">
+        INSERT INTO TBL_TRADE_REPLY (ID, REPLY_CONTENT, MEMBER_ID, TRADE_ID, REPLY_DEPTH, REPLY_GROUP)
+        VALUES(TRADE_REPLY_SEQ.NEXTVAL,#{replyContent}, #{memberId}, #{tradeId}, 1, TRADE_REPLY_SEQ.CURRVAL)
+        <selectKey keyProperty="id" resultType="long" order="AFTER">
+            SELECT TRADE_REPLY_SEQ.CURRVAL FROM DUAL
+        </selectKey>
+    </insert>
+
+<!--  대댓글 등록  -->
+    <insert id="rereplyInsert">
+        INSERT INTO TBL_TRADE_REPLY (ID, REPLY_CONTENT, MEMBER_ID, TRADE_ID, REPLY_DEPTH, REPLY_GROUP)
+        VALUES(TRADE_REPLY_SEQ.NEXTVAL,#{replyContent}, #{memberId}, #{tradeId}, 2, #{replyGroup})
+        <selectKey keyProperty="id" resultType="long" order="AFTER">
+            SELECT TRADE_REPLY_SEQ.CURRVAL FROM DUAL
+        </selectKey>
+    </insert>
+
+<!--  댓글 삭제  -->
+    <delete id="delete">
+        DELETE FROM TBL_TRADE_REPLY
+        WHERE ID = #{id}
+    </delete>
+
+<!--  댓글 전체 삭제  -->
+    <delete id="deleteAll">
+        DELETE FROM TBL_TRADE_REPLY
+        WHERE TRADE_ID = #{id}
+    </delete>
+<!--  댓글 신고  -->
+    <insert id="report">
+        INSERT INTO TBL_TRADE_REPORT
+        (ID, REPORTED_ID, REPORTER_ID, TRADE_ID, TRADE_REPLY_ID, CATEGORY_NAME)
+        VALUES(SEQ_TRADE_REPORT.NEXTVAL, #{reportedId}, #{reporterId}, #{tradeId}, #{tradeReplyId}, 'r')
+    </insert>
+</mapper>

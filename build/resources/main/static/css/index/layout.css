@@ -1,0 +1,89 @@
+@charset "UTF-8";
+/* 컨테이너 공통 */
+.cont-wrap{background: #fff; width: 100%; height: auto;}
+
+/* 메인페이지 */
+.inner-cont{margin: 0px auto; max-width: 808px; width: 100%; padding: 0px 20px; min-height: 1px;}
+
+/* 메인페이지 - 슬라이드 */
+.main-visual{margin-bottom: 20px;}
+.main-visual .slide-wrap{width: 100%; overflow: hidden; position: relative;}
+.main-visual ul{position: relative; left: 0; display: flex; justify-content: space-between; transition: all 0.2s;}
+.main-visual ul img{width: 100%; height: auto; display: block;}
+
+/* 슬라이드 － arrow */
+.main-visual .arrow{position: absolute; top: 50%; transform: translateY(-50%); cursor: pointer;}
+.main-visual .arrow.left{left: 10px; transform: rotate(180deg) translate(0px, 50%);}
+.main-visual .arrow.right{right: 10px;}
+
+/* 슬라이드 － pagenation */
+.main-visual .pagenation{width: auto; position: absolute; right: 20px; bottom: 20px; display: flex; -webkit-box-align: center; align-items: center; right: 12px; height: 28px; padding: 6px 10px; color: rgb(204, 204, 204); font-size: 12px; line-height: 16px; letter-spacing: -0.36px; font-weight: bold; border-radius: 16px; background-color: rgba(0, 0, 0, 0.4);}
+.main-visual .pagenation .curr{color: #fff; font-weight: 600;}
+.main-visual .pagenation .curr::after{content: '/'; display: inline-block; margin: 0 5px;  color: rgb(204, 204, 204);}
+
+/* 컨테이너 공통 */
+#index section{margin-bottom: 60px;}
+.sec-head{width: 100%; display: flex; justify-content: space-between; align-items: center; -webkit-box-align: center; margin-bottom: 40px;}
+.sec-head .tit{display: block; margin-right: 8px; font-weight: bold; color: black; font-size: inherit; white-space: nowrap; text-overflow: ellipsis;}
+.sec-head .view-more{font-size: 14px; font-weight: 500; color: #000;}
+
+/* 좋아요, 댓글, 인포 */
+.info-wrap{margin-bottom: 20px;}
+.like-comment{display: flex; align-items: center; -webkit-box-align: center;}
+.like-comment .like i{font-size: 21px; color: #707070;}
+.like-comment .like-btn.active i{color: #ffb029;}
+.like-comment div{display: flex; align-items: center; -webkit-box-align: center; height: 18px;}
+.like-comment div button{padding: 0px;}
+.like-comment div + div{margin-left: 20px;}
+.like-comment .cnt{vertical-align: middle; margin-left: 5px; height: 18px;}
+
+/* 썸네일 */
+.thumb{width: 100%; overflow: hidden; position: relative; padding-top: 100%; border-radius: 10px; margin-bottom: 20px;}
+.thumb .img-wrap{position: absolute; left: 0; top: 0;}
+.thumb img{width: 100%; height: auto; display: block;}
+
+/* 컨테이너 sec1 베스트 피드 */
+.best-feed .feed-wrap{display: flex; align-items: center; -webkit-box-align: center;}
+.best-feed .feed-wrap li{width: calc(100% / 3);}
+.best-feed .feed-wrap li + li{margin-left: 20px;}
+
+/* 베스트 피드 - 컨텐츠 */
+.hashtag{padding: 5px 10px; background-color: #fffbf4; width: max-content; border-radius: 20px; font-size: 12px; color: #ffb029; margin-bottom: 5px; font-weight: 500; border: 1px solid #ffb02955;}
+.content{height: auto; font-weight: 400; word-break: keep-all; overflow-wrap: break-word; overflow: hidden; text-overflow: ellipsis; -webkit-line-clamp: 2; display: -webkit-box; -webkit-box-orient: vertical; line-height: 20px; font-size: 14px;}
+
+
+/* 컨테이너 - 함께해요, 교환해요 */
+.list-wrap{display: flex; align-items: center; -webkit-box-align: center;}
+.list-wrap li{width: calc(100% / 4);}
+.list-wrap li + li{margin-left: 20px;}
+.list-wrap .bo-tit{font-size: 15px; font-weight: 600;  overflow-wrap: break-word; overflow: hidden; text-overflow: ellipsis; -webkit-line-clamp: 2; display: -webkit-box; -webkit-box-orient: vertical; line-height: 20px; margin-bottom: 10px;}
+
+
+/* 메인 미디어쿼리 */
+@media screen and (max-width: 576px) {
+    .inner-cont{padding: 0px;}
+    #index section{margin-bottom: 40px; padding: 0 20px;}
+    #index section.main-visual{padding: 0px;}
+    /* 교환해요, 함께해요 */
+    .list-wrap{flex-wrap: wrap;}
+    .list-wrap li + li{margin-left: 0px;}
+    .list-wrap li{width: calc(100% / 2 - 10px); margin-bottom: 30px;}
+    .list-wrap li:nth-child(even){margin-left: 20px;}
+
+    /* 피드 */
+    .best-feed .sec-body{
+        overflow-x: scroll;
+        overflow-y: hidden;
+        -ms-overflow-style: none; /* 인터넷 익스플로러 */
+        scrollbar-width: none; /* 파이어폭스 */
+    }
+    .best-feed .sec-body::-webkit-scrollbar {
+        display: none; /* 크롬, 사파리, 오페라, 엣지 */
+    }
+    .best-feed .feed-wrap{width: 576px;}
+}
+
+@media screen and (max-width: 360px) {
+    /* 피드 */
+    .best-feed .feed-wrap{width: 460px;}
+}

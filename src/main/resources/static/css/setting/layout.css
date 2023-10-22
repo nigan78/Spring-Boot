@@ -1,0 +1,135 @@
+@charset "utf-8";
+
+.setting {
+    min-height: 50vh;
+}
+
+.settingDiv {
+    padding-bottom: 24px;
+}
+
+.settingHeader {
+    border-bottom: 1px solid rgb(238, 238, 238);
+}
+
+.settingHeaderDiv {
+    padding: 50px 20px 20px;
+    margin: 0px auto;
+    max-width: 768px;
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+}
+
+.settingHeaderDiv2 {
+    font-size: 24px;
+    line-height: 36px;
+    font-weight: bold;
+    letter-spacing: -0.72px;
+    color: rgb(51, 51, 51);
+}
+
+.settingDetail {
+    display: flex;
+    flex-flow: column;
+    align-content: flex-start;
+    margin: 0px auto;
+    max-width: 808px;
+    width: 100%;
+    padding: 0px 20px;
+    min-height: 1px;
+}
+
+.settingDetail1 {
+    width: auto;
+    height: 56px;
+    margin: 0px 20px;
+    padding: 0px;
+    border-bottom: 1px solid rgb(244, 244, 244);
+    background-color: rgb(255, 255, 255);
+}
+
+.settingDetail2 {
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    height: 100%;
+    padding: 16px 0px;
+}
+
+.ONOFF {
+    position: relative;
+    display: inline-block;
+    text-align: left;
+    opacity: 1;
+    direction: ltr;
+    border-radius: 14px;
+    transition: opacity 0.25s ease 0s;
+    touch-action: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    user-select: none;
+}
+
+.on1 {
+    height: 28px;
+    width: 48px;
+    margin: 0px;
+    position: relative;
+    background: #21BAF3;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: background 0.25s ease 0s;
+}
+
+.on2 {
+    height: 24px;
+    width: 24px;
+    background: rgb(255, 255, 255);
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 50%;
+    position: absolute;
+    transform: translateX(22px);
+    top: 2px;
+    outline: 0px;
+    border: 0px;
+    transition: background-color 0.25s ease 0s, transform 0.25s ease 0s, box-shadow 0.15s ease 0s;
+}
+
+.off1 {
+    height: 28px;
+    width: 48px;
+    margin: 0px;
+    position: relative;
+    background: rgb(221, 221, 221);
+    border-radius: 14px;
+    cursor: pointer;
+    transition: background 0.25s ease 0s;
+}
+
+.off2 {
+    height: 24px;
+    width: 24px;
+    background: rgb(255, 255, 255);
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 50%;
+    position: absolute;
+    transform: translateX(2px);
+    top: 2px;
+    outline: 0px;
+    border: 0px;
+    transition: background-color 0.25s ease 0s, transform 0.25s ease 0s, box-shadow 0.15s ease 0s;
+}
+
+*, ::before, ::after {
+    background-repeat: no-repeat;
+    box-sizing: inherit;
+}
+
+* {
+    outline: none;
+    font-family: inherit;
+}
+.setting .tit{line-height: 28px}

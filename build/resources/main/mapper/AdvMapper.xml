@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.app.teamProject.mapper.AdvMapper">
+    <insert id="insert">
+        INSERT INTO TBL_ADV
+        VALUES (seq_adv.nextval, #{memberId}, #{title}, #{content}, #{startDate}, #{endDate}, #{price}, #{status}, #{sort})
+    </insert>
+
+    <select id="select" resultType="Long">
+        SELECT ID FROM TBL_ADV WHERE ROWNUM = 1 ORDER BY ID DESC
+    </select>
+
+    <insert id="insertfile">
+        INSERT INTO TBL_ADV_FILE (ID, FILE_PATH, FILE_NAME, POST_ID)
+        VALUES(SEQ_ADV_FILE.nextval, #{filePath}, #{fileName}, #{postId})
+    </insert>
+
+    <select id="selectAdv" resultType="advDTO">
+        SELECT
+            a.ID,
+            a.STARTDATE,
+            a.ENDDATE,
+            a.STATUS,
+            a.SORT,
+            f.FILE_PATH,
+            f.FILE_NAME
+        FROM TBL_ADV a
+        JOIN TBL_ADV_FILE f ON a.ID = f.POST_ID
+        WHERE a.status = 'y' AND a.SORT = 'b' AND a.STARTDATE >= SYSDATE AND a.ENDDATE >= SYSDATE
+    </select>
+</mapper>

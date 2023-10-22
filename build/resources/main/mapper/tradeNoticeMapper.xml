@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.app.teamProject.mapper.TradeNoticeMapper">
+    <!-- 알림 신청용  -->
+    <insert id="applyInsert">
+        INSERT INTO TBL_TRADE_NOTICE
+        (ID, NOTICE_ID, SEND_ID, TRADE_ID, CATEGORY_NAME)
+        VALUES(SEQ_TRADE_NOTICE.NEXTVAL, #{noticeId}, #{sendId}, #{tradeId}, 'p')
+    </insert>
+
+    <!-- 댓글 신청용  -->
+    <insert id="replyInsert">
+        INSERT INTO TBL_TRADE_NOTICE
+        (ID, NOTICE_ID, SEND_ID, TRADE_ID, TRADE_REPLY_ID, CATEGORY_NAME)
+        VALUES(SEQ_TRADE_NOTICE.NEXTVAL, #{noticeId}, #{sendId}, #{tradeId}, #{tradeReplyId}, 'r')
+    </insert>
+
+    <!--  신청알림 전체 삭제  -->
+    <delete id="deleteApply">
+        DELETE FROM TBL_TRADE_NOTICE
+        WHERE TRADE_ID = #{id}
+    </delete>
+
+    <!--  댓글알림 전체 삭제  -->
+    <delete id="deleteReply">
+        DELETE FROM TBL_TRADE_NOTICE
+        WHERE TRADE_REPLY_ID = #{id}
+    </delete>
+</mapper>

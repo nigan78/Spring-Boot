@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <!-- 공통 css-->
+    <link rel="stylesheet" href="/css/font/font.css">
+    <link rel="stylesheet" href="/css/inc/reset.css">
+    <link rel="stylesheet" href="/css/inc/layout.css">
+    <link rel="stylesheet" href="/css/dm/layout.css">
+    <!-- 페이지 css-->
+    <link rel="stylesheet" href="/css/setting/layout.css">
+    <!-- 공통js -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="/js/inc/layout.js"></script>
+    <script src="/js/dm/layout.js" defer></script>
+    <!-- 페이지 js -->
+    <script src="/js/setting/layout.js" defer></script>
+    <title>설정</title>
+</head>
+<body>
+    <div class="setting">
+        <div class="settingDiv">
+            <header class="settingHeader">
+                <div class="settingHeaderDiv">
+                    <div class="settingHeaderDiv2">설정</div>
+                </div>
+            </header>
+        </div>
+        <div class="settingDetail">
+            <div class="settingDetail1">
+                <a href="">
+                    <div class="settingDetail2"><span class="tit">개인정보수정</span></div>
+                </a>
+            </div>
+            <div class="settingDetail1">
+                <div class="settingDetail2">
+                    <span class="tit">모든 DM 허용</span>
+                    <div class="ONOFF" onclick="DMDetail()">
+                        <div class="on1" id="onoff1"></div>
+                        <div class="on2" id="onoff2"></div>
+                        <input type="checkbox" role="switch" style="border: 0px; clip: rect(0px, 0px, 0px, 0px); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px;">
+                    </div>
+                </div>
+            </div>
+            <div class="settingDetail1">
+                <div class="settingDetail2">
+                    <span class="tit">팔로우한 사람만 DM 허용</span>
+                    <div class="ONOFF" onclick="FollowerDMDetail()">
+                        <div class="off1" id="onoff3"></div>
+                        <div class="off2" id="onoff4"></div>
+                        <input type="checkbox" role="switch" style="border: 0px; clip: rect(0px, 0px, 0px, 0px); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px;">
+                    </div>
+                </div>
+            </div>
+            <div class="settingDetail1">
+                <a href="">
+                    <div class="settingDetail2"><span class="tit">차단목록 관리</span></div>
+                </a>
+            </div>
+            <div class="settingDetail1">
+                <div class="settingDetail2"><span class="tit">비공개 계정 설정</span>
+                    <div class="ONOFF" onclick="PrivateAccountDetail()">
+                        <div class="off1" id="onoff5"></div>
+                        <div class="off2" id="onoff6"></div>
+                        <input type="checkbox" role="switch" style="border: 0px; clip: rect(0px, 0px, 0px, 0px); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

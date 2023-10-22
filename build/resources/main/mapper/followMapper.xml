@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.app.teamProject.mapper.FollowMapper">
+    <!--  팔로우  -->
+    <insert id="insert">
+        INSERT INTO TBL_FOLLOW
+        VALUES(FOLLOW_SEQ.NEXTVAL, #{memberId}, #{fwId})
+    </insert>
+
+    <!--  팔로우취소  -->
+    <delete id="delete">
+        DELETE FROM TBL_FOLLOW
+        WHERE MEMBER_ID = #{memberId} AND FW_ID = #{fwId}
+    </delete>
+
+    <!--  팔로우 확인  -->
+    <select id="findFollow" resultType="int">
+        SELECT * FROM TBL_FOLLOW
+        WHERE MEMBER_ID = #{memberId} AND FW_ID = #{fwId}
+    </select>
+</mapper>

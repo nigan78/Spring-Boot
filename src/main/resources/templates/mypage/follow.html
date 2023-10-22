@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <!-- 공통 css-->
+    <link rel="stylesheet" href="/css/font/font.css">
+    <link rel="stylesheet" href="/css/inc/reset.css">
+    <link rel="stylesheet" href="/css/inc/layout.css">
+    <!-- 공통js -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+<!--    <script src="/js/inc/layout.js"></script>-->
+    <!-- 페이지 css -->
+    <link rel="stylesheet" type='text/css' href="/css/mypage/following.css">
+    <!-- 페이지 js -->
+    <script charset="UTF-8" src="/js/mypage/follow.js"></script>
+    <script src="/js/mypage/backend/layout.js"></script>
+    <script th:inline="javascript">
+        let posts = [[${followeing}]];
+        let posts2 = [[${follower}]];
+
+        let memderid=posts[0].fwId; //자신
+        let ing=posts[0].memberId; //팔로잉
+        console.log(memderid);
+    </script>
+    <title>팔로잉 / 팔로워 목록</title>
+</head>
+<body>
+<!-- 공통헤더 -->
+<div id="page-container">
+    <div class="black-bg-wrap" style="display: none"></div>
+    <div class="wz-header"></div>
+    <form method="get" id="forwardForm">
+        <input type="hidden" id="returnURL" name="returnURL"/>
+    </form>
+    <input type="hidden" id="sessionLoginCheck" value="true"/>
+    <div id="my-follow-app" style="min-height: 100vh">
+        <div class="MyFollowAppContainer-container">
+            <div class="MyFollowAppContainer-contents">
+                <p class="MyFollowAppContainer-header">팔로잉 / 팔로워</p>
+                <div class="MyFollowAppContainer-tabsWrapper">
+                    <div class="Tabs-tabsWrapper">
+                        <ul class="Tabs-ul">
+
+                            <li data-index="0" class="active" id="follower" onclick="follower()">
+                                <button type="button" class="Tab-tab-First-btn" id="button1" role="tab" data-value="0">
+                                      <span>
+                                        <p>팔로워<sup></sup></p>
+                                      </span>
+                                </button>
+                            </li>
+
+                            <li data-index="1" id="following" onclick="following()">
+                                <button type="button" class="Tab-tab-Second-btn" role="tab" data-value="1">
+                                      <span>
+                                        <p>팔로잉<sup></sup></p>
+                                      </span>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 여기까지 대가리 -->
+                <div class="TabsPanels-tabPanels">
+                    <div class="page-container" id="container">
+
+                        <!-- 여기부터 -->
+<!--                        <div class="FollowingCard-container-3">-->
+<!--                            <div class="FollowingCard-contents-S">-->
+<!--                                <div class="FollowingCard-leftPanel">-->
+<!--                                    <div class="FollowingCard-avatarWrapper">-->
+<!--                                        <div class="Avatar-avatar-FollowingCard-avatar">-->
+<!--                                                <span class="Avatar-hasImage"-->
+<!--                                                      style="background-image: url(/img/advertising/banner_1.png);-->
+<!--                                                      border: 1px solid rgb(221, 226, 230);">-->
+<!--                                                </span>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                    <div class="FollowingCard-info"><p class="FollowingCard-name">임종민</p></div>-->
+<!--                                </div>-->
+<!--                                <div class="FollowingCard-rightPanel">-->
+<!--                                    <button class="Button-button-3MO4n Button-secondary" type="button">-->
+<!--                                        <span class="Button-children">팔로잉</span>-->
+<!--                                    </button>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <div class="FollowingCard-divider"></div>-->
+<!--                        </div>-->
+                        <!-- 개수 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script charset="UTF-8" src="/js/mypage/backend/follow.js"></script>
+</body>
+</html>

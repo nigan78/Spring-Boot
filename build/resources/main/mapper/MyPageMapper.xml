@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.app.teamProject.mapper.MyPageMapper">
+    <!--    접속 여부 확인용-->
+    <select id="onLogin" resultType="memberVO">
+        SELECT * FROM TBL_MEMBER
+        WHERE ID = #{Id}
+        <if test="Pw != null">
+            AND PW = #{Pw}
+        </if>
+    </select>
+    <!--   내가 요청한 광고-->
+    <select id="adv" resultType="advVO">
+        SELECT * FROM TBL_ADV WHERE MEMBERID = #{memberId}
+    </select>
+
+    <!--  follower-->
+    <select id="follower" resultType="followVO">
+        SELECT * FROM TBL_FOLLOW F JOIN TBL_MEMBER MEM
+        ON F.MEMBER_ID = MEM.ID WHERE MEM.ID = #{memberId}
+    </select>
+
+    <!--  following-->
+    <select id="following" resultType="followVO">
+        SELECT * FROM TBL_FOLLOW F JOIN TBL_MEMBER MEM
+        ON F.FW_ID = MEM.ID WHERE F.FW_ID = #{fwId}
+    </select>
+
+    <!--  한 사람이 작성한 feed-->
+    <select id="feed" resultType="feedVO">
+        SELECT T.ID, T.TITLE, T.CONTENT, T.TAG_CODE, T.MEMBER_ID, COUNT(L.FEED_ID) AS LIKECOUNT
+        FROM TBL_FEED T
+        LEFT JOIN TBL_FEED_LIKE L ON T.ID = L.FEED_ID AND T.MEMBER_ID  = #{memberId}
+        WHERE T.MEMBER_ID = #{memberId}
+        GROUP BY T.ID, T.TITLE, T.CONTENT, T.TAG_CODE, T.FEED_REGISTER_DATE , T.MEMBER_ID ORDER BY T.ID DESC
+    </select>
+
+    <select id="feedRCount" resultType="String">
+        SELECT COUNT(R.ID) FROM TBL_FEED T
+        LEFT JOIN TBL_FEED_REPLY R ON T.ID = R.FEED_ID
+        GROUP BY T.ID, T.TITLE ORDER BY T.ID DESC
+    </select>
+
+
+    <delete id="delete">
+        DELETE FROM TBL_FOLLOW WHERE MEMBER_ID  = #{memberId} AND FW_ID = #{fwId}
+    </delete>
+
+    <!--    함께해요-->
+    <select id="together" resultType="togetherVO">
+        SELECT T.ID, T.TITLE, T.CONTENT, T.MAPINFO, T.STATUS, T.MEMBER_ID, COUNT(L.TOGETHER_ID) AS LIKECOUNT
+        FROM TBL_TOGETHER T
+        LEFT JOIN TBL_TOGETHER_LIKE L ON T.ID = L.TOGETHER_ID AND T.MEMBER_ID = #{memberId}
+        WHERE T.MEMBER_ID = #{memberId}
+        GROUP BY T.ID, T.TITLE, T.CONTENT, T.MAPINFO, T.STATUS, T.MEMBER_ID  ORDER BY T.ID DESC
+    </select>
+
+    <select id="togetherRCount" resultType="String">
+        SELECT COUNT(R.ID) FROM TBL_TOGETHER T
+        LEFT JOIN TBL_TOGETHER_REPLY R ON T.ID = R.TOGETHER_ID
+        GROUP BY T.ID, T.TITLE ORDER BY T.ID DESC
+    </select>
+
+    <!--    교환해요-->
+    <select id="trade" resultType="tradeVO">
+        SELECT * FROM TBL_TRADE WHERE MEMBER_ID = #{memberId}
+    </select>
+
+    <update id="update">
+       UPDATE TBL_MEMBER SET HP = #{Hp},PW =#{Pw}
+        WHERE ID = #{Id}
+    </update>
+</mapper>

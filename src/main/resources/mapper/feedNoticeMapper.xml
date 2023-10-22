@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.app.teamProject.mapper.FeedNoticeMapper">
+
+<!--  피드 알림 인서트  -->
+    <insert id="insert">
+        INSERT INTO TBL_FEED_NOTICE(ID, NOTICE_ID, SEND_ID, FEED_ID, FEED_REPLY_ID)
+        VALUES(SEQ_FEED_NOTICE.NEXTVAL, #{noticeId}, #{sendId}, #{feedId}, #{feedReplyId})
+    </insert>
+
+</mapper>

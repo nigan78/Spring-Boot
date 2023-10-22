@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.app.teamProject.mapper.RegisterMapper">
+    <insert id="insert">
+        INSERT INTO TBL_MEMBER
+        VALUES(#{Id}, #{Pw}, #{Name}, #{Hp}, #{Img}, #{Sort})
+    </insert>
+
+    <select id="selectForIdCheck" resultType="string">
+        SELECT ID FROM TBL_MEMBER
+        WHERE ID = #{ID}
+    </select>
+
+    <select id="selectForHpCheck" resultType="string">
+        SELECT HP FROM TBL_MEMBER
+        WHERE HP = #{hp}
+    </select>
+</mapper>

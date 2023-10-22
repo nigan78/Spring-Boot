@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <!-- 공통 css-->
+    <link rel="stylesheet" href="/css/font/font.css">
+    <link rel="stylesheet" href="/css/inc/reset.css">
+    <link rel="stylesheet" href="/css/inc/layout.css">
+    <!-- 공통js -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="/js/inc/layout.js"></script>
+    <!-- 페이지 css -->
+    <link rel="stylesheet" href="/css/mypage/myTradeList.css">
+    <!-- 페이지 js -->
+    <script src="/js/mypage/myTogetherList.js" defer></script>
+    <title>나의 교환해요</title>
+</head>
+<body>
+<div class="main">
+    <h1 font-size="24px" class="mainh1">나의 교환해요</h1>
+    <div class="maindiv" id="maindiv">
+        <span class="select" id="feed">신청목록</span>
+        <span class="other" id="together" onclick="select('together')">나의 작성글</span>
+    </div>
+
+    <!-- 수락 신청완료 인원마감 필터  -->
+    <div class="sub-main-filer">
+        <ul>
+            <li class="all"><button type="button">전체</button></li>
+            <li class="active"><button type="button">신청중</button></li>
+            <li><button type="button">교환완료</button></li>
+
+        </ul>
+    </div>
+
+    <!-- 나의 신청목록 -->
+    <section>
+        <div id="myApplication" class="listdiv" >
+            <ul class="listul">
+                <li>
+                    <div class="lidiv" onclick="check()">
+                        <div class="img enroll">신청완료</div>
+                        <div class="lititle">광화문 32일 오후5시 밥먹어요</div>
+                        <div class="time">2023-08-08 16:05</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="lidiv">
+                        <div class="img accept">교환완료</div>
+                        <div>[</div>
+                        <div class="lisort">서울</div>
+                        <div>]</div>
+                        <div class="lititle">현충일(6/6) 고객센터 운영시간 안내</div>
+                        <div class="time">2023-06-01 08:31</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="lidiv">
+                        <div class="img fail">교환마감</div>
+                        <div>[</div>
+                        <div class="lisort">일본</div>
+                        <div>]</div>
+                        <div class="lititle">도쿄에서 푸딩먹으실분</div>
+                        <div class="time">2023-06-01 08:31</div>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+    </section>
+
+    <!-- 나의 작성글 ------------------------------------------------------------------ -->
+    <section>
+        <div id="app" style="display: none" >
+            <div class="appWrapper">
+                <div class="SocialFeedPage">
+
+                    <div class="SocialFeedPage-Content" style="opacity: 1; display: block">
+                        <div class="FeedList" id="FeedList">
+                            <!-- 2 -----------------------사진 여러장인 경우-!!!!!!!!!!----------------------------------------- -->
+                            <div class="post">
+                                <div class="user-wrap">
+                                    <a href="">
+                                        <div class="user-img">
+                                            <img src="/img/trade/tradeImg/교환물건(10).jpg" alt="" />
+                                        </div>
+                                        <div class="usr-mid">
+                                            <div class="user-name">아무개</div>
+                                            <div class="post-date">1시간 전</div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="img-wrap">
+                                    <ul class="thumb-ul">
+                                        <li><img src="/img/trade/피드여행(6).jpg" alt="" /></li>
+                                        <li><img src="/img/trade/피드여행(8).jpg" alt="" /></li>
+                                    </ul>
+                                    <div class="arrow left">
+                                        <img
+                                                src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='50' height='50' viewBox='0 0 50 50'%3E %3Cpath fill='none' fill-rule='evenodd' stroke='%23FFF' stroke-width='2' d='M21 17l8 8.014L21.028 33'/%3E %3C/svg%3E"
+                                                alt=""
+                                        />
+                                    </div>
+                                    <div class="arrow right">
+                                        <img
+                                                src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='50' height='50' viewBox='0 0 50 50'%3E %3Cpath fill='none' fill-rule='evenodd' stroke='%23FFF' stroke-width='2' d='M21 17l8 8.014L21.028 33'/%3E %3C/svg%3E"
+                                                alt=""
+                                        />
+                                    </div>
+                                    <ul class="page"></ul>
+                                </div>
+                                <div class="con-wrap">
+                                    <a href="">
+                                        <div class="tit">[서울]경복궁 놀러왔어요</div>
+                                        <div class="content">
+                                            안녕하세요 오늘 경복궁 놀러왔어요 와 진짜 재밌다ㅎㅎㅎ 함께노실분
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="util-wrap">
+                                    <div class="like">
+                                        <div class="icon-wrap">
+                                            <button type="button" class="ActionGroup-heart">
+                                                <img
+                                                        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='21' height='18' viewBox='0 0 21 18'%3E %3Cpath fill='none' stroke='%234E5968' stroke-width='1.5' d='M15.657.75c-1.226 0-2.379.485-3.246 1.365l-1.91 1.94-1.912-1.94C7.722 1.235 6.57.75 5.343.75s-2.378.485-3.245 1.365C1.198 3.028.75 4.227.75 5.425c0 1.199.448 2.398 1.348 3.31l8.425 8.504 8.379-8.504c.9-.912 1.348-2.111 1.348-3.31 0-1.198-.448-2.397-1.347-3.31-.867-.88-2.02-1.365-3.246-1.365z'/%3E %3C/svg%3E"
+                                                        alt="좋아요~"
+                                                />
+                                            </button>
+                                        </div>
+                                        <span class="count">100</span>
+                                    </div>
+                                    <div class="comment">
+                                        <div class="icon-wrap">
+                                            <img
+                                                    src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='21' height='18' viewBox='0 0 21 18'%3E %3Cpath fill='none' stroke='%234E5968' stroke-width='1.5' d='M20.25.75H.75v11.818h3.842v4.015l5.9-4.015h9.758V.75z'/%3E %3C/svg%3E"
+                                                    alt="댓글"
+                                            />
+                                        </div>
+                                        <span class="count">30</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="post">
+                                <div class="user-wrap">
+                                    <a href="">
+                                        <div class="user-img">
+                                            <img src="/img/trade/tradeImg/교환물건(12).jpg" alt="" />
+                                        </div>
+                                        <div class="usr-mid">
+                                            <div class="user-name">김수박</div>
+                                            <div class="post-date">1시간 전</div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="img-wrap">
+                                    <ul class="thumb-ul">
+                                        <li><img src="/img/trade/피드여행(3).jpg" alt="" /></li>
+                                        <li><img src="/img/trade/피드여행(4).jpg" alt="" /></li>
+                                    </ul>
+                                    <div class="arrow left">
+                                        <img
+                                                src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='50' height='50' viewBox='0 0 50 50'%3E %3Cpath fill='none' fill-rule='evenodd' stroke='%23FFF' stroke-width='2' d='M21 17l8 8.014L21.028 33'/%3E %3C/svg%3E"
+                                                alt=""
+                                        />
+                                    </div>
+                                    <div class="arrow right">
+                                        <img
+                                                src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='50' height='50' viewBox='0 0 50 50'%3E %3Cpath fill='none' fill-rule='evenodd' stroke='%23FFF' stroke-width='2' d='M21 17l8 8.014L21.028 33'/%3E %3C/svg%3E"
+                                                alt=""
+                                        />
+                                    </div>
+                                    <ul class="page"></ul>
+                                </div>
+                                <div class="con-wrap">
+                                    <a href="">
+                                        <div class="tit">[서울]야경보러왔습니다</div>
+                                        <div class="content">함께노실분</div>
+                                    </a>
+                                </div>
+                                <div class="util-wrap">
+                                    <div class="like">
+                                        <div class="icon-wrap">
+                                            <button type="button" class="ActionGroup-heart">
+                                                <img
+                                                        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='21' height='18' viewBox='0 0 21 18'%3E %3Cpath fill='none' stroke='%234E5968' stroke-width='1.5' d='M15.657.75c-1.226 0-2.379.485-3.246 1.365l-1.91 1.94-1.912-1.94C7.722 1.235 6.57.75 5.343.75s-2.378.485-3.245 1.365C1.198 3.028.75 4.227.75 5.425c0 1.199.448 2.398 1.348 3.31l8.425 8.504 8.379-8.504c.9-.912 1.348-2.111 1.348-3.31 0-1.198-.448-2.397-1.347-3.31-.867-.88-2.02-1.365-3.246-1.365z'/%3E %3C/svg%3E"
+                                                        alt="좋아요~"
+                                                />
+                                            </button>
+                                        </div>
+                                        <span class="count">40</span>
+                                    </div>
+                                    <div class="comment">
+                                        <div class="icon-wrap">
+                                            <img
+                                                    src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='21' height='18' viewBox='0 0 21 18'%3E %3Cpath fill='none' stroke='%234E5968' stroke-width='1.5' d='M20.25.75H.75v11.818h3.842v4.015l5.9-4.015h9.758V.75z'/%3E %3C/svg%3E"
+                                                    alt="댓글"
+                                            />
+                                        </div>
+                                        <span class="count">30</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+</body>
+</html>

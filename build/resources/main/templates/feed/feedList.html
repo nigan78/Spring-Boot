@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- 공통 css-->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link rel="stylesheet" href="/css/inc/layout.css">
+    <!-- 페이지 css -->
+    <link rel="stylesheet" href="/css/feed/feedList.css">
+    <!-- 공통js -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://rawgit.com/jackmoore/autosize/master/dist/autosize.min.js"></script>
+    <script src="/js/inc/layout.js"></script>
+    <title>피드 리스트</title>
+</head>
+<body>
+    <!--공통헤더-->
+    <header th:replace="~{inc/header.html :: header}"></header>
+
+    <div id="app">
+        <div class="appWrapper">
+            <div class="SocialFeedPage">
+                <!-- 피드헤더~~~~~~ -->
+                <div class="SocialFeedPage-Header">
+                    <div>
+                        <span class="SocialFeedPage-Title">피드</span>
+                    </div>
+                </div>
+                <!-- 피드 헤더아래~~~~~~~~ -->
+                <div class="SocialFeedPage-Content" style="opacity: 1; display: block">
+                    <div class="FeedList" id="feedList">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--  피드 유틸  -->
+    <div class="feed-util-layer">
+        <div class="bg"></div>
+        <div class="layer-con">
+            <div class="inner-con">
+                <div class="deco-bar"></div>
+                <div class="layer-body">
+                    <ul>
+<!--                        <li><button type="button" class="update">수정</button></li>-->
+<!--                        <li><button type="button" class="delete">삭제</button></li>-->
+                        <li>
+                            <button type="button" class="report">신고</button>
+                            <input type="hidden" name="" class="feedId">
+                            <input type="hidden" name="" class="id">
+                        </li>
+                    </ul>
+                </div>
+            </div><!-- inner-con -->
+        </div><!-- layer-con -->
+    </div>
+</div>
+    <!--  피드 댓글  -->
+    <div th:replace="~{feed/reply.html :: .reply-layer}"></div>
+
+    <!-- 공통푸터-->
+    <footer th:replace="~{inc/footer.html :: footer}"></footer>
+
+    <!--  DM  -->
+    <div th:replace="~{dm/list.html :: #chat-area}"></div>
+</body>
+</html>
+<script th:inline="javascript">
+    let feeds = [[${feeds}]];
+    let memberId = [[${session.memberId}]];
+</script>
+<script src="/js/feed/list.js"></script>

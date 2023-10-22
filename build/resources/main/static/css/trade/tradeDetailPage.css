@@ -1,0 +1,150 @@
+#detail{background: #fff; width: 100%;}
+#detail .inner-con{background: #fff; width: 100%; max-width: 768px; margin: 0 auto; padding: 40px 0}
+#detail .top{display: flex; justify-content: space-between; padding-bottom: 25px; border-bottom: 1px solid rgb(238, 238, 238); margin-bottom: 40px}
+/* 이미지 슬라이드 */
+#detail .top .img-area{width: 50%; max-width: 357px; margin-right: 20px}
+#detail .top .img-wrap{width: 100%;border-radius: 20px;position: relative;left: 0;top: 0; overflow: hidden; background: #f7f7f7}
+#detail .top .img-wrap ul{position: relative; top: 0; left: 0; display: flex; justify-content: space-between; width: 300%; }
+#detail .top .img-wrap ul li{width: 100%}
+#detail .top .img-wrap ul li .img-box{position: relative; left: 0; top: 0; padding-top: 100%;}
+#detail .top .img-wrap ul li .img-box img{width: 100%; height: auto; display: block; object-fit: cover; position: absolute; left: 0; top: 50%; transform: translateY(-50%);}
+#detail .top .img-wrap .arrow{position: absolute; top: 50%; transform: translateY(-50%); cursor: pointer}
+#detail .top .img-wrap .arrow.left{left: 10px;}
+#detail .top .img-wrap .arrow.left img{transform: rotate(180deg);}
+#detail .top .img-wrap .arrow.right{right: 10px;}
+#detail .top .img-wrap .page{color: #fff; font-size: 12px; padding: 5px 10px; border-radius: 20px; background: #0005; position: absolute; left: 50%; transform: translateX(-50%); bottom: 15px}
+#detail .top .img-wrap .page .curr:after{content: '/'; display: inline-block; margin: 0 0px 0px 4px;}
+
+/* 컨텐츠 */
+#detail .top .tag-area{display: flex;}
+#detail .top .tag-area span{padding: 5px 10px; background-color: #fffbf4; width: max-content; border-radius: 20px; font-size: 12px; color: #ffb029; margin-bottom: 10px; font-weight: 500; border: 1px solid #ffb02955;}
+#detail .top .tag-area span.end-tag{background: #f7f7f7; border-color: #ddd; color: #707070}
+#detail .top .tag-area span + span{margin-left: 5px}
+#detail .top .cont-area{width: 50%; display: flex; flex-direction: column; justify-content: space-between;}
+#detail .top .content-wrap .txt-area{margin-bottom: 20px; display: flex; justify-content: space-between; align-items: flex-start}
+#detail .top .content-wrap .tit{width: 100%; font-size: 20px; font-weight: 600; letter-spacing: -0.6px; word-break: keep-all; overflow-wrap: break-word; color: #333;}
+#detail .top .content-wrap .cont{width: 100%; font-size: 14px; letter-spacing: -0.6px; color: #707070; line-height: 20px; word-break: keep-all; overflow-wrap: break-word; }
+
+/* 컨텐츠 유저 정보 + 팔로우 */
+#detail .top .user-area{border-top: 1px solid rgb(238, 238, 238); padding: 20px 10px 0 0; display: flex; justify-content: space-between; align-items: center}
+#detail .top .user-area a{display: flex; justify-content: space-between; align-items: center}
+#detail .top .user-area .user-img{width: 50px; height: 50px; overflow: hidden; border-radius: 50%; margin-right: 10px;}
+#detail .top .user-area .user-img img{width: 100%; height: auto; display: block}
+#detail .top .user-info{width: calc(100% - 50px)}
+#detail .top .user-info .user-name{margin-bottom: 5px;}
+#detail .top .follow-wrap{display: flex; align-items: center; font-size: 12px; color: rgb(170, 170, 170)}
+#detail .top .follow-wrap div + div{margin-left: 10px}
+#detail .top .follow-btn{width: 100%; max-width: 100px; border: 1px solid #333; padding: 10px; border-radius: 5px; font-size: 14px; transition: all 0.2s}
+#detail .top .follow-btn:hover{background: #F2F8FB; color: #21baf3; border-color: #21baf3}
+#detail .top .follow-btn.active{background: #21baf3; color: #fff; border-color: #21baf3;}
+
+/* 섹션 타이틀 */
+section .sec-tit{font-size: 20px; font-weight: 700; line-height: 24px; margin: 0px; margin-bottom: 30px}
+.re-cnt{color: #21baf3; font-weight: 500}
+
+/* 댓글 */
+.reply li{padding: 20px 0}
+.reply li + li{border-top: 1px solid rgb(238, 238, 238)}
+.reply-wrap{margin-bottom: 20px}
+.reply .user-info{display: flex; align-items: center; margin-bottom: 20px}
+.reply .user-img{width: 36px; height: 36px; border-radius: 50%; overflow: hidden; margin-right: 10px}
+.reply .user-img img{width: 100%; height: auto; display: block}
+.reply .name{font-size: 14px; color: #333; margin-bottom: 5px}
+.reply .date{color: rgb(170, 170, 170); font-size: 12px}
+.reply-con{width: 100%;line-height: 20px; letter-spacing: -0.6px; margin-bottom: 20px; font-size: 14px}
+.reply-btn-wrap button{color: rgb(170, 170, 170); font-size: 12px; padding: 0px}
+.reply-btn-wrap button + button{margin-left: 5px;}
+.no-reply{width: 100%; text-align: center; padding: 40px 0 80px !important; font-size: 14px; color: #707070}
+.no-rereply{width: 100%; text-align: center; padding: 40px 0 40px !important; font-size: 14px; color: #707070}
+
+/* 대댓글 */
+.rereply-wrap{background: #f7f7f7; padding: 20px; border-radius: 10px; display: none}
+.rereply-wrap .rereply + .rereply{margin-top: 20px}
+
+/* 댓글 + 대댓글 인풋창 */
+.reply-input, .rereply-input{margin-top: 30px; display: flex; justify-content: space-between}
+.reply-input{margin-top: 0px; padding: 40px 0; border-top: 1px solid rgb(238, 238, 238)}
+.reply textarea{width: 100%; border: 1px solid #ddd; resize: none;height: 42px; padding: 10px 15px; box-sizing: border-box; border-radius: 20px; line-height: 20px; color: #333}
+.reply textarea:active, .reply textarea:focus{border: 1px solid #21baf3; outline: none}
+.reply-input button{width: 100px; background: #21baf3; border-radius: 20px; margin-left: 10px; color: #fff}
+.rereply-input button{width: 100px; background: #fff5; border: 1px solid #21baf3; border-radius: 20px; margin-left: 10px; color: #21baf3}
+
+/* 디테일 유틸 레이어 */
+.detail-util-layer{position: fixed; left: 0; top: 0; width: 100vw; height: 100vh; z-index: 99; display: none}
+.detail-util-layer .bg{background: rgba(0, 0, 0, 0.6); width: 100%; height: 100vh;}
+.detail-util-layer .layer-con{position: absolute; left: 50%; transform: translateX(-50%); width: 100%; max-width: 768px; height: auto; background: #fff; bottom: 0; border-radius: 50px 50px 0 0; text-align: center; overflow: hidden}
+.detail-util-layer .inner-con{padding-top: 20px;}
+.detail-util-layer .deco-bar{background: #ddd; width: 100%; max-width: 100px; border-radius: 20px; height: 5px; margin: 0 auto 20px;}
+.detail-util-layer .layer-con button{display: block; padding: 15px 0; text-align: center;width: 100%; font-size: 13px; transition: all 0.2s}
+.detail-util-layer li button:hover{background: #F2F8FB;}
+
+/* foot-util */
+.foot-util{box-shadow: rgba(0, 0, 0, 0.08) 0px -10px 30px -10px; width: 100%; position: fixed; bottom: 0; left: 0px; background: #fff; padding: 20px 0}
+.foot-util .like svg{width: 36px; height: 36px;}
+.foot-util .like.active svg path{fill: #ffb029; stroke: #ffb029;}
+.foot-util .inner-con{width: 100%; max-width: 768px; margin: 0 auto; display: flex; justify-content:space-between}
+.foot-util .inner-con .app-btn,
+.foot-util .inner-con .app-view-btn {background: #21baf3; width: 90%; border-radius: 30px; color: #fff; text-align: center; padding: 10px 0;}
+.foot-util .inner-con a{width: 90%; display: block}
+.foot-util .inner-con a .app-btn{width: 100%}
+.app-close-btn{background: #fff; border: 1px solid #21baf3; width: 20%; border-radius: 30px; color: #21baf3; text-align: center; padding: 10px 0; margin-left: 5px; transition: all 0.2s;}
+.app-close-btn:hover{background: #F2F8FB; color: #21baf3; border-color: #21baf3;}
+.app-end-div{background: #F2F8FB; width: 90%; border-radius: 30px; color: #21baf3; text-align: center; padding: 10px 0; border: 1px solid #21baf3}
+
+/* 푸터 공통버튼 */
+.chat-btn{bottom: 90px}
+.write-btn-wrap{bottom: 160px}
+#chat{bottom: 160px}
+
+/* 디테일 신청 리스트 */
+.appView-layer{width: 100%; height: 100vh; position: fixed; z-index: 99; left: 0; top: 0; display: none}
+.appView-layer .bg{background: rgba(0, 0, 0, 0.6); width: 100%; height: 100vh;}
+.appView-layer .layer-con{
+    width: 100%;
+    max-width: 768px;
+    background: #fff;
+    align-items: center;
+    border-top: 1px solid rgb(238, 238, 238);
+    background-color: white;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 20px 20px 0 0;
+    min-height: 600px;
+    max-height: 650px;
+}
+.appView-layer .inner-con{width: 100%;margin: 0 auto;}
+.appView-layer .layer-head{padding: 20px; border-bottom: 1px solid #DEDEDE}
+.appView-layer .layer-head .tit{width: 100%; max-width: 768px; font-size: 18px; font-weight: 600; margin: 0 auto}
+.appView-layer .layer-body{width: 100%; max-width: 768px; margin: 0 auto;}
+.scroll-wrap{overflow-y: scroll;min-height: 500px; max-height: 500px;}
+.appView-layer>ul{margin-bottom: 20px; min-height: 444px}
+.appView-layer>ul>li + li{margin-top: 15px}
+.appView-layer .content-area{display: flex; width: 100%; padding: 20px; border-bottom: 1px solid #ddd}
+
+/* 유저이미지 */
+.appView-layer .con-wrap{width: calc(100% - 50px)}
+.appView-layer .user-name{font-size: 12px; letter-spacing: -0.43px; color: rgb(78, 89, 104); margin-bottom: 3px;}
+.appView-layer .img-wrap{width: 36px; height: 36px; margin-right:10px}
+.appView-layer .img-wrap img{width: 100%; height: auto; display: block}
+.appView-layer .date{font-size: 12px; color: rgb(170, 170, 170); margin-left: 5px}
+.appView-layer .comment{max-width: 100%; display: inline-block; font-size: 14px; line-height: 23px; padding: 10px 0px; letter-spacing: -0.5px; color: rgb(78, 89, 104); margin-bottom: 4px;}
+.appView-layer .util button{padding: 0px; font-size: 12px; color: rgb(198, 202, 208)}
+.appView-layer .util button + button{margin-left: 5px}
+.appView-layer .util span.trade-ok{color: #ffb029; font-size: 12px; margin-left: 5px}
+
+/* 데이터가 없을 경우 */
+.appView-layer .no-data{display: block; width: 100%; padding: 60px 0; font-size: 12px; color: #707070; text-align: center}
+
+/* 신청 이미지 */
+.trade-img{width: 100%; overflow-x: scroll; padding: 20px 0; display: none}
+.trade-img ul{display: flex; width: 150%}
+.trade-img ul li{width: 33.3333%;}
+.trade-img ul li + li{margin-left: 10px}
+.trade-img ul li .img-box{background: #f7f7f7; border-radius: 20px; position: relative; left: 0;top: 0; padding-top: 100%;overflow: hidden}
+.trade-img ul li img{width: 100%;height: auto; display: block; position: absolute; left: 0; top: 50%; transform: translateY(-50%)}
+
+/* placeholder */
+textarea::placeholder{font-size: 12px; color: #ddd}
+

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>회원 정보 </title>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <!-- 공통 css-->
+    <link rel="stylesheet" href="/css/font/font.css">
+    <link rel="stylesheet" href="/css/inc/reset.css">
+    <link rel="stylesheet" href="/css/inc/layout.css">
+    <!-- 공통js -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="/js/inc/layout.js"></script>
+    <!-- 페이지 css-->
+    <link rel="stylesheet" href="/css/adminReport/detailPage.css">
+    <!-- 페이지 js -->
+    <script src="../adminReport"></script>
+  </head>
+  <body>
+    <div>
+      <div class="wrap">
+        <!-- 사이드 바 -->
+        <div></div>
+
+        <div class="container">
+          <div class="container-margin">
+            <div class="info-flex">
+              <!-- 내용 섹션 -->
+              <section class="board-info-box-layout">
+                <div class="board-info-box board-info-box-flex">
+                  <div class="board-info-title-box">
+                    <span>회원 정보</span>
+                  </div>
+                  <!-- 계정 영구정지 버튼으로 생각 중 -->
+                  <div class="modify-button-box">
+                    <a>
+                      <img src="/image/admin/gear_icon.png" class="gear-icon" />
+                      <a>제재 하기</a>
+                    </a>
+                  </div>
+                </div>
+                <hr />
+                <div class="board-info-box">
+                  <div class="member-img-box">
+                    <!-- member-img가 프로필 이미지 나오게 -->
+                    <div class="member-img"></div>
+                    <div class="member-nickname-box">
+                      <span>닉네임123</span>
+                    </div>
+                  </div>
+                  <div class="member-info-box">
+                    <div class="member-info-tag-box">
+                      <span class="info-tag">이름</span>
+                      <!-- 이름 -->
+                      <div class="info">
+                        <span>이준상</span>
+                      </div>
+                    </div>
+                    <div class="member-info-tag-box">
+                      <span class="info-tag">이메일</span>
+                      <!-- 이메일 -->
+                      <div class="info">
+                        <span>ljs1234@gmail.com</span>
+                      </div>
+                    </div>
+                    <div class="member-info-tag-box">
+                      <span class="info-tag">핸드폰 번호</span>
+                      <!-- 핸드폰 번호 -->
+                      <div class="info">
+                        <span>010-1234-1234</span>
+                      </div>
+                    </div>
+
+                    <!-- member-info-tag-box를 추가만 하면 알아서 정보란이 늘어난다 -->
+                    <div class="member-info-tag-box">
+                      <span class="info-tag">양식 양식</span>
+                      <div class="info">
+                        <span>양식 양식</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+  <!-- 나는 다른 사이드 메뉴니 참고용으로만 남김 -->
+  <script src="/js/admin/sidemenu.js"></script>
+</html>

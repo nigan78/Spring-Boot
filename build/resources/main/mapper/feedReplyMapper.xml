@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.app.teamProject.mapper.FeedReplyMapper">
+    <!--  댓글 출력  -->
+    <select id="selectReplies" resultType="feedReplyDTO">
+        <!-- 최종 결과를 가져오기 위한 외부 쿼리 -->
+        SELECT R, MEMBER_NAME, MEMBER_IMG, MEMBER_ID, ID, REPLY_CONTENT, REPLY_REGISTER_DATE, REPLY_DEPTH, REPLY_GROUP, FEED_ID
+        FROM
+        (
+        <!-- 페이징 처리를 위한 중간 쿼리 -->
+        SELECT ROWNUM R, MEMBER_NAME, MEMBER_IMG, MEMBER_ID, ID, REPLY_CONTENT, REPLY_REGISTER_DATE, REPLY_DEPTH, REPLY_GROUP, FEED_ID
+        FROM
+        (
+        <!-- 실제 데이터를 가져오는 내부 쿼리 -->
+        SELECT
+        m.NAME AS MEMBER_NAME,
+        m.IMG AS MEMBER_IMG,
+        m.id AS MEMBER_ID,
+        fr.ID,
+        fr.REPLY_CONTENT,
+        fr.REPLY_REGISTER_DATE,
+        fr.REPLY_DEPTH,
+        fr.REPLY_GROUP,
+        fr.FEED_ID,
+        fr.STATUS
+        FROM TBL_MEMBER m
+        JOIN TBL_FEED_REPLY fr ON m.ID = fr.MEMBER_ID
+        WHERE fr.FEED_ID = #{feedId} AND fr.REPLY_DEPTH = 1
+        ORDER BY fr.REPLY_REGISTER_DATE
+        )
+        <![CDATA[
+        WHERE ROWNUM <= #{pagination.page} * #{pagination.rowCount}
+        )]]>
+    </select>
+
+    <!-- 2댑스  -->
+    <select id="selectRereplies" resultType="feedReplyDTO2">
+        SELECT m.NAME AS MEMBER_NAME, m.IMG AS MEMBER_IMG, m.id AS MEMBER_ID,
+        fr.ID, fr.REPLY_CONTENT, fr.REPLY_REGISTER_DATE, fr.REPLY_DEPTH, fr.REPLY_GROUP, fr.FEED_ID, fr.STATUS
+        FROM TBL_MEMBER m JOIN TBL_FEED_REPLY fr
+        ON FEED_ID = #{feedId} AND M.ID = fr.MEMBER_ID WHERE fr.REPLY_DEPTH  = 2 AND fr.REPLY_GROUP = #{replyGroup}
+        ORDER BY fr.REPLY_REGISTER_DATE
+    </select>
+
+<!--  댓글 등록  -->
+    <insert id="replyInsert">
+        INSERT INTO TBL_FEED_REPLY (ID, REPLY_CONTENT, MEMBER_ID, FEED_ID, REPLY_DEPTH, REPLY_GROUP)
+        VALUES(FEED_REPLY_SEQ.NEXTVAL,#{replyContent}, #{memberId}, #{feedId}, 1, FEED_REPLY_SEQ.CURRVAL)
+    </insert>
+
+<!--  대댓글 등록  -->
+    <insert id="rereplyInsert">
+        INSERT INTO TBL_FEED_REPLY (ID, REPLY_CONTENT, MEMBER_ID, FEED_ID, REPLY_DEPTH, REPLY_GROUP)
+        VALUES(FEED_REPLY_SEQ.NEXTVAL,#{replyContent}, #{memberId}, #{feedId}, 2, #{replyGroup})
+    </insert>
+
+<!--  댓글 삭제  -->
+    <delete id="delete">
+        DELETE FROM TBL_FEED_REPLY
+        WHERE ID = #{id}
+    </delete>
+<!--  댓글 신고  -->
+    <insert id="report">
+        INSERT INTO TBL_FEED_REPORT
+        (ID, REPORTED_ID, REPORTER_ID, FEED_REPLY_ID, CATEGORY_NAME)
+        VALUES(SEQ_FEED_REPORT.NEXTVAL, #{reportedId}, #{reporterId}, #{feedReplyId}, 'r')
+    </insert>
+</mapper>

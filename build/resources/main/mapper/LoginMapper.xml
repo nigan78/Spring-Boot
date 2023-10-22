@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.app.teamProject.mapper.LoginMapper">
+    <select id="select" resultType="memberVO">
+        SELECT ID, NAME FROM TBL_MEMBER
+        WHERE ID = #{Id} AND PW = #{Pw}
+    </select>
+
+    <update id="update">
+        UPDATE TBL_MEMBER SET pw = #{Pw} WHERE ID = #{Id} AND HP = ${Hp}
+    </update>
+
+    <select id="selectKakao" resultType="memberVO">
+        SELECT ID, NAME FROM TBL_MEMBER
+        WHERE ID = #{Id}
+    </select>
+
+    <select id="selectId" resultType="String">
+        SELECT ID FROM TBL_MEMBER
+        WHERE HP = #{hp}
+    </select>
+</mapper>

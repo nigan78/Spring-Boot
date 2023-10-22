@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>회원가입</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <link rel='stylesheet' type='text/css' href='/css/inc/reset.css'>
+    <link rel='stylesheet' type='text/css' href='/css/font/font.css'>
+    <link rel="stylesheet" href="/css/inc/layout.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <script src="/js/inc/layout.js"></script>
+    <!-- 페이지 css -->
+    <link rel="stylesheet" href="/css/register/registerNext.css">
+    <script src="/js/register/registerNext.js" defer></script>
+    <script src="/js/register/register.js" defer></script>
+
+</head>
+<body>
+<header th:insert="~{inc/header.html :: header}"></header>
+<div id="app">
+    <div class="appWrapper">
+        <div class="PageWrapper">
+            <div class="RegisterPage">
+                <div class="Title">
+                    <h3>회원가입</h3>
+                </div>
+                <form class="RegisterPageForm" th:action="@{/register/registerNext}" name="join" method="post" th:object="${memberVO}">
+                    <!-- 닉네임 -->
+                    <div>
+                        <input id="idOrEmail" class="nickInput" type="text" placeholder="아이디" th:field="*{Id}" />
+                        <p class="fail">사용할 수 없는 아이디 입니다.</p>
+                        <p class="succes">사용가능한 아이디 입니다.</p>
+                    </div>
+                    <div>
+                        <input id="pw" class="nickInput" type="password" placeholder="비밀번호" />
+<!--                        <p class="explain">대/소문자, 숫자, 특수문자 중 2가지 이상의 조합으로 10자 이상</p>-->
+                    </div>
+                    <div>
+                        <input
+                                id="RePassword"
+                                class="nickInput"
+                                type="password"
+                                placeholder="비밀번호 확인"
+                                th:field="*{Pw}"
+                        />
+                        <p id="checkPW" class="explain"></p>
+                    </div>
+                    <!-- 닉네임 -->
+                    <div>
+                        <input id="nickname" class="nickInput" type="text" placeholder="닉네임" th:field="*{Name}" />
+                        <p class="fail">닉네임을 입력 해주세요</p>
+                    </div>
+                    <!-- 폰 번호 입력 -->
+                    <div class="PhoneNumberWrap">
+                        <div>
+                            <input
+                                    id="phoneNumber"
+                                    class="PhoneNumInput"
+                                    type="number"
+                                    placeholder="휴대폰 번호(- 없이 입력)"
+                                    th:field="*{Hp}"
+                            />
+                        </div>
+                        <button id="send" type="button" class="authentication-SendButton">인증번호 전송</button>
+                    </div>
+                    <p class="fail">올바른 휴대폰 번호 형식이 아닙니다.</p>
+                    <p class="fail">이미 사용중인 번호 입니다.</p>
+                    <!-- 인증번호 인증 -->
+                    <div class="authentication">
+                        <div>
+                            <div>
+                                <input
+                                        id="authenticationNumber"
+                                        class="authenticationNum"
+                                        type="number"
+                                        placeholder="인증번호"
+                                />
+                            </div>
+                        </div>
+                        <button id="checkHp" type="button" class="authentication-Button">인증하기</button>
+                    </div>
+                    <p class="fail">인증번호가 일치하지 않습니다.</p>
+                    <p class="succes">인증이 완료 되었습니다.</p>
+                    <input type="text" id="sort" th:field="*{Sort}" hidden>
+                    <button type="button" class="SubmitButton" onclick="regist()">가입하기</button>
+                    <p class="fail">잘못된 사항이 있습니다. 다시 시도해 주시길 바랍니다.</p>
+                </form>
+            </div>
+            <input id="idcheck" value="0" hidden>
+            <input id="pwcheck" value="0" hidden>
+            <input id="namecheck" value="0" hidden>
+            <input id="hpcheck" value="0" hidden>
+        </div>
+    </div>
+</div>
+<footer th:insert="~{inc/footer.html :: footer}"></footer>
+</body>
+<script th:inline="javascript">
+    let kakao = [[${kakao}]];
+</script>
+</html>

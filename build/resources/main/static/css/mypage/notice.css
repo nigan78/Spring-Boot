@@ -1,0 +1,148 @@
+#notice {
+    margin: 40px auto;
+}
+#notice{
+    width: 100%;
+    max-width: 750px;
+
+}
+
+@media (min-width: 768px){
+.title {
+    font-size: 24px;
+    line-height: 32px;
+    margin-bottom: 40px;
+}}
+.title{
+    line-height: 28px;
+    font-weight: 700;
+    color: rgb(47, 52, 56);
+    padding: 0px 16px;
+}
+.listWrapper{
+    padding-top: 0px;
+    padding-bottom: 0px;
+    transform: translateY(0px);
+}
+
+/* 색 있는 목록 (배경에 은은히 하늘색이 있음. 이유는 모름)*/
+@media (min-width: 768px){
+.color {
+    min-height: 100px;
+    padding: 18px 24px;
+}}
+.color {
+    position: relative;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    width: 100%;
+    min-height: 80px;
+    padding: 15px 16px;
+    box-sizing: border-box;
+    font-size: 14px;
+    color: rgb(47, 52, 56);
+    line-height: 20px;
+    background: rgb(239, 251, 255);
+}
+
+/* 색 없는 목록*/
+@media (min-width: 768px){
+.colorless {
+    min-height: 100px;
+    padding: 18px 24px;
+}}
+
+.colorless {
+    position: relative;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    width: 100%;
+    min-height: 80px;
+    padding: 15px 16px;
+    box-sizing: border-box;
+    font-size: 14px;
+    color: rgb(47, 52, 56);
+    line-height: 20px;
+}
+
+/* 앞에 사진 */
+.imageWrap{
+    display: inline-block;
+    margin-right: 10px;
+    line-height: 0;
+}
+@media (min-width: 768px){
+.imagee {
+    width: 40px;
+    height: 40px;
+}}
+ .imagee {
+     width: 30px;
+     height: 30px;
+     border-radius: 50%;
+ }
+
+/* 내용 */
+.contentWrap{
+    width: 100%;
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+}
+@media (min-width: 768px){
+.content {
+    line-height: 18px;
+	width: 100%;
+}}
+
+@media (min-width: 768px){
+.description {
+    margin-bottom: 6px;
+}}
+ .description {
+     color: rgb(47, 52, 56);
+     display: inline;
+     margin-right: 6px;
+ }
+ .time-time {
+     font-size: 12px;
+     line-height: 20px;
+     color: rgb(130, 140, 148);
+	 margin-left: 33%;
+ }
+
+ /*---------*/
+
+@media (min-width: 768px){
+.color::after {
+    left: 0px;
+    right: 0px;
+}}
+ .color::after {
+     content: "";
+     position: absolute;
+     left: 16px;
+     right: 16px;
+     bottom: 0px;
+     height: 1px;
+     background: rgb(234, 237, 239);
+ }
+
+@media (min-width: 768px)
+.colorless::after {
+    left: 0px;
+    right: 0px;
+}
+ .colorless::after {
+     content: "";
+     position: absolute;
+     left: 16px;
+     right: 16px;
+     bottom: 0px;
+     height: 1px;
+     background: rgb(234, 237, 239);
+ }

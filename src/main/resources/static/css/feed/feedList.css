@@ -1,0 +1,442 @@
+button,
+html [type='button'],
+[type='reset'],
+[type='submit'] {
+    -webkit-appearance: button;
+    appearance: button;
+}
+img {
+    border-style: none;
+}
+::selection {
+    background-color: #b3d4fc;
+    color: #000000;
+    text-shadow: none;
+}
+*,
+::before,
+::after {
+    background-repeat: no-repeat;
+    box-sizing: inherit;
+}
+div {
+    display: block;
+}
+img {
+    overflow-clip-margin: content-box;
+    overflow: clip;
+}
+* {
+    outline: none;
+    font-family: inherit;
+}
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+button {
+    cursor: pointer;
+}
+a,
+area,
+button,
+input,
+label,
+select,
+textarea,
+[tabindex] {
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+}
+button,
+select {
+    text-transform: none;
+}
+button,
+input {
+    overflow: visible;
+}
+button,
+input,
+select,
+textarea {
+    background-color: transparent;
+    border-style: none;
+    color: inherit;
+    font-size: 1em;
+    margin: 0;
+}
+/* ----------------------------------------------------------------------------------------------------------- */
+#app {
+    background-color: white;
+    min-height: 100%;
+    min-width: 100%;
+}
+.appWrapper {
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    min-height: 100vh;
+}
+.SocialFeedPage {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 768px;
+    margin: 0px auto;
+}
+
+/* 피드헤더 (피드라고 써져있는부분) */
+.SocialFeedPage-Header {
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid rgb(238, 238, 238);
+}
+.SocialFeedPage-Title {
+    color: rgb(51, 61, 75);
+    font-weight: bold;
+    font-size: 24px;
+}
+.SocialFeedPage-button {
+    cursor: pointer;
+    vertical-align: super;
+}
+
+/* 피드 contents ----------------------------------------------------------------------------------------- */
+.SocialFeedPage-Content {
+    width: auto;
+    height: auto;
+    transition: opacity 200ms ease-in-out 0s;
+    min-width: 0px;
+    min-height: 1px;
+}
+.FeedList {
+    display: flex;
+    flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    justify-content: flex-start;
+    overflow-x: hidden;
+}
+.FeedList > div {
+    width: 100%;
+    padding: 30px 20px;
+    border-bottom: 1px solid rgb(238, 238, 238);
+    border-left: 1px solid rgb(238, 238, 238);
+    margin-left: -1px;
+}
+
+
+
+/* 1. 피드 contents - 프로필 이름, 사진, 시간 */
+.FeedList-ProfileWrapper {
+    margin-bottom: 15px;
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+}
+.UserProfileWrapper {
+    display: flex;
+}
+
+/* 1-1. 프로필이미지 */
+.ProfileImageWrapper {
+    width: 36px;
+    height: 36px;
+    margin-right: 10px;
+    margin-top: 10%;
+}
+.ProfileImage-Wrapper {
+    min-height: 1px;
+}
+.ImageLoader {
+    display: none !important;
+}
+
+.Fade-Wrapper {
+    width: auto;
+    height: auto;
+    transition: opacity 200ms ease-in-out 0s;
+    min-width: 0px;
+    min-height: 1px;
+}
+
+/* 사진 크기 설정 */
+.Fade-Wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.StyledImage {
+    display: initial;
+    border-radius: 36px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+
+/* 이 아래는 필요한지 잘 모르겠음 */
+.FloatingButtonWrapper {
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+}
+.Footer-Wrapper {
+    padding: 40px 20px 96px;
+    background-color: rgb(248, 248, 248);
+}
+
+.FeedImage-wrapper2 {
+    max-width: 213px;
+    position: relative;
+    align-items: center;
+}
+
+/* feed 리스트 -------------------------------------------------------------*/
+.post .user-wrap {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+.post .user-wrap a {
+    display: flex;
+    align-items: center;
+}
+.post .user-img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #f7f7f7;
+    margin-right: 10px;
+}
+.post .user-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.post .user-name {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+.post .post-date {
+    font-size: 12px;
+    color: #707070;
+}
+.post .img-wrap {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    position: relative;
+    left: 0;
+    top: 0;
+}
+.post .img-wrap .thumb-ul {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    left: 0;
+    top: 0;
+    transition: all 0.2s;
+
+}
+.post .img-wrap .thumb-ul li {
+    width: 100%;
+    height: 100%;
+    background: #f7f7f7;
+
+}
+.post .img-wrap .thumb-ul li .img-box{
+    position: relative;
+    left: 0;
+    top: 0;
+    padding-top: 100%;
+}
+.post .img-wrap .thumb-ul li img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.post .img-wrap .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+.post .img-wrap .arrow.left {
+    left: 5px;
+}
+.post .img-wrap .arrow.left img {
+    transform: rotate(180deg);
+}
+.post .img-wrap .arrow.right {
+    right: 5px;
+}
+.post .img-wrap .page {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    left: 50%;
+    bottom: 20px;
+    transform: translateX(-50%);
+    height: 5px;
+}
+.post .img-wrap .page li {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #fff;
+    opacity: 0.5;
+    box-shadow: 0 0 5px #0003;
+}
+.post .img-wrap .page li.active {
+    opacity: 1;
+}
+.post .img-wrap .page li + li {
+    margin-left: 5px;
+}
+
+.post .con-wrap {
+    width: 100%;
+    margin-bottom: 36px;
+}
+.post .con-wrap .tit {
+    font-weight: 600;
+    letter-spacing: -1px;
+    margin-bottom: 15px;
+}
+.post .con-wrap .content {
+    font-size: 14px;
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    max-height: 48px;
+    color: #707070;
+    line-height: 16px;
+}
+
+.post .util-wrap {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.post .util-wrap > div {
+    display: flex;
+    align-items: center;
+}
+.post .util-wrap > div + div {
+    margin-left: 15px;
+}
+.post .icon-wrap {
+    width: 22px;
+    margin-right: 5px;
+}
+.post .count {
+    line-height: inherit;
+    margin-left: 3px;
+}
+.veiw-more{margin-bottom: 40px; padding: 0 20px}
+.hashtag{padding: 5px 10px; background-color: #fffbf4; width: max-content; border-radius: 20px; font-size: 12px; color: #ffb029; margin-bottom: 10px; font-weight: 500; border: 1px solid #ffb02955;}
+.no-data{padding: 100px 0 !important; text-align: center; font-size: 14px; color: #707070}
+.no-data .ico{font-size: 70px; color: #dedede; margin-bottom: 20px;}
+.no-data .message{font-size: 14px; color: #dedede;}
+
+/* 피드 댓글 css 추가 230824 */
+.reply-open{cursor: pointer}
+.reply-layer{width: 100%; height: 100vh; position: fixed; z-index: 99; left: 0; top: 0; display: none}
+.reply-layer .bg{background: rgba(0, 0, 0, 0.6); width: 100%; height: 100vh;}
+.reply-layer .layer-con{
+    width: 100%;
+    max-width: 768px;
+    background: #fff;
+    align-items: center;
+    border-top: 1px solid rgb(238, 238, 238);
+    background-color: white;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 20px 20px 0 0;
+    min-height: 600px;
+    max-height: 650px;
+}
+.reply-layer .inner-con{width: 100%;margin: 0 auto;}
+.reply-layer .layer-head{padding: 20px; border-bottom: 1px solid #DEDEDE}
+.reply-layer .layer-head .tit{width: 100%; max-width: 768px; font-size: 18px; font-weight: 600; margin: 0 auto}
+.reply-layer .layer-body{width: 100%; max-width: 768px; margin: 0 auto; padding: 20px;}
+.scroll-wrap{overflow-y: scroll;min-height: 500px; max-height: 500px;}
+.reply-layer ul{margin-bottom: 20px; min-height: 444px}
+.reply-layer li + li{margin-top: 15px}
+.reply-layer .re-con{display: flex; width: 100%}
+.reply-layer .re-con.depth2{margin-top: 20px; padding-left: 40px}
+.reply-layer .img-wrap{width: 36px; height: 36px; margin-right:10px}
+.reply-layer .img-wrap img{width: 100%; height: auto; display: block}
+.reply-layer .user-name{display: block; font-size: 12px; letter-spacing: -0.43px; color: rgb(78, 89, 104); margin-bottom: 3px;}
+.reply-layer .comment{max-width: 100%;
+    display: inline-block;
+    font-size: 14px;
+    line-height: 23px;
+    padding: 10px 13px;
+    letter-spacing: -0.5px;
+    color: rgb(78, 89, 104);
+    background-color: rgb(242, 243, 246);
+    border-radius: 21.5px;
+    margin-bottom: 4px;
+}
+.reply-layer .re-con.depth2 .comment{background-color: rgb(243 248 255);}
+.reply-layer .util{font-size: 12px; color: rgb(198, 202, 208);}
+.comment-form{position: sticky; left: 0; bottom: 0; width: 100%; background: #fff; padding: 10px 0;}
+.comment-form textarea{border: 1px solid #ddd; width: 100%; border-radius: 20px; height: 36px; resize: none; padding: 10px 20px; box-sizing: border-box; font-size: 12px; color: #999999}
+.comment-form textarea:active, .comment-form textarea:focus{border: 1px solid #21BAF3}
+/* 댓글 */
+.reply-wrap{display: flex; justify-content: space-between;}
+.comment-form .replyBtn{color: #707070}
+/* 대댓글 */
+.rereply-wrap{display: none; justify-content: space-between; position: relative}
+.rereply-name{font-size: 12px; color: #21baf3; width: 15%; min-width: 60px; padding-left: 15px;}
+.rereply-textarea{padding: 10px}
+.rereply-del{font-size: 16px; color: #707070; padding-right: 10px}
+.comment-form .rereplyBtn{color: #707070;}
+.re-input-wrap{display: flex; justify-content: space-between; align-items: center; width: 100%; border: 1px solid #ddd; background: #fff; border-radius: 20px; height: inherit}
+.rereply-textarea{border: 0px !important;}
+.rereply-textarea:active, .rereply-textarea:focus{border: 0px}
+/* 좋아요 */
+.likeBtn{padding: 0px}
+.likeBtn svg{width: 26px}
+.likeCheck{display: none}
+.likeBtn.active svg path{fill: #ffb029; stroke: #ffb029;}
+
+/* 피드 유틸 레이어 */
+.feed-util-layer{position: fixed; left: 0; top: 0; width: 100vw; height: 100vh; z-index: 99; display: none}
+.feed-util-layer .bg{background: rgba(0, 0, 0, 0.6); width: 100%; height: 100vh;}
+.feed-util-layer .layer-con{position: absolute; left: 50%; transform: translateX(-50%); width: 100%; max-width: 768px; height: auto; background: #fff; bottom: 0; border-radius: 50px 50px 0 0; text-align: center;}
+.feed-util-layer .inner-con{padding-top: 20px;}
+.feed-util-layer .deco-bar{background: #ddd; width: 100%; max-width: 100px; border-radius: 20px; height: 5px; margin: 0 auto 20px;}
+.feed-util-layer .layer-con button{display: block; padding: 15px 0; text-align: center;width: 100%; font-size: 13px; transition: all 0.2s}
+.feed-util-layer li button:hover{background: #F2F8FB;}
+
+/*.reMoreBtn{position: sticky;left: 0;bottom: 63px;}*/
+.moreBtn{width: 100%; padding: 10px 0; font-size: 12px; background: #fff; border: 1px solid #333333;}

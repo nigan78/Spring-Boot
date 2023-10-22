@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!-- 공통 css-->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link rel="stylesheet" href="/css/font/font.css">
+    <link rel="stylesheet" href="/css/inc/reset.css">
+    <link rel="stylesheet" href="/css/inc/layout.css">
+    <!-- 페이지 css-->
+    <link rel="stylesheet" href="/css/mypage/list.css">
+    <!-- 공통 js-->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+<!--    <script src="/js/inc/layout.js"></script>-->
+
+    <script src="/js/mypage/backend/layout.js" defer></script>
+
+    <script th:inline="javascript">
+        let posts = [[${advList}]];
+        console.log(posts);
+    </script>
+
+
+
+    <title>광고 결과 페이지</title>
+</head>
+<body>
+<header th:insert="~{inc/header.html :: header}"></header>
+
+<div>
+    <div class="info-title-box info-title-box-flex">
+        <div style="margin: 0 auto">
+            <div class="select-name">
+                <span>광고 신청 결과</span>
+            </div>
+        </div>
+    </div>
+    <div class="wrap">
+        <!-- 사이드 바 -->
+        <div></div>
+
+        <div class="container">
+            <div class="container-margin">
+                <!-- 여기에 필터 넣으면 될 듯 -->
+
+                <!-- 내용 섹션 -->
+                <section class="board-info-box-layout">
+                    <div class="board-info-box">
+                        <div class="board-info-title-box">
+                            <span>광고 목록</span>
+                        </div>
+
+                        <div class="info-table">
+                            <table id="listUp">
+                                <thead>
+                                <th>No</th>
+                                <th>제 목</th>
+                                <th>신청일</th>
+                                <th>기 간</th>
+                                <th>결 과</th>
+                                </thead>
+                                <!-- 리스트 내용 -->
+                                <!--                                <tr>-->
+                                <!--                                    &lt;!&ndash; 게시물 pk번호 &ndash;&gt;-->
+                                <!--                                    <td>1</td>-->
+                                <!--                                    &lt;!&ndash; 형 식 &ndash;&gt;-->
+                                <!--                                    <td>피드</td>-->
+                                <!--                                    &lt;!&ndash; 신청일 &ndash;&gt;-->
+                                <!--                                    <td>23.01.17</td>-->
+                                <!--                                    &lt;!&ndash; 기 간 &ndash;&gt;-->
+                                <!--                                    <td>3개월</td>-->
+                                <!--                                    &lt;!&ndash; 신청자 이름 &ndash;&gt;-->
+                                <!--                                    <td>-->
+                                <!--                                        승 인-->
+                                <!--                                    </td>-->
+                                <!--                                </tr>-->
+                                <!-- 리스트 내용 -->
+                                <!--                                <tr>-->
+                                <!--                                    &lt;!&ndash; 게시물 pk번호 &ndash;&gt;-->
+                                <!--                                    <td>2</td>-->
+                                <!--                                    &lt;!&ndash; 형 식 &ndash;&gt;-->
+                                <!--                                    <td>피드</td>-->
+                                <!--                                    &lt;!&ndash; 신청일 &ndash;&gt;-->
+                                <!--                                    <td>23.01.17</td>-->
+                                <!--                                    &lt;!&ndash; 기 간 &ndash;&gt;-->
+                                <!--                                    <td>3개월</td>-->
+                                <!--                                    &lt;!&ndash; 신청자 이름 &ndash;&gt;-->
+                                <!--                                    <td>-->
+                                <!--                                        거 절-->
+                                <!--                                    </td>-->
+                                <!--                                </tr>-->
+                            </table>
+                        </div>
+                    </div>
+                </section>
+                <!-- 폼태그 -->
+
+                <!-- 페이지 버튼 -->
+                <!--                &lt;!&ndash; 페이지 버튼 끝 &ndash;&gt;-->
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/js/mypage/backend/adlist.js"></script>
+</body>
+</html>

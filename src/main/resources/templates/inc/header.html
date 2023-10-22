@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 공통 css-->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link rel="stylesheet" href="/css/inc/layout.css">
+    <!-- 공통js -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://rawgit.com/jackmoore/autosize/master/dist/autosize.min.js"></script>
+    <script src="/js/inc/layout.js"></script>
+    <title>헤더</title>
+</head>
+<body>
+    <!--공통헤더-->
+    <header th:fragment="header">
+        <div id="head">
+            <!-- top -->
+            <div class="top">
+                <div class="inner-top">
+                    <ul>
+                        <!-- 로그인 시 -->
+                        <li th:if="${session.memberId != null}"><span class="name" th:text="${session.memberName} + 님"></span><a href="/login/login" class="logout">로그아웃</a></li>
+                        <!-- 로그인 끝 -->
+                        <li th:if="${session.memberId == null}"><a href="">회원가입</a></li>
+                        <li th:if="${session.memberId == null}"><a href="/login/login">로그인</a></li>
+                        <li><a href="">공지사항</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- bottom -->
+            <div class="bottom">
+                <div class="inner-bottom">
+                    <!-- 카테고리button -->
+                    <div class="cate">
+                        <button type="button" class="cate-btn">
+                            <img src="data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Crect x='11.5' y='10.5' width='7' height='7' fill='%23707070'/%3E %3Crect x='1.5' y='10.5' width='7' height='7' fill='%23707070'/%3E %3Crect x='1.5' y='0.5' width='7' height='7' fill='%23707070'/%3E %3Crect x='11.5' y='0.5' width='7' height='7' fill='%23707070'/%3E %3C/svg%3E" alt="카테고리-icon">
+                        </button>
+                        <div class="tit">카테고리</div>
+                    </div>
+                    <div class="cate-layer">
+                        <div class="bg"></div>
+                        <div class="layer-con">
+                            <ul>
+                                <li><a href="/feed/list"><span class="tit">피드</span> <img src="/img/inc/cate_1.png" alt="피드"></a></li>
+                                <li><a href="/trade/list"><span class="tit">교환해요</span><img src="/img/inc/cate_2.png" alt="교환해요"></a></li>
+                                <li><a href=""><span class="tit">함께해요</span><img src="/img/inc/cate_3.png" alt="함께해요"></a></li>
+                                <!-- 광고해요는 공식계정만 노출 -->
+                                <li><a href=""><span class="tit">광고해요</span><img src="/img/inc/cate_4.png" alt="광고해요"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- 로고 -->
+                    <h1 class="logo"><a href=""><img src="/img/inc/logo.svg" alt="텍스트로고"></a></h1>
+                    <div class="search">
+                        <form action="">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none' viewBox='0 0 24 24'%3E %3Cpath stroke='%23AAA' stroke-width='2' d='M11 17c3.314 0 6-2.686 6-6s-2.686-6-6-6-6 2.686-6 6 2.686 6 6 6zM15 15l4.95 4.95'/%3E %3C/svg%3E" alt="" class="MagnifierImg__MagnfierImg-vdfqqy-0 kKRRUP">
+                            <input type="text" name="" id="" class="" placeholder="지금 생각나는 취미를 검색하세요.">
+                            <button type="button" class="del_btn"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E %3Cg fill='none' fill-rule='nonzero'%3E %3Ccircle cx='8' cy='8' r='8' fill='%23BBB'/%3E %3Cpath fill='%23FFF' d='M7.823 7.116l2.475-2.475 1.06 1.06-2.474 2.476 2.298 2.298-1.06 1.06-2.299-2.298-2.121 2.122-1.06-1.06 2.12-2.122-2.298-2.298 1.061-1.061 2.298 2.298z'/%3E %3C/g%3E %3C/svg%3E" alt="" class="Icon-sc-1n96qsy-0 dsjmCy"></button>
+                        </form>
+                    </div>
+                    <div class="search-layer">
+                        <div class="bg"></div>
+                        <div class="layer-con">
+                            <div class="inner-con">
+                                <div class="history">
+                                    <div class="head">
+                                        <div class="tit">최근 검색어</div>
+                                        <button type="button" class="all-del">지우기</button>
+                                    </div>
+                                    <div class="body">
+                                        <ul>
+                                            <li><a href="">부산</a></li>
+                                            <li><a href="">일본</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="util">
+                        <a href="/feed/list">
+                            <img src="data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Crect x='1' y='0.5' width='18' height='17' fill='%23707070'/%3E %3Crect x='4.375' y='13.375' width='11.25' height='0.75' stroke='white' stroke-width='0.75'/%3E %3Crect x='4.375' y='10.375' width='7.25' height='0.75' stroke='white' stroke-width='0.75'/%3E %3Cpath d='M8.87786 3.85311C8.63758 3.62543 8.31786 3.5 7.97789 3.5C7.63792 3.5 7.31829 3.62534 7.07783 3.85311L6.75005 4.16359L6.42227 3.85302C6.18189 3.62534 5.86218 3.5 5.5222 3.5C5.18223 3.5 4.86261 3.62534 4.62224 3.85311C4.12592 4.32322 4.12592 5.08808 4.62224 5.55819L6.61734 7.44794C6.65251 7.48126 6.70025 7.5 6.74995 7.5C6.79966 7.5 6.8474 7.48126 6.88257 7.44794L8.87767 5.55819C9.37408 5.08799 9.37408 4.32313 8.87786 3.85311Z' fill='white'/%3E %3C/svg%3E" alt="피드-icon">
+                            <div class="tit">피드</div>
+                        </a>
+                        <a href="/mypage/mypage">
+                            <img src="data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cpath d='M17 11H3L1 17.4H19L17 11Z' fill='%23707070'/%3E %3Ccircle cx='10' cy='5' r='4.5' fill='%23707070'/%3E %3C/svg%3E" alt="마이-icon">
+                            <div class="tit">마이</div>
+                        </a>
+                        <a href="" class="bell">
+                            <i class="xi-bell"></i>
+                            <div class="tit">알림</div>
+                            <span class="cnt">0</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+</body>
+</html>

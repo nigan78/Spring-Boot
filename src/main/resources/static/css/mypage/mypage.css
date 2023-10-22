@@ -1,0 +1,128 @@
+.mypage {
+    display: flex;
+    flex-flow: column;
+    align-content: flex-start;
+    margin: 0px auto;
+    max-width: 808px;
+    width: 100%;
+    padding: 0px 20px;
+    min-height: 1px;
+}
+
+.my {
+    padding: 24px 20px 36px;
+}
+
+.mya {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.myimg {
+    width: 64px;
+    height: 64px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 32px;
+    margin-right: 16px;
+}
+
+.myname {
+    margin-bottom: 4px;
+    color: rgb(51, 51, 51);
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 26px;
+    letter-spacing: -0.54px;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.mysort {
+    color: rgb(170, 170, 170);
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: -0.36px;
+}
+
+.mymiddel {
+    display: flex;
+    gap: 60px;
+    padding: 0px 20px 20px;
+}
+
+.namediv {
+    position: relative;
+    color: rgb(119, 119, 119);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 22px;
+    letter-spacing: -0.42px;
+}
+
+.numdiv {
+    color: rgb(51, 51, 51);
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 28px;
+    letter-spacing: -0.6px;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.fhr {
+    width: 100%;
+    border-top: 1px solid rgb(238, 238, 238);
+    border-bottom: none;
+    margin: 0px 0px 0px;
+}
+
+.ohr {
+    height: 1px;
+    background-color: rgb(255, 255, 255);
+    margin: 0px 20px;
+    border-top: 1px solid rgb(238, 238, 238);
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+}
+
+.header {
+    padding: 8px 20px;
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 500;
+    letter-spacing: -0.42px;
+    color: rgb(204, 204, 204);
+}
+
+.maindiv {
+    width: auto;
+    height: 64px;
+    margin: 0px;
+    padding: 0px 20px;
+    border-bottom: none;
+    background-color: rgb(255, 255, 255);
+}
+
+.middiv {
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+    height: 100%;
+    padding: 16px 0px;
+}
+
+.info {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.03em;
+    color: rgb(51, 51, 51);
+}

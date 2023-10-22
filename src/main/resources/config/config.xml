@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0/EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <typeAliases>
+        <!-- 유아람 -->
+        <typeAlias type="com.app.teamProject.dto.feed.FeedDTO" alias="feedDTO"/>
+        <typeAlias type="com.app.teamProject.domain.feed.FeedFileVO" alias="feedFileVO"/>
+        <typeAlias type="com.app.teamProject.domain.feed.FeedReportVO" alias="feedReportVO"/>
+        <typeAlias type="com.app.teamProject.dto.feed.FeedReplyDTO" alias="feedReplyDTO"/>
+        <typeAlias type="com.app.teamProject.dto.feed.FeedReplyDTO2" alias="feedReplyDTO2"/>
+        <typeAlias type="com.app.teamProject.dto.trade.TradeDTO" alias="tradeDTO"/>
+        <typeAlias type="com.app.teamProject.domain.trade.TradeFileVO" alias="TradeFileVO"/>
+        <typeAlias type="com.app.teamProject.dto.trade.TradeReplyDTO" alias="tradeReplyDTO"/>
+        <typeAlias type="com.app.teamProject.dto.trade.TradeReplyDTO2" alias="tradeReplyDTO2"/>
+        <typeAlias type="com.app.teamProject.domain.trade.TradeApplyVO" alias="tradeApplyVO"/>
+        <typeAlias type="com.app.teamProject.domain.trade.TradeApplyFileVO" alias="tradeApplyFileVO"/>
+        <typeAlias type="com.app.teamProject.dto.trade.TradeApplyDTO" alias="tradeApplyDTO"/>
+        <typeAlias type="com.app.teamProject.dto.DmDTO" alias="dmDTO"/>
+        <typeAlias type="com.app.teamProject.dto.DmDTO" alias="dmDTO2"/>
+
+<!--    임종민    -->
+        <typeAlias type="com.app.teamProject.domain.MemberVO" alias="memberVO"/>
+        <typeAlias type="com.app.teamProject.domain.adv.AdvVO" alias="advVO"/>
+        <typeAlias type="com.app.teamProject.dto.AdvDTO" alias="advDTO"/>
+<!-- 황진서       -->
+        <typeAlias type="com.app.teamProject.domain.FollowVO" alias="followVO"/>
+        <typeAlias type="com.app.teamProject.domain.feed.FeedVO" alias="feedVO"/>
+        <typeAlias type="com.app.teamProject.domain.feed.FeedReplyVO" alias="feedReplyVO"/>
+        <typeAlias type="com.app.teamProject.domain.together.TogetherReplyVO" alias="togetherReplyVO"/>
+        <typeAlias type="com.app.teamProject.domain.together.TogetherVO" alias="togetherVO"/>
+        <typeAlias type="com.app.teamProject.domain.trade.TradeVO" alias="tradeVO"/>
+    </typeAliases>
+</configuration>

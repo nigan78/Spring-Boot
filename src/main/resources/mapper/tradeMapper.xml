@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.app.teamProject.mapper.TradeMapper">
+    <!--  조회  -->
+    <select id="selectAll" resultType="tradeDTO">
+        SELECT
+        R,
+        MEMBER_ID,
+        NAME,
+        IMG,
+        ID,
+        TITLE,
+        CONTENT,
+        TAG_CODE,
+        TRADE_REGISTER_DATE,
+        STATUS,
+        RE_CNT,
+        LIKE_CNT,
+        LIKE_CHECK
+        FROM
+        (
+        SELECT
+        ROWNUM R,
+        MEMBER_ID,
+        NAME,
+        IMG,
+        ID,
+        TITLE,
+        CONTENT,
+        TAG_CODE,
+        TRADE_REGISTER_DATE,
+        STATUS,
+        RE_CNT,
+        LIKE_CNT,
+        LIKE_CHECK
+        FROM
+        (
+        SELECT
+        m.ID AS MEMBER_ID, m.NAME, m.IMG,
+        t.ID, t.TITLE, t.CONTENT, t.TAG_CODE, t.TRADE_REGISTER_DATE, t.STATUS,
+        (SELECT COUNT(*) FROM TBL_TRADE_REPLY WHERE TRADE_ID = t.ID) AS RE_CNT,
+        (SELECT COUNT(*) FROM TBL_TRADE_LIKE WHERE TRADE_ID = t.ID) AS LIKE_CNT,
+        (SELECT COUNT(*) FROM TBL_TRADE_LIKE WHERE TRADE_ID = t.ID AND MEMBER_ID = #{memberId}) AS LIKE_CHECK
+        FROM TBL_MEMBER m
+        INNER JOIN TBL_TRADE t
+        ON m.ID = t.MEMBER_ID
+        ORDER BY t.TRADE_REGISTER_DATE
+        )
+         <![CDATA[
+        WHERE ROWNUM <= #{pagination.page} * #{pagination.rowCount}
+        )]]>
+    </select>
+
+    <!--  트레이드 개수  -->
+    <select id="selectCountOfPost" resultType="_int">
+        SELECT COUNT(t.ID) FROM TBL_MEMBER m INNER JOIN TBL_TRADE t ON m.ID = t.MEMBER_ID
+        ORDER BY t.TRADE_REGISTER_DATE
+    </select>
+
+    <!-- 등록  -->
+    <insert id="insert">
+        INSERT INTO TBL_TRADE(ID, TITLE, CONTENT, TAG_CODE, TRADE_REGISTER_DATE, TRADE_UPDATE_DATE, MEMBER_ID)
+        VALUES(TRADE_SEQ.NEXTVAL, #{title}, #{content}, #{tagCode}, SYSDATE, SYSDATE, #{memberId})
+        <selectKey keyProperty="id" resultType="long" order="AFTER">
+            SELECT TRADE_SEQ.CURRVAL FROM DUAL
+        </selectKey>
+    </insert>
+
+    <!--  좋아요 추가  -->
+    <insert id="insertLike">
+        INSERT INTO TBL_TRADE_LIKE
+        VALUES(TRADE_LIKE_SEQ.NEXTVAL, #{tradeId}, #{memberId})
+    </insert>
+
+    <!--  좋아요 삭제  -->
+    <delete id="deleteLike">
+        DELETE FROM TBL_TRADE_LIKE
+        WHERE TRADE_ID = #{tradeId} AND MEMBER_ID = #{memberId}
+    </delete>
+
+    <!--  좋아요 삭제  -->
+    <delete id="deleteLikeAll">
+        DELETE FROM TBL_TRADE_LIKE
+        WHERE TRADE_ID = #{tradeId}
+    </delete>
+
+    <!--  좋아요 유무 검사  -->
+    <select id="findLike" resultType="boolean">
+        SELECT * FROM TBL_TRADE_LIKE
+        WHERE TRADE_ID = #{tradeId} AND MEMBER_ID = #{memberId}
+    </select>
+
+    <!--  디테일페이지  -->
+    <select id="selectById" resultType="tradeDTO">
+        SELECT
+        m.ID AS MEMBER_ID, m.NAME, m.IMG,
+        t.ID, t.TITLE, t.CONTENT, t.TAG_CODE, t.TRADE_REGISTER_DATE, t.STATUS,
+        (SELECT COUNT(*) FROM TBL_TRADE_REPLY WHERE TRADE_ID = t.ID) AS RE_CNT,
+        (SELECT COUNT(*) FROM TBL_TRADE_LIKE WHERE TRADE_ID = t.ID) AS LIKE_CNT,
+        (SELECT COUNT(*) FROM TBL_TRADE_LIKE WHERE TRADE_ID = t.ID AND MEMBER_ID = #{memberId}) AS LIKE_CHECK,
+        (SELECT COUNT(ID) FROM TBL_FOLLOW WHERE MEMBER_ID = #{memberId}) AS FOLLOWING,
+        (SELECT COUNT(ID) FROM TBL_FOLLOW WHERE FW_ID = #{memberId}) AS FOLLOWER,
+        (SELECT COUNT(*) FROM TBL_FOLLOW WHERE FW_ID = t.MEMBER_ID  AND MEMBER_ID = #{fmemberId}) AS FOLLOW_CHECK
+        FROM TBL_MEMBER m
+        INNER JOIN TBL_TRADE t
+        ON m.ID = t.MEMBER_ID
+        WHERE t.ID = #{id}
+    </select>
+
+    <!--  수정  -->
+    <update id="update">
+        UPDATE TBL_TRADE
+        SET TITLE=#{title}, CONTENT=#{content}, TAG_CODE=#{tagCode}, TRADE_UPDATE_DATE= SYSDATE
+        WHERE ID=#{id}
+    </update>
+
+    <!--  교환해요관련 신고 여부  -->
+    <select id="findReport" resultType="int">
+        SELECT COUNT(ID) AS REPORT_COUNT
+        FROM TBL_TRADE_REPORT
+        WHERE
+        <choose>
+            <when test="tradeReportVO.categoryName == 'r'.toString()">
+                TRADE_REPLY_ID = #{tradeReportVO.tradeReplyId}
+            </when>
+            <otherwise>
+                TRADE_ID = #{tradeReportVO.tradeId}
+            </otherwise>
+        </choose>
+    </select>
+
+    <!--  교환해요 신고  -->
+    <insert id="report">
+        INSERT INTO TBL_TRADE_REPORT
+        (ID, REPORTED_ID, REPORTER_ID, TRADE_ID, CATEGORY_NAME)
+        VALUES(SEQ_FEED_REPORT.NEXTVAL, #{reportedId}, #{reporterId}, #{tradeId}, 'p')
+    </insert>
+
+    <!--  신고 전체 삭제  -->
+    <delete id="deleteReportAll">
+        DELETE FROM TBL_TRADE_REPORT WHERE TRADE_ID = #{tradeId}
+    </delete>
+
+    <!--  교환해요 삭제  -->
+    <delete id="delete">
+        DELETE FROM TBL_TRADE WHERE ID = #{id}
+    </delete>
+
+    <!--  교환해요 마감  -->
+    <update id="updateStatus">
+        UPDATE TBL_TRADE SET STATUS='n' WHERE ID = #{id}
+    </update>
+
+</mapper>

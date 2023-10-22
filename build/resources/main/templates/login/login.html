@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>로그인 기본화면</title>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <!-- 공통 css-->
+    <link rel="stylesheet" href="/css/font/font.css">
+    <link rel="stylesheet" href="/css/inc/reset.css">
+    <link rel="stylesheet" href="/css/inc/layout.css">
+    <!-- 공통js -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="/js/inc/layout.js"></script>
+    <!-- 페이지 css -->
+    <link rel="stylesheet" href="/css/login/login.css">
+<body>
+<div class="app">
+    <div class="appWrapper">
+        <div class="PageWrapper">
+            <br>
+            <div class="Title">
+                <h3>로그인</h3>
+            </div>
+            <!-- 아이디 / 비밀번호 입력칸 -->
+            <form class="LoginRegister" th:action="@{/login/login}" name="join" method="post" th:object="${memberVO}">
+                <div>
+                    <input id="email" class="input" type="text" name="email" placeholder="아이디(이메일)" th:field="*{Id}">
+                </div>
+                <div>
+                    <input class="input" type="password" name="password" placeholder="비밀번호" th:field="*{Pw}">
+                </div>
+<!--                <label class="autoLoginLabel">-->
+<!--&lt;!&ndash;                    <input class="autoLogin" type="checkbox" name="auto-login" value="1" >자동로그인&ndash;&gt;-->
+<!--                </label>-->
+                <a class="FindID" th:href="@{/login/findPw}">비밀번호 찾기</a>
+                <a class="FindPW" th:href="@{/login/findId}">아이디 찾기</a>
+                <a class="regist" th:href="@{/register/registerNext}">회원가입</a>
+                <button class="loginButton" type="submit">로그인</button>
+                <a href="https://kauth.kakao.com/oauth/authorize?client_id=eea7bbd27c4bb3d3bfb861ce160fa60c&redirect_uri=http://localhost:10000/login&response_type=code">
+                    <button class="kakaoButton" type="button">
+                        <img src="https://d2v80xjmx68n4w.cloudfront.net/assets/icon/icon_kakao.png" alt="sns아이콘" class="width-30px margin-right-5">
+                        <span style="font-size: 15px; color: rgb(51, 51, 51); border-color: rgb(51, 51, 51);">카카오톡 간편 로그인</span>
+                    </button>
+                </a>
+            </form>
+            <!-- 다른 방식으로 로그인 -->
+        </div>
+    </div>
+</div>
+</body>
+</html>

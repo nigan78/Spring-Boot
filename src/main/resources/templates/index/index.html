@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 공통 css-->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link rel="stylesheet" href="/css/inc/layout.css">
+    <!-- 페이지 css -->
+    <link rel="stylesheet" href="/css/index/layout.css">
+    <!-- 공통js -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="/js/inc/layout.js"></script>
+    <!-- 페이지 js -->
+    <script src="/js/index/layout.js" defer></script>
+    <title>TEXT</title>
+</head>
+<body>
+    <!--공통헤더-->
+    <header th:replace="~{inc/header.html :: header}"></header>
+    <!-- 메인페이지-->
+    <div id="index" class="cont-wrap">
+        <div class="inner-cont">
+            <section class="main-visual">
+                <div class="slide-wrap">
+                    <!-- 슬라이드 -->
+                    <ul></ul>
+                    <!-- 에로우-->
+                    <div class="arrow left"><img data-role="none" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='50' height='50' viewBox='0 0 50 50'%3E %3Cpath fill='none' fill-rule='evenodd' stroke='%23FFF' stroke-width='2' d='M21 17l8 8.014L21.028 33'/%3E %3C/svg%3E" style="display: block;"></div>
+                    <div class="arrow right"><img data-role="none" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='50' height='50' viewBox='0 0 50 50'%3E %3Cpath fill='none' fill-rule='evenodd' stroke='%23FFF' stroke-width='2' d='M21 17l8 8.014L21.028 33'/%3E %3C/svg%3E" style="display: block;"></div>
+                    <!-- 페이지네이션 -->
+                    <div class="pagenation">
+                        <span class="curr">1</span>
+                        <span class="max">6</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 베스트 피드 -->
+            <section class="sec1 best-feed">
+                <div class="sec-head">
+                    <h2 class="tit">제일 잘 나가는 피드 🛫</h2>
+                    <button class="view-more" type="button">피드보기</button>
+                </div>
+                <div class="sec-body">
+                    <ul class="feed-wrap">
+                        <li>
+                            <a href="">
+                                <div class="thumb">
+                                    <div class="img-wrap">
+                                        <img src="/img/index/img1.jpg" alt="">
+                                    </div>
+                                </div>
+                                <div class="info-wrap">
+                                    <div class="hashtag">대한민국</div>
+                                    <div class="content">안녕하세요, 테라리움 전문 가게 해피에버애프터 입니다. 가게는 인사동 쌈지길 1층에 위치하고 있어요! (*2022년 1월 24일 쌈지길 1층 조금 더 넓은 매장으로 확장이전했습니다.) 아기자기한 쌈지길에서 특별한 추억을 남기고 싶다면 인생 첫 나만의 반려식물! 테라리움을 만들어 보는건 어떨까요?</div>
+                                </div>
+                            </a>
+                            <div class="like-comment">
+                                <div class="like">
+                                    <button type="button" class="like-btn">
+                                        <i class="xi-heart-o"></i>
+                                    </button>
+                                    <span class="cnt">0</span>
+                                </div>
+                                <div class="comment">
+                                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='21' height='18' viewBox='0 0 21 18'%3E %3Cpath fill='none' stroke='%234E5968' stroke-width='1.5' d='M20.25.75H.75v11.818h3.842v4.015l5.9-4.015h9.758V.75z'/%3E %3C/svg%3E" alt="댓글">
+                                    <span class="cnt">0</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="">
+                                <div class="thumb">
+                                    <div class="img-wrap">
+                                        <img src="/img/index/img2.jpg" alt="">
+                                    </div>
+                                </div>
+                                <div class="info-wrap">
+                                    <div class="hashtag">일본</div>
+                                    <div class="content">안녕하세요, 테라리움 전문 가게 해피에버애프터 입니다. 가게는 인사동 쌈지길 1층에 위치하고 있어요! (*2022년 1월 24일 쌈지길 1층 조금 더 넓은 매장으로 확장이전했습니다.) 아기자기한 쌈지길에서 특별한 추억을 남기고 싶다면 인생 첫 나만의 반려식물! 테라리움을 만들어 보는건 어떨까요?</div>
+                                </div>
+                            </a>
+                            <div class="like-comment">
+                                <div class="like">
+                                    <button type="button" class="like-btn">
+                                        <i class="xi-heart-o"></i>
+                                    </button>
+                                    <span class="cnt">0</span>
+                                </div>
+                                <div class="comment">
+                                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='21' height='18' viewBox='0 0 21 18'%3E %3Cpath fill='none' stroke='%234E5968' stroke-width='1.5' d='M20.25.75H.75v11.818h3.842v4.015l5.9-4.015h9.758V.75z'/%3E %3C/svg%3E" alt="댓글">
+                                    <span class="cnt">0</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="">
+                                <div class="thumb">
+                                    <div class="img-wrap">
+                                        <img src="/img/index/img3.jpg" alt="">
+                                    </div>
+                                </div>
+                                <div class="info-wrap">
+                                    <div class="hashtag">중국</div>
+                                    <div class="content">안녕하세요, 테라리움 전문 가게 해피에버애프터 입니다. 가게는 인사동 쌈지길 1층에 위치하고 있어요! (*2022년 1월 24일 쌈지길 1층 조금 더 넓은 매장으로 확장이전했습니다.) 아기자기한 쌈지길에서 특별한 추억을 남기고 싶다면 인생 첫 나만의 반려식물! 테라리움을 만들어 보는건 어떨까요?</div>
+                                </div>
+                            </a>
+                            <div class="like-comment">
+                                <div class="like">
+                                    <button type="button" class="like-btn">
+                                        <i class="xi-heart-o"></i>
+                                    </button>
+                                    <span class="cnt">0</span>
+                                </div>
+                                <div class="comment">
+                                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='21' height='18' viewBox='0 0 21 18'%3E %3Cpath fill='none' stroke='%234E5968' stroke-width='1.5' d='M20.25.75H.75v11.818h3.842v4.015l5.9-4.015h9.758V.75z'/%3E %3C/svg%3E" alt="댓글">
+                                    <span class="cnt">0</span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- 함께해요 -->
+            <section class="sec2 together">
+                <div class="sec-head">
+                    <h2 class="tit">진행중인 함께해요 😊</h2>
+                    <button class="view-more" type="button">더 보기</button>
+                </div>
+                <div class="sec-body">
+                    <ul class="list-wrap">
+                        <li>
+                            <a href="">
+                                <div class="thumb">
+                                    <div class="img-wrap">
+                                        <img src="/img/index/img4.jpg" alt="">
+                                    </div>
+                                </div>
+                                <div class="info-wrap">
+                                    <div class="bo-tit">[종로] 나만의 반려식물, 테라리움 만들기</div>
+                                    <div class="content">안녕하세요, 테라리움 전문 가게 해피에버애프터 입니다. 가게는 인사동 쌈지길 1층에 위치하고 있어요! (*2022년 1월 24일 쌈지길 1층 조금 더 넓은 매장으로 확장이전했습니다.) 아기자기한 쌈지길에서 특별한 추억을 남기고 싶다면 인생 첫 나만의 반려식물! 테라리움을 만들어 보는건 어떨까요?</div>
+                                </div>
+                            </a>
+                            <div class="like-comment">
+                                <div class="like">
+                                    <button type="button" class="like-btn">
+                                        <i class="xi-heart-o"></i>
+                                    </button>
+                                    <span class="cnt">0</span>
+                                </div>
+                                <div class="comment">
+                                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='21' height='18' viewBox='0 0 21 18'%3E %3Cpath fill='none' stroke='%234E5968' stroke-width='1.5' d='M20.25.75H.75v11.818h3.842v4.015l5.9-4.015h9.758V.75z'/%3E %3C/svg%3E" alt="댓글">
+                                    <span class="cnt">0</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="">
+                                <div class="thumb">
+                                    <div class="img-wrap">
+                                        <img src="/img/index/img5.jpg" alt="">
+                                    </div>
+                                </div>
+                                <div class="info-wrap">
+                                    <div class="bo-tit">[종로] 나만의 반려식물, 테라리움 만들기</div>
+                                    <div class="content">안녕하세요, 테라리움 전문 가게 해피에버애프터 입니다. 가게는 인사동 쌈지길 1층에 위치하고 있어요! (*2022년 1월 24일 쌈지길 1층 조금 더 넓은 매장으로 확장이전했습니다.) 아기자기한 쌈지길에서 특별한 추억을 남기고 싶다면 인생 첫 나만의 반려식물! 테라리움을 만들어 보는건 어떨까요?</div>
+                                </div>
+                            </a>
+                            <div class="like-comment">
+                                <div class="like">
+                                    <button type="button" class="like-btn">
+                                        <i class="xi-heart-o"></i>
+                                    </button>
+                                    <span class="cnt">0</span>
+                                </div>
+                                <div class="comment">
+                                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='21' height='18' viewBox='0 0 21 18'%3E %3Cpath fill='none' stroke='%234E5968' stroke-width='1.5' d='M20.25.75H.75v11.818h3.842v4.015l5.9-4.015h9.758V.75z'/%3E %3C/svg%3E" alt="댓글">
+                                    <span class="cnt">0</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="">
+                                <div class="thumb">
+                                    <div class="img-wrap">
+                                        <img src="/img/index/img6.jpg" alt="">
+                                    </div>
+                                </div>
+                                <div class="info-wrap">
+                                    <div class="bo-tit">[종로] 나만의 반려식물, 테라리움 만들기</div>
+                                    <div class="content">안녕하세요, 테라리움 전문 가게 해피에버애프터 입니다. 가게는 인사동 쌈지길 1층에 위치하고 있어요! (*2022년 1월 24일 쌈지길 1층 조금 더 넓은 매장으로 확장이전했습니다.) 아기자기한 쌈지길에서 특별한 추억을 남기고 싶다면 인생 첫 나만의 반려식물! 테라리움을 만들어 보는건 어떨까요?</div>
+                                </div>
+                            </a>
+                            <div class="like-comment">
+                                <div class="like">
+                                    <button type="button" class="like-btn">
+                                        <i class="xi-heart-o"></i>
+                                    </button>
+                                    <span class="cnt">0</span>
+                                </div>
+                                <div class="comment">
+                                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='21' height='18' viewBox='0 0 21 18'%3E %3Cpath fill='none' stroke='%234E5968' stroke-width='1.5' d='M20.25.75H.75v11.818h3.842v4.015l5.9-4.015h9.758V.75z'/%3E %3C/svg%3E" alt="댓글">
+                                    <span class="cnt">0</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="">
+                                <div class="thumb">
+                                    <div class="img-wrap">
+                                        <img src="/img/index/img7.jpg" alt="">
+                                    </div>
+                                </div>
+                                <div class="info-wrap">
+                                    <div class="bo-tit">[종로] 나만의 반려식물, 테라리움 만들기</div>
+                                    <div class="content">안녕하세요, 테라리움 전문 가게 해피에버애프터 입니다. 가게는 인사동 쌈지길 1층에 위치하고 있어요! (*2022년 1월 24일 쌈지길 1층 조금 더 넓은 매장으로 확장이전했습니다.) 아기자기한 쌈지길에서 특별한 추억을 남기고 싶다면 인생 첫 나만의 반려식물! 테라리움을 만들어 보는건 어떨까요?</div>
+                                </div>
+                            </a>
+                            <div class="like-comment">
+                                <div class="like">
+                                    <button type="button" class="like-btn">
+                                        <i class="xi-heart-o"></i>
+                                    </button>
+                                    <span class="cnt">0</span>
+                                </div>
+                                <div class="comment">
+                                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='21' height='18' viewBox='0 0 21 18'%3E %3Cpath fill='none' stroke='%234E5968' stroke-width='1.5' d='M20.25.75H.75v11.818h3.842v4.015l5.9-4.015h9.758V.75z'/%3E %3C/svg%3E" alt="댓글">
+                                    <span class="cnt">0</span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- 교환해요 -->
+            <section class="sec3 trade">
+                <div class="sec-head">
+                    <h2 class="tit">진행중인 교환해요 😊</h2>
+                    <button class="view-more" type="button">더 보기</button>
+                </div>
+                <div class="sec-body">
+                    <ul class="list-wrap">
+                        <li>
+                            <a href="">
+                                <div class="thumb">
+                                    <div class="img-wrap">
+                                        <img src="/img/index/img8.jpg" alt="">
+                                    </div>
+                                </div>
+                                <div class="info-wrap">
+                                    <div class="hashtag">음식</div>
+                                    <div class="bo-tit">[종로] 나만의 반려식물, 테라리움 만들기</div>
+                                    <div class="content">안녕하세요, 테라리움 전문 가게 해피에버애프터 입니다. 가게는 인사동 쌈지길 1층에 위치하고 있어요! (*2022년 1월 24일 쌈지길 1층 조금 더 넓은 매장으로 확장이전했습니다.) 아기자기한 쌈지길에서 특별한 추억을 남기고 싶다면 인생 첫 나만의 반려식물! 테라리움을 만들어 보는건 어떨까요?</div>
+                                </div>
+                            </a>
+                            <div class="like-comment">
+                                <div class="like">
+                                    <button type="button" class="like-btn">
+                                        <i class="xi-heart-o"></i>
+                                    </button>
+                                    <span class="cnt">0</span>
+                                </div>
+                                <div class="comment">
+                                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='21' height='18' viewBox='0 0 21 18'%3E %3Cpath fill='none' stroke='%234E5968' stroke-width='1.5' d='M20.25.75H.75v11.818h3.842v4.015l5.9-4.015h9.758V.75z'/%3E %3C/svg%3E" alt="댓글">
+                                    <span class="cnt">0</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="">
+                                <div class="thumb">
+                                    <div class="img-wrap">
+                                        <img src="/img/index/img9.jpg" alt="">
+                                    </div>
+                                </div>
+                                <div class="info-wrap">
+                                    <div class="hashtag">기념품</div>
+                                    <div class="bo-tit">[종로] 나만의 반려식물, 테라리움 만들기</div>
+                                    <div class="content">안녕하세요, 테라리움 전문 가게 해피에버애프터 입니다. 가게는 인사동 쌈지길 1층에 위치하고 있어요! (*2022년 1월 24일 쌈지길 1층 조금 더 넓은 매장으로 확장이전했습니다.) 아기자기한 쌈지길에서 특별한 추억을 남기고 싶다면 인생 첫 나만의 반려식물! 테라리움을 만들어 보는건 어떨까요?</div>
+                                </div>
+                            </a>
+                            <div class="like-comment">
+                                <div class="like">
+                                    <button type="button" class="like-btn">
+                                        <i class="xi-heart-o"></i>
+                                    </button>
+                                    <span class="cnt">0</span>
+                                </div>
+                                <div class="comment">
+                                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='21' height='18' viewBox='0 0 21 18'%3E %3Cpath fill='none' stroke='%234E5968' stroke-width='1.5' d='M20.25.75H.75v11.818h3.842v4.015l5.9-4.015h9.758V.75z'/%3E %3C/svg%3E" alt="댓글">
+                                    <span class="cnt">0</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="">
+                                <div class="thumb">
+                                    <div class="img-wrap">
+                                        <img src="/img/index/img1.jpg" alt="">
+                                    </div>
+                                </div>
+                                <div class="info-wrap">
+                                    <div class="hashtag">옷</div>
+                                    <div class="bo-tit">[종로] 나만의 반려식물, 테라리움 만들기</div>
+                                    <div class="content">안녕하세요, 테라리움 전문 가게 해피에버애프터 입니다. 가게는 인사동 쌈지길 1층에 위치하고 있어요! (*2022년 1월 24일 쌈지길 1층 조금 더 넓은 매장으로 확장이전했습니다.) 아기자기한 쌈지길에서 특별한 추억을 남기고 싶다면 인생 첫 나만의 반려식물! 테라리움을 만들어 보는건 어떨까요?</div>
+                                </div>
+                            </a>
+                            <div class="like-comment">
+                                <div class="like">
+                                    <button type="button" class="like-btn">
+                                        <i class="xi-heart-o"></i>
+                                    </button>
+                                    <span class="cnt">0</span>
+                                </div>
+                                <div class="comment">
+                                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='21' height='18' viewBox='0 0 21 18'%3E %3Cpath fill='none' stroke='%234E5968' stroke-width='1.5' d='M20.25.75H.75v11.818h3.842v4.015l5.9-4.015h9.758V.75z'/%3E %3C/svg%3E" alt="댓글">
+                                    <span class="cnt">0</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="">
+                                <div class="thumb">
+                                    <div class="img-wrap">
+                                        <img src="/img/index/img2.jpg" alt="">
+                                    </div>
+                                </div>
+                                <div class="info-wrap">
+                                    <div class="hashtag">음식</div>
+                                    <div class="bo-tit">[종로] 나만의 반려식물, 테라리움 만들기</div>
+                                    <div class="content">안녕하세요, 테라리움 전문 가게 해피에버애프터 입니다. 가게는 인사동 쌈지길 1층에 위치하고 있어요! (*2022년 1월 24일 쌈지길 1층 조금 더 넓은 매장으로 확장이전했습니다.) 아기자기한 쌈지길에서 특별한 추억을 남기고 싶다면 인생 첫 나만의 반려식물! 테라리움을 만들어 보는건 어떨까요?</div>
+                                </div>
+                            </a>
+                            <div class="like-comment">
+                                <div class="like">
+                                    <button type="button" class="like-btn">
+                                        <i class="xi-heart-o"></i>
+                                    </button>
+                                    <span class="cnt">0</span>
+                                </div>
+                                <div class="comment">
+                                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='21' height='18' viewBox='0 0 21 18'%3E %3Cpath fill='none' stroke='%234E5968' stroke-width='1.5' d='M20.25.75H.75v11.818h3.842v4.015l5.9-4.015h9.758V.75z'/%3E %3C/svg%3E" alt="댓글">
+                                    <span class="cnt">0</span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- 공통푸터-->
+    <footer th:replace="~{inc/footer.html :: footer}"></footer>
+
+    <!--  DM  -->
+    <div th:replace="~{dm/list.html :: #chat-area}"></div>
+    <table id="length1" hidden>
+        <tbody>
+        <tr th:each="advDTOS, index : ${advDTOS}">
+            <td class="index" th:text="*{index.index}"></td>
+            <td class="path" th:text="${advDTOS.filePath}"></td>
+            <td class="filename" th:text="${advDTOS.fileName}"></td>
+        </tr>
+        </tbody>
+    </table>
+</body>
+</html>

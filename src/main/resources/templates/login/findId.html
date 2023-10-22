@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>아이디 찾기</title>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <!-- 공통 css-->
+    <link rel="stylesheet" href="/css/font/font.css">
+    <link rel="stylesheet" href="/css/inc/reset.css">
+    <link rel="stylesheet" href="/css/inc/layout.css">
+    <!-- 공통js -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="/js/inc/layout.js"></script>
+    <!-- 페이지 css -->
+    <link rel="stylesheet" href="/css/login/findId.css">
+    <script src="/js/login/findId.js" defer></script>
+</head>
+<body>
+<div class="FindPasswordPage">
+    <div class="Title">
+        <h3>아이디 찾기</h3>
+    </div>
+    <form class="LoginRegister" action="">
+        <div>
+            <div class="PhoneNumberWrap">
+                <div>
+                    <input
+                            id="phoneNumber"
+                            class="PhoneNumInput"
+                            type="number"
+                            placeholder="휴대폰 번호(- 없이 입력)"
+                    />
+                </div>
+                <button id="send" type="button" class="authentication-SendButton">인증번호 전송</button>
+            </div>
+            <p class="fail">올바른 휴대폰 번호 형식이 아닙니다.</p>
+            <p class="fail">가입되지 않은 번호입니다.</p>
+            <div class="authentication">
+                <div>
+                    <div>
+                        <input
+                                id="authenticationNumber"
+                                class="authenticationNum"
+                                type="number"
+                                placeholder="인증번호"
+                        />
+                    </div>
+                </div>
+                <button id="checkHp" type="button" class="authentication-Button">인증하기</button>
+            </div>
+            <p class="fail">인증번호가 일치하지 않습니다.</p>
+            <p class="succes">인증이 완료 되었습니다.</p>
+            <p class="p-tag">찾으시려는 계정의 번호를 입력해주세요.</p>
+        </div>
+        <button id="success" class="Button" type="button">확인</button>
+        <p class="fail">인증이 완료 되지 않았습니다.</p>
+    </form>
+    <input id="hpcheck" value="0" hidden>
+</div>
+</body>
+</html>

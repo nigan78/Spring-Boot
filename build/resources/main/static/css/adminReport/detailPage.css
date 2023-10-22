@@ -1,0 +1,286 @@
+@charset "UTF-8";
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+label,
+button {
+  cursor: pointer;
+}
+
+.is-hidden {
+  display: none !important;
+}
+
+.is-block {
+  display: block !important;
+}
+
+.is-inline-block {
+  display: inline-block !important;
+}
+
+.is-flex {
+  display: flex !important;
+}
+
+.is-align-center {
+  text-align: center;
+}
+
+.is-flex-align-center {
+  justify-content: center !important;
+}
+
+.is-flex-align-left {
+  justify-content: left !important;
+}
+
+.is-flex-align-right {
+  justify-content: right !important;
+}
+
+.is-flex-align-around {
+  justify-content: space-around !important;
+}
+
+.is-flex-align-between {
+  justify-content: space-between !important;
+}
+
+.is-flex-align-evenly {
+  justify-content: space-evenly !important;
+}
+
+td.is_inactive > hr {
+  border-bottom: 4px solid gray !important;
+}
+
+td.is_active > hr {
+  border-bottom: 4px solid green !important;
+}
+
+td.is_warning > hr {
+  border-bottom: 4px solid rgb(255, 48, 25) !important;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  /* margin-left: 120px;
+  margin-top: 70px; */
+}
+
+.info-flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.board-info-box-layout {
+  display: block;
+  border: 0.0625rem solid #f2f2f2;
+  box-shadow: 11px 13px 11px -14px grey;
+  background: #fff;
+}
+
+.info-title-box-flex {
+  display: flex;
+  position: fixed;
+  justify-content: flex-start;
+}
+
+.info-title-box {
+  width: 100%;
+  height: 55px;
+  border-radius: 3px;
+  background: #fff;
+  box-shadow: 11px 13px 11px -14px grey;
+}
+
+.info-table {
+  margin: 0 auto;
+  padding: 10px 30px;
+}
+
+.board-info-title-box {
+  padding: 20px 27px 15px;
+}
+
+.board-info-title-box {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.select-name {
+  padding-top: 20px;
+  padding-left: 5px;
+}
+
+.container-margin {
+  margin-top: 40px;
+  margin: 40px 250px 0px;
+}
+
+.board-info-box-layout {
+  margin: 0 auto;
+  width: 48%;
+  min-width: 350px;
+  margin-top: 30px;
+}
+
+.prev-icon {
+  position: absolute;
+  width: 20px;
+  top: 3px;
+}
+
+hr {
+  height: 1px;
+  background: #f2f1f1;
+  border: 0;
+}
+
+.span-bold {
+  font-weight: bold;
+}
+
+.info-member {
+  margin-bottom: 10px;
+}
+
+.member-img-box {
+  margin-top: 20px;
+}
+
+.member-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin: 0 auto;
+}
+
+.member-nickname-box {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.member-nickname-box span {
+  font-size: 14px;
+}
+
+.member-info-box {
+  margin: 32px;
+}
+
+.member-info-tag-box {
+  margin-top: 10px;
+}
+
+.info-tag {
+  font-size: 13px;
+  color: #c1c1c1;
+}
+
+.info span {
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.member-info {
+  margin: 28px;
+}
+
+div.margin {
+  margin-top: 50px;
+}
+
+div.margin span {
+  font-size: 14px;
+}
+
+.write-count-box {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.count {
+  padding-left: 15px;
+}
+
+.board-info-box-flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.modify-button-box {
+  padding: 20px 27px 15px;
+  font-size: 12px;
+  font-weight: 400;
+  position: relative;
+}
+
+.gear-icon {
+  width: 10px;
+}
+
+.wrap {
+  width: 100%;
+  height: 90vh;
+  background-color: gray;
+}
+
+.scrollbar-inner {
+  height: 100%;
+}
+*, :after, :before {
+  box-sizing: border-box;
+}
+
+div {
+  display: block;
+}
+
+.navbar-vertical.navbar-expand-xs .navbar-inner {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.overflow-auto {
+  overflow: auto!important;
+}
+
+.navbar-vertical.navbar-expand-xs .navbar-nav {
+  flex-direction: column;
+  margin-left: -1.5rem;
+  margin-right: -1.5rem;
+}
+.navbar-vertical .navbar-nav {
+  margin-left: -1rem;
+  margin-right: -1rem;
+}
+.navbar-nav {
+  display: flex;
+  flex-direction: column;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+dl, ol, ul {
+  margin-top: 0;
+}
+address, dl, ol, ul {
+  margin-bottom: 1rem;
+}
+ul {
+  display: block;
+  list-style-type: disc;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
+}

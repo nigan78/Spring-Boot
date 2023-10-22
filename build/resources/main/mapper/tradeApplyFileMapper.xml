@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.app.teamProject.mapper.TradeApplyFileMapper">
+    <select id="selectAll" resultType="tradeApplyFileVO">
+        SELECT ID, FILE_PATH, FILE_UUID, FILE_NAME, FILE_SIZE, TRADE_APPLY_ID, FILE_TYPE
+        FROM TBL_TRADE_APPLY_FILE
+        WHERE TRADE_APPLY_ID = #{tradeApplyId}
+        ORDER BY FILE_TYPE DESC
+    </select>
+
+    <insert id="insert">
+        INSERT INTO TBL_TRADE_APPLY_FILE
+        (ID, FILE_PATH, FILE_UUID, FILE_NAME, FILE_TYPE, FILE_SIZE, TRADE_APPLY_ID)
+        VALUES(TRADE_APPLY_FILE_SEQ.NEXTVAL, #{filePath}, #{fileUuid}, #{fileName}, #{fileType}, #{fileSize}, #{tradeApplyId})
+    </insert>
+
+    <delete id="delete">
+        DELETE FROM TBL_TRADE_APPLY_FILE WHERE ID = #{id}
+    </delete>
+
+    <delete id="deleteAll">
+        DELETE FROM TBL_TRADE_APPLY_FILE
+        WHERE TRADE_APPLY_ID IN (
+        SELECT ID FROM TBL_TRADE_APPLY
+        WHERE TRADE_ID = #{id}
+        )
+    </delete>
+
+    <select id="selectYesterday" resultType="tradeApplyFileVO">
+        SELECT ID, FILE_PATH, FILE_UUID, FILE_NAME, FILE_SIZE, TRADE_APPLY_ID, FILE_TYPE
+        FROM TBL_TRADE_APPLY_FILE WHERE FILE_PATH = TO_CHAR(SYSDATE - 1, 'YYYY/MM/DD')
+    </select>
+</mapper>

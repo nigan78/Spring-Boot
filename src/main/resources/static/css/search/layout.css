@@ -1,0 +1,73 @@
+@charset "UTF-8";
+/* 레이아웃 */
+#search section{margin-bottom: 60px}
+.inner-cont{margin: 0px auto; max-width: 808px; width: 100%; padding: 0px 20px; min-height: 1px;}
+
+/* 검색 상단 필터 */
+.result .search-head{padding: 20px 0px; font-size: 18px; margin-top: 20px; font-weight: bold; display: flex; align-items: center; -webkit-align-items: center}
+.result .cate-filter{position: relative; margin-right: 10px; cursor: pointer}
+.result .cate-filter .cate-tit{font-weight: 600 ; width: auto; display: inline-block; margin-right: 10px}
+.result .cate-filter .list{width: 100px; position: absolute; left: 0; top: 38px; background: #fff; border: 1px solid #DEDEDE; z-index: 1; padding: 20px 10px; display: none; border-radius: 10px;box-shadow: 0 0 10px #dedede55;}
+.result .cate-filter .list button{transition: color 0.2s}
+.result .cate-filter .list button:hover{color: #21BAF3}
+.result .cate-filter .list button + button{margin-top: 10px}
+.result .search-head .deco{font-weight: 600}
+.result .cate-arrow{transition: all 0.2s}
+.result .cate-arrow.active{transform: rotate(180deg);}
+
+/* 검색 하위 메인 필터 */
+.sub-main-filer{overflow-x: scroll; -ms-overflow-style: none; /* 인터넷 익스플로러 */ scrollbar-width: none; /* 파이어폭스 */}
+.sub-main-filer::-webkit-scrollbar{display: none; /* 크롬, 사파리, 오페라, 엣지 */}
+.sub-main-filer ul{display: flex;width: 100%; margin-bottom: 10px;}
+.sub-main-filer ul li button{padding: 6px 10px; font-size: 12px; font-weight: 500; line-height: 14px; border-radius: 5px; color: #333; background-color: rgb(245, 245, 245);}
+.sub-main-filer ul li.active button{color: #21BAF3; background-color: #F2F8FB;}
+.sub-main-filer ul li + li{margin-left: 10px;}
+
+/* 검색 하위 필터 */
+.sub-filter{overflow-x: scroll; -ms-overflow-style: none; /* 인터넷 익스플로러 */ scrollbar-width: none; /* 파이어폭스 */}
+.sub-filter::-webkit-scrollbar{display: none; /* 크롬, 사파리, 오페라, 엣지 */}
+.sub-filter ul{display: flex; padding-bottom: 25px; width: max-content;}
+.sub-filter ul li button{font-size: 12px; margin-right: 10px;padding: 6px 10px; border-radius: 5px;}
+.sub-filter ul li.active button{color: #ffb029; font-weight: bold; background: #fffbf4;}
+
+/* 좋아요, 댓글, 인포 */
+.info-wrap{margin-bottom: 20px;}
+.like-comment{display: flex; align-items: center; -webkit-box-align: center;}
+.like-comment .like i{font-size: 21px; color: #707070;}
+.like-comment .like-btn.active i{color: #ffb029;}
+.like-comment div{display: flex; align-items: center; -webkit-box-align: center; height: 18px;}
+.like-comment div button{padding: 0px;}
+.like-comment div + div{margin-left: 20px;}
+.like-comment .cnt{vertical-align: middle; margin-left: 5px; height: 18px;}
+
+/* 검색결과값 */
+.search-result ul{display: flex; align-items: center; -webkit-box-align: center;}
+.search-result li{width: calc(100% / 3);}
+.search-result li + li{margin-left: 20px;}
+.hashtag{padding: 5px 10px; background-color: #fffbf4; width: max-content; border-radius: 20px; font-size: 12px; color: #ffb029; margin-bottom: 5px; font-weight: 500; border: 1px solid #ffb02955;}
+.content{height: auto; font-weight: 400; word-break: keep-all; overflow-wrap: break-word; overflow: hidden; text-overflow: ellipsis; -webkit-line-clamp: 2; display: -webkit-box; -webkit-box-orient: vertical; line-height: 20px; font-size: 14px;}
+
+/* 썸네일 */
+.thumb{width: 100%; overflow: hidden; position: relative; padding-top: 100%; border-radius: 10px; margin-bottom: 20px;}
+.thumb .img-wrap{position: absolute; left: 0; top: 0;}
+.thumb img{width: 100%; height: auto; display: block;}
+
+/* 페이징 버튼 */
+.veiw-more{text-align: center; padding-top: 60px}
+.view-more-btn{margin: 0 auto; display: flex; -webkit-box-pack: center; justify-content: center; -webkit-box-align: center; align-items: center; width: 100%; height: 56px; border: 1.5px solid rgb(17, 17, 17);}
+
+
+/* 미디어쿼리 */
+@media screen and (max-width: 576px) {
+    .search-result ul{flex-wrap: wrap;}
+    .search-result li + li{margin-left: 0px;}
+    .search-result li{width: calc(100% / 2 - 10px); margin-bottom: 30px;}
+    .search-result li:nth-child(even){margin-left: 20px;}
+}
+
+@media screen and (max-width: 360px) {
+    .result .search-head{font-size: 16px}
+    .search-result li{width: 100%;}
+    .search-result li:nth-child(even){margin-left: 0px;}
+    .veiw-more{padding-top: 40px}
+}

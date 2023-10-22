@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.app.teamProject.mapper.FeedMapper">
+    <!--  조회  -->
+    <select id="selectAll" resultType="feedDTO">
+        SELECT
+        R,
+        MEMBER_ID,
+        NAME,
+        IMG,
+        ID,
+        TITLE,
+        CONTENT,
+        TAG_CODE,
+        FEED_REGISTER_DATE,
+        RE_CNT,
+        LIKE_CNT,
+        LIKE_CHECK
+        FROM
+        (
+        SELECT
+        ROWNUM R,
+        MEMBER_ID,
+        NAME,
+        IMG,
+        ID,
+        TITLE,
+        CONTENT,
+        TAG_CODE,
+        FEED_REGISTER_DATE,
+        RE_CNT,
+        LIKE_CNT,
+        LIKE_CHECK
+        FROM
+        (
+        SELECT
+        m.ID AS MEMBER_ID, m.NAME, m.IMG,
+        f.ID, f.TITLE, f.CONTENT, f.TAG_CODE, f.FEED_REGISTER_DATE,
+        (SELECT COUNT(*) FROM TBL_FEED_REPLY WHERE FEED_ID = f.ID) AS RE_CNT,
+        (SELECT COUNT(*) FROM TBL_FEED_LIKE WHERE FEED_ID = f.ID) AS LIKE_CNT,
+        (SELECT COUNT(*) FROM TBL_FEED_LIKE WHERE FEED_ID = f.ID AND MEMBER_ID = #{memberId}) AS LIKE_CHECK
+        FROM TBL_MEMBER m
+        INNER JOIN TBL_FEED f
+        ON m.ID = f.MEMBER_ID
+        WHERE f.MEMBER_ID IN(
+        SELECT FW_ID FROM TBL_FOLLOW
+        WHERE MEMBER_ID = #{memberId}
+        )
+        ORDER BY f.FEED_REGISTER_DATE
+        )
+         <![CDATA[
+        WHERE ROWNUM <= #{pagination.page} * #{pagination.rowCount}
+        )]]>
+    </select>
+
+    <!-- 등록  -->
+    <insert id="insert">
+        INSERT INTO TBL_FEED(ID, TITLE, CONTENT, TAG_CODE, FEED_REGISTER_DATE, MEMBER_ID)
+        VALUES(FEED_SEQ.NEXTVAL, #{title}, #{content}, #{tagCode}, SYSDATE, #{memberId})
+        <selectKey keyProperty="id" resultType="long" order="AFTER">
+            SELECT FEED_SEQ.CURRVAL FROM DUAL
+        </selectKey>
+    </insert>
+
+    <!--  좋아요 추가  -->
+    <insert id="insertLike">
+        INSERT INTO TBL_FEED_LIKE
+        VALUES(FEED_LIKE_SEQ.NEXTVAL, #{feedId}, #{memberId})
+    </insert>
+
+    <!--  좋아요 삭제  -->
+    <delete id="deleteLike">
+        DELETE FROM TBL_FEED_LIKE
+        WHERE FEED_ID = #{feedId} AND MEMBER_ID = #{memberId}
+    </delete>
+
+    <!--  좋아요 유무 검사  -->
+    <select id="findLike" resultType="boolean">
+        SELECT * FROM TBL_FEED_LIKE
+        WHERE FEED_ID = #{feedId} AND MEMBER_ID = #{memberId}
+    </select>
+
+    <!--  피드 뷰  -->
+    <select id="select" resultType="feedDTO">
+        SELECT ID, TITLE, CONTENT, TAG_CODE, FEED_REGISTER_DATE, FEED_UPDATE_DATE, MEMBER_ID
+        FROM TBL_FEED
+        WHERE ID = #{id}
+    </select>
+
+    <!--  피드 수정  -->
+    <update id="update">
+        UPDATE TBL_FEED
+        SET TITLE = #{title}, CONTENT = #{content}, TAG_CODE = #{tagCode}, FEED_UPDATE_DATE = SYSDATE
+        WHERE ID = #{id}
+    </update>
+
+    <!--  피드관련 신고 여부  -->
+    <select id="findReport" resultType="int">
+        SELECT COUNT(ID) AS REPORT_COUNT
+        FROM TBL_FEED_REPORT
+        WHERE
+        <choose>
+            <when test="feedReportVO.categoryName == 'r'.toString()">
+                FEED_REPLY_ID = #{feedReportVO.feedReplyId}
+            </when>
+            <otherwise>
+                FEED_ID = #{feedReportVO.feedId}
+            </otherwise>
+        </choose>
+    </select>
+
+    <!--  피드 개수  -->
+    <select id="selectCountOfPost" resultType="_int">
+        SELECT COUNT(f.ID) FROM TBL_MEMBER m INNER JOIN TBL_FEED f ON m.ID = f.MEMBER_ID
+        WHERE f.MEMBER_ID IN(SELECT FW_ID FROM TBL_FOLLOW WHERE MEMBER_ID = #{memberId})
+        ORDER BY f.FEED_REGISTER_DATE
+    </select>
+
+    <!--  피드 신고  -->
+    <insert id="report">
+        INSERT INTO TBL_FEED_REPORT
+        (ID, REPORTED_ID, REPORTER_ID, FEED_ID, CATEGORY_NAME)
+        VALUES(SEQ_FEED_REPORT.NEXTVAL, #{reportedId}, #{reporterId}, #{feedId}, 'p')
+    </insert>
+
+</mapper>

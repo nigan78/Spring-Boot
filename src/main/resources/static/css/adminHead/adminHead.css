@@ -1,0 +1,294 @@
+body {
+    margin: 0;
+    font-family: Open Sans, sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #666;
+    text-align: left;
+    background-color: #eceff1;
+    height: 100%;
+}
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    vertical-align: baseline;
+    font-family: 'pretendard';
+    font-weight: 400;
+    box-sizing: border-box;
+}
+
+#app, .modal {
+    font-family: Noto Sans KR, sans-serif;
+    letter-spacing: -.5px;
+    color: #333;
+}
+
+.wrapper {display: inline-block;
+    height: 100vh;
+    width: 12%;
+    background: white;
+}
+
+.navbar-vertical.navbar-expand-xs.fixed-left {
+    left: 0;
+    border-width: 0 1px 0 0;
+}
+
+@media (max-width: 1199.98px) {
+    .sidenav-pinned .sidenav {
+        transform: translateX(0);
+    }
+}
+
+.sidenav-pinned .sidenav {
+    max-width: 250px !important;
+}
+
+.navbar-vertical.navbar-expand-xs {
+    display: block;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    max-width: 62px;
+    overflow-y: auto;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.navbar-vertical.navbar-light {
+    background-color: #eee;
+    border-color: rgba(0, 0, 0, .05);
+}
+
+.bg-white {
+    background-color: #fff !important;
+}
+
+@media (max-width: 1199.98px) {
+    .sidenav {
+        transform: translateX(-62px);
+    }
+}
+
+.sidenav {
+    z-index: 1000;
+    transition: all .15s ease;
+}
+
+.navbar-vertical {
+    padding-top: 0;
+    border-width: 0 0 1px 0;
+    border-style: solid;
+    box-shadow: 0 0 2rem 0 rgba(136, 152, 170, .15);
+}
+
+.navbar, .navbar > .container, .navbar > .container-fluid {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar {
+    position: relative;
+    padding: 1rem 1rem;
+}
+
+.ps {
+    overflow: hidden !important;
+    overflow-anchor: none;
+    -ms-overflow-style: none;
+    touch-action: auto;
+    -ms-touch-action: auto;
+}
+
+.navbar-vertical.navbar-expand-xs .navbar-nav {
+    flex-direction: column;
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+}
+
+.navbar-vertical .navbar-nav {
+    margin-left: -1rem;
+    margin-right: -1rem;
+}
+
+.navbar-nav {
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+
+dl, ol, ul {
+    margin-top: 0;
+}
+
+address, dl, ol, ul {
+    margin-bottom: 1rem;
+}
+
+*, :after, :before {
+    box-sizing: border-box;
+}
+
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+    list-style-type: none;
+
+    font-family: pretendard;
+    font-size: 20px;
+
+
+}
+
+.navbar-vertical.navbar-expand-xs .navbar-nav > .nav-item {
+    margin-top: 2px;
+}
+
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+
+.scrollbar-inner {
+    height: 100%;
+}
+
+
+.navbar-vertical.navbar-expand-xs .navbar-nav .nav-link {
+    padding: 0.675rem 1.5rem;
+}
+
+.navbar-vertical .navbar-nav .nav-link {
+    display: flex;
+    align-items: center;
+    font-size: .875rem;
+    font-weight: 500;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: rgba(0, 0, 0, .6);
+}
+
+a:not([href]):not([tabindex]), a:not([href]):not([tabindex]):focus, a:not([href]):not([tabindex]):hover {
+    color: inherit;
+    text-decoration: none;
+}
+
+.navbar-nav .nav-link {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.nav-link {
+    color: #777;
+}
+
+.nav-link {
+    display: block;
+    padding: 0.5rem 0.75rem;
+}
+
+.sidebar-menu-item {
+    cursor: pointer;
+}
+
+a, a:hover {
+    text-decoration: none;
+}
+
+a {
+    color: #21BAF3;
+    background-color: transparent;
+}
+
+a:-webkit-any-link {
+    cursor: pointer;
+}
+
+*, :after, :before {
+    box-sizing: border-box;
+}
+
+.mr-1, .mx-1 {
+    margin-right: 0.25rem !important;
+}
+
+img, svg {
+    vertical-align: middle;
+}
+
+img {
+    border-style: none;
+}
+
+사용자 에이전트 스타일시트
+img {
+    overflow-clip-margin: content-box;
+    overflow: clip;
+}
+
+b {
+    font-weight: bold;
+}
+
+b, strong {
+    font-weight: bolder;
+}
+
+
+.sidenav-header {
+    height: 78px;
+}
+
+.align-center {
+    align-items: center !important;
+}
+
+.d-flex {
+    display: flex !important;
+}
+
+.sidenav-pinned .sidenav .navbar-brand, .sidenav-pinned .sidenav .navbar-heading {
+    display: block;
+}
+
+.sidenav-show .sidenav .navbar-brand, .sidenav-show .sidenav .navbar-heading {
+    display: block;
+}
+
+.sidenav .navbar-brand, .sidenav .navbar-heading {
+    padding: 1.5rem;
+    display: none;
+}
+
+.navbar-vertical .navbar-brand {
+    margin-right: 0;
+}
+
+.navbar-light .navbar-brand, .navbar-light .navbar-brand:focus, .navbar-light .navbar-brand:hover {
+    color: rgba(0, 0, 0, .9);
+}
+
+.navbar-brand {
+    display: inline-block;
+    padding-top: 0.3125rem;
+    padding-bottom: 0.3125rem;
+    margin-right: 1rem;
+    font-size: 1.25rem;
+    line-height: inherit;
+    white-space: nowrap;
+}

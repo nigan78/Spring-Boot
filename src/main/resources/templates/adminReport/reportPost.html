@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>신고물 관리 </title>
+
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <!-- 공통 css-->
+    <link rel="stylesheet" href="/css/font/font.css">
+    <link rel="stylesheet" href="/css/inc/reset.css">
+    <link rel="stylesheet" href="/css/inc/layout.css">
+    <!-- 공통js -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="/js/inc/layout.js"></script>
+    <!-- 페이지 css -->
+    <link rel="stylesheet" href="/css/jinDefault/list.css">
+    <link rel="stylesheet" href="/css/adminHead/adminHead.css">
+    <!-- 페이지 js -->
+    <script src="/js/admindHead/adminHead.js"></script>
+
+</head>
+<body>
+<div>
+<div th:replace="~{adminHead/adminHead.html :: header}"></div>
+    <div class="info-title-box info-title-box-flex">
+        <div class="logo-box-layout">
+            <div class="logo-box">
+                <img src="/image/logo/logo.png"/>
+            </div>
+            <!-- <div class="logo-title">
+                      <span>Jar</span>
+                  </div> -->
+        </div>
+        <div>
+            <div class="select-name">
+                <span>신고물 관리</span>
+            </div>
+        </div>
+    </div>
+    <div class="wrap">
+        <!-- 사이드 바 -->
+        <div></div>
+
+        <div class="container">
+            <div class="container-margin">
+                <!-- 여기에 필터 넣으면 될 듯 -->
+
+                <!-- 내용 섹션 -->
+                <section class="board-info-box-layout">
+                    <div class="board-info-box">
+                        <div class="board-info-title-box">
+                            <span>신고 목록</span>
+                        </div>
+
+                        <div class="info-table">
+                            <table>
+                                <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>신고자</th>
+                                    <th>분류</th>
+                                    <th>신고 사유</th>
+                                    <th>제재하기</th>
+                                </tr>
+                                </thead>
+                                <!-- 리스트 내용 -->
+                                <tr>
+                                    <!-- 게시물 pk번호 -->
+                                    <td>1</td>
+                                    <!-- 신고자 이름 -->
+                                    <td class="member_type is_active">
+                                        ljs1234
+                                    </td>
+                                    <!-- 분류 -->
+                                    <td>댓글</td>
+                                    <!-- 신고 사유 -->
+                                    <td>욕설</td>
+                                    <!-- 이거 누르면 영구정지 되게 만들기 -->
+                                    <td>제재하기</td>
+                                </tr>
+                                <!-- 리스트 내용 -->
+                                <tr>
+                                    <!-- 게시물 pk번호 -->
+                                    <td>1</td>
+                                    <!-- 신고자 이름 -->
+                                    <td class="member_type is_active">
+                                        ljs1234
+                                    </td>
+                                    <!-- 분류 -->
+                                    <td>게시글</td>
+                                    <!-- 신고 사유 -->
+                                    <td>음란물</td>
+                                    <!-- 이거 누르면 영구정지되게 만들기 -->
+                                    <td>제재하기</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+                <!-- 폼태그 -->
+
+                <!-- 페이지 버튼 -->
+                <div class="page-button-box-layout">
+                    <div class="page-button-box">
+                        <!-- 페이지 번호 -->
+                        <div class="">
+                            <div class="page-button-margin">
+                                <div>
+                                    <img src="/image/admin/left_icon.png" class="left-button"/>
+                                </div>
+                            </div>
+                        </div>
+                        <!--<th:block
+                                th:each="num : ${#numbers.sequence(pageDTO.startPage, pageDTO.endPage + 1)}"
+                        >-->
+                            <a
+                                    <!--th:class="${(num == pageDTO.startPage) ? 'page-button-active page-button changePage' : 'page-button changePage'}"
+                                    th:href="${num}"-->
+                            >
+                                <span class="page-button"></span>
+                            </a>
+                            <div style="width: 2px"></div>
+                        <!--</th:block>-->
+                        <div class="">
+                            <div class="page-button-margin">
+                                <div>
+                                    <img src="/image/admin/right_icon.png" class="right-button"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 페이지 버튼 끝 -->
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

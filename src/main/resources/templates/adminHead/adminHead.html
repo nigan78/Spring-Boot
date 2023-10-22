@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>관리자페이지 head</title>
+
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <!-- 공통 css-->
+    <link rel="stylesheet" href="/css/font/font.css">
+    <link rel="stylesheet" href="/css/inc/reset.css">
+    <link rel="stylesheet" href="/css/inc/layout.css">
+    <!-- 공통js -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="/js/inc/layout.js"></script>
+    <!-- 페이지 css -->
+    <link rel="stylesheet" href="/css/adminHead/adminHead.css">
+    <!-- 페이지 js -->
+    <script src="/js/admindHead/adminHead.js"></script>
+
+</head>
+<body class="sidenav-show sidenav-pinned">
+<div class="wrapper" th:fragment="header">
+    <div class="sidenav nav nav-ver fixed-left nav-expand nav-light bg-white ps">
+        <div class="scrollbar-inner" style="padding-bottom: 8rem;">
+            <div class="sidenav-header d-flex align-center">
+                <div class="nav-brand">
+                    <a href="/" class="router-link-exact-active open active" target="_self">
+                        <!-- 로고 이미지 구간 -->
+                        <img src="" width="80" height="30"
+                        /></a>
+                </div>
+            </div>
+            <div class="nav-inner links-after overflow-auto">
+                <ul class="nav-nav">
+                    <!-- 회원 관리 버튼 -->
+                    <li to="/host" class="nav-item">
+                        <a href="" class="side-item nav-link"><span>회원 관리</span></a>
+                    </li>
+                    <!-- 신고 관리 버튼 -->
+                    <li to="/product" class="nav-item">
+                        <a href="" class="side-item nav-link"><span>신고 관리</span></a>
+                    </li>
+                    <!-- 광고 승인 버튼 -->
+                    <li class="nav-item">
+                        <a href="" class="side-item nav-link"><span>광고 승인</span></a>
+                    </li>
+                    <!-- 공지사항 관리, 일단 만들어만 놈 -->
+                    <li class="nav-item">
+                        <a href="" class="side-item nav-link"><span>공지 사항</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,421 @@
+@charset "UTF-8";
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff')
+    format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+* {
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+li {
+    list-style: none;
+}
+
+body {
+    background-color: #f1f1f1;
+    font-family: 'GmarketSansMedium';
+}
+
+button {
+    cursor: pointer;
+}
+
+.wrap {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.side-menu {
+    display: block;
+    position: fixed;
+    top: 55px;
+    bottom: 0;
+    z-index: 99;
+    width: 250px;
+    background-color: #4e4e4e;
+}
+
+.menu-bar li span {
+    margin: 10px;
+}
+
+.menu-bar .menu .menu-flex {
+    font-size: 14px;
+    color: #fff;
+    display: flex;
+    justify-content: flex-start;
+    margin: 20px 45px 0px;
+}
+
+.menus .select-menu {
+    font-size: 11px;
+    color: #fff;
+    margin-left: 67px;
+}
+
+.menus .select-menu span {
+    margin-left: 5px;
+}
+
+.menu-title {
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+    font-size: 21px;
+    color: #fff;
+    height: 32px;
+}
+
+.icon {
+    padding-top: 2px;
+    width: 16px;
+    filter: invert(71%) sepia(59%) saturate(0%) hue-rotate(176deg) brightness(91%) contrast(94%);
+}
+
+.triangle {
+    padding-top: 5px;
+    width: 12px;
+}
+
+.menu .triangle-acitve {
+    transform: rotate(180deg);
+    width: 12px;
+}
+
+.menu-title div img {
+    padding-top: 5px;
+    width: 20px;
+}
+
+.select-menu {
+    font-size: 10px;
+    margin-bottom: 5px;
+}
+
+.menu-title-layout {
+    margin: 8px 18px 0px 44px;
+}
+
+.menus2,
+.menu1 {
+    display: none;
+}
+
+.menu-name {
+    color: #fff;
+    font-size: 20px;
+    margin-top: 6px;
+    font-weight: bold;
+}
+
+.info-margin-bottom {
+    margin-bottom: 10px;
+}
+
+.logo-box-layout {
+    /* display: flex; */
+    width: 250px;
+    position: relative;
+    padding: 4px 10px 0px 25px;
+}
+
+.logo-box {
+    /* padding: 4px 10px 0px 25px; */
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    left: 80px;
+}
+
+.logo-box img {
+    /* filter: invert(75%) sepia(74%) saturate(1021%) hue-rotate(356deg) brightness(104%) contrast(110%); */
+    filter: none !important;
+    width: 110px !important;
+}
+
+.logo-title {
+    display: none;
+    /* color: #060024;
+      padding-top: 10px;
+      font-size: 26px;
+      font-weight: 700; */
+}
+
+.info-title-box {
+    z-index: 1000;
+}
+
+label,
+button {
+    cursor: pointer;
+}
+
+.is-hidden {
+    display: none !important;
+}
+
+.is-block {
+    display: block !important;
+}
+
+.is-inline-block {
+    display: inline-block !important;
+}
+
+.is-flex {
+    display: flex !important;
+}
+
+.is-align-center {
+    text-align: center;
+}
+
+.is-flex-align-center {
+    justify-content: center !important;
+}
+
+.is-flex-align-left {
+    justify-content: left !important;
+}
+
+.is-flex-align-right {
+    justify-content: right !important;
+}
+
+.is-flex-align-around {
+    justify-content: space-around !important;
+}
+
+.is-flex-align-between {
+    justify-content: space-between !important;
+}
+
+.is-flex-align-evenly {
+    justify-content: space-evenly !important;
+}
+
+td.is_inactive > hr {
+    border-bottom: 4px solid gray !important;
+}
+
+td.is_active > hr {
+    border-bottom: 4px solid green !important;
+}
+
+td.is_warning > hr {
+    border-bottom: 4px solid rgb(255, 48, 25) !important;
+}
+
+.container {
+    width: 100%;
+    margin-left: 250px;
+    margin-top: 55px;
+}
+
+tr {
+    border-bottom: 0.5px solid #c60a164d;
+    line-height: 50px;
+}
+
+table th,
+table td {
+    font-size: 12px;
+    padding-left: 10px;
+}
+
+.checkbox-line {
+    line-height: 1px;
+}
+
+table td {
+    font-weight: 300;
+}
+
+table {
+    text-align: center;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.board-info-box {
+    border: 0.0625rem solid #f2f2f2;
+    box-shadow: 11px 13px 11px -14px grey;
+    background: #fff;
+}
+
+.info-title-box-flex {
+    display: flex;
+    position: fixed;
+    justify-content: flex-start;
+}
+
+.info-title-box {
+    width: 100%;
+    height: 55px;
+    border-radius: 3px;
+    background: #fff;
+    box-shadow: 11px 13px 11px -14px grey;
+}
+
+.info-table {
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.board-info-title-box {
+    padding: 20px 27px 0;
+}
+
+.board-info-title-box {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.select-name {
+    padding-top: 20px;
+    padding-left: 5px;
+}
+
+.delete-box {
+    text-align: right;
+}
+
+.delete-button {
+    box-shadow: 2px 2px 7px -2px grey;
+    font-family: 'GmarketSansMedium';
+    border: none;
+    width: 120px;
+    height: 50px;
+    background-color: #fff;
+    font-weight: bold;
+}
+
+.container-margin {
+    margin: 40px 100px 0px;
+}
+
+.board-info-box-layout {
+    margin-top: 30px;
+}
+
+.page-button-box-layout {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.page-button-box {
+    display: flex;
+    justify-content: center;
+}
+
+.page-button-active {
+    width: 20px;
+    height: 20px;
+    background-color: #818298;
+    color: #fff;
+    border-radius: 2px;
+}
+
+.page-button {
+    width: 20px;
+    cursor: pointer;
+}
+
+.page-button-box {
+    font-size: 13px;
+}
+
+.page-button-margin {
+    margin: 0 auto;
+}
+
+.modify-button {
+    padding-right: 20px;
+}
+
+.info-table .modify-button {
+    width: 10%;
+    font-weight: 500;
+}
+
+.modify-button button {
+    border: none;
+    background: none;
+    font-size: inherit;
+    font-family: 'GmarketSansMedium';
+    font-weight: 500;
+    margin-left: 5px;
+}
+
+.update-button-flex {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.register-button {
+    margin-right: 10px;
+    box-shadow: 2px 2px 7px -2px grey;
+    font-family: 'GmarketSansMedium';
+    border: none;
+    width: 120px;
+    height: 50px;
+    background-color: #fff;
+    font-weight: bold;
+}
+
+.page-button-margin div {
+    margin-top: 3px;
+}
+
+.right-button {
+    margin-left: 10px;
+    cursor: pointer;
+    width: 15px;
+}
+
+.left-button {
+    margin-right: 10px;
+    width: 15px;
+    cursor: pointer;
+}
+
+a.paging {
+    display: inline-block;
+    width: 30px;
+    text-align: center;
+    border-radius: 3px;
+    margin-right: 15px;
+    color: #7d7d7d;
+    font-size: 15px;
+}
+
+.paging-border-blue {
+    color: #0206af;
+    border: 1px solid #0206af;
+}
+
+div#paging-wrap {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+/* td.member_inactive hr {
+	border-bottom: 4px solid gray;
+}
+td.member_out hr {
+	border-bottom: 4px solid rgb(255, 48, 25);
+}
+td.member_active hr {
+	border-bottom: 4px solid green;
+} */

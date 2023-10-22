@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <!-- 공통 css-->
+    <link rel="stylesheet" href="/css/font/font.css">
+    <link rel="stylesheet" href="/css/inc/reset.css">
+    <link rel="stylesheet" href="/css/inc/layout.css">
+    <!-- 공통js -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="/js/inc/layout.js"></script>
+    <!-- 페이지 css -->
+    <link rel="stylesheet" type='text/css' href="/css/mypage/create.css">
+    <!-- 페이지 js -->
+    <script src="/js/mypage/create.js"></script>
+
+    <title>함께해요 작성페이지 </title>
+</head>
+<body>
+<form action="" method="post" enctype="multipart/form-data">
+    <div>
+        <div class="top">함께해요 작성</div>
+        <div class="side">
+            <form>
+                <div class="all">
+                    <div>
+                        <div class="title">
+                            <div class="title1">
+                                <div class="title2">
+                                    <div class="title3" style="font-size: 0.9rem;">제목</div>
+                                </div>
+                                <div class="titlediv">
+                                    <div>
+                                        <span>
+                                            <fieldset class="" id="">
+                                                <div>
+                                                    <div class="">
+                                                    <input type="text" placeholder="제목을 입력해주세요." class="titleinp" valid="true">
+                                                    </div>
+                                                </div>
+                                            </fieldset>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="title">
+                            <div class="title1">
+                                <div class="title2">
+                                    <div class="title3" style="font-size: 0.9rem;">내용</div>
+                                </div>
+                                <div class="titlediv">
+                                    <div>
+                                        <span>
+                                            <fieldset class="" id="">
+                                                <div>
+                                                    <div class="">
+                                                    <input type="text" class="contentinp" valid="true">
+                                                    </div>
+                                                </div>
+                                            </fieldset>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="title">
+                            <div class="title1">
+                                <div class="title2">
+                                    <div class="title3" style="font-size: 0.9rem;">사진</div>
+                                </div>
+                                <div class="titlediv">
+                                    <div>
+                                        <div>
+                                            <div class="row" id="row">
+                                                <div class="imgbox">
+                                                    <div class="imgcard">
+                                                        <div class="">
+                                                            <div class="delete" onclick="del(1)">
+                                                                <button type="button" class="xi-close"></button>
+                                                            </div>
+                                                            <label for="img1">
+                                                                <div class="imgthum" id="image_container">
+
+                                                                    <img src="" class="thumnail" id="thumnail1">
+                                                                    <div class="imginpdiv" id="imginpdiv1">
+                                                                        <div>
+                                                                            <div class="text-center">
+                                                                                <img src="https://frip.host/img/add.85e31315.svg" width="48" height="48">
+                                                                                <div>썸네일 이미지 추가하기</div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <input id="img1" type="file" style="display: none;" accept="image/*" onchange="setThumbnail(event,1);">
+                                                                </div>
+                                                            </label>
+                                                            <div class="container"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="imgbox">
+                                                    <div class="imgcard">
+                                                        <div class="">
+                                                            <div class="delete" onclick="del(2)">
+                                                                <button type="button" class="xi-close"></button>
+                                                            </div>
+                                                            <label for="img2">
+                                                                <div class="imgdiv" id="image_container">
+                                                                    <img src="" class="thumnail" id="thumnail2">
+                                                                    <div class="imginpdiv" id="imginpdiv2">
+                                                                        <div>
+                                                                            <div class="text-center">
+                                                                                <img src="https://frip.host/img/add.85e31315.svg" width="48" height="48">
+                                                                                <div>이미지 추가하기</div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <input id="img2" type="file" style="display: none;" accept="image/*" onchange="setThumbnail(event,2);">
+                                                                </div>
+                                                            </label>
+                                                            <div class="container"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="imgbox">
+                                                    <div class="imgcard">
+                                                        <div class="">
+                                                            <div class="delete" onclick="del(3)">
+                                                                <button type="button" class="xi-close"></button>
+                                                            </div>
+                                                            <label for="img3">
+                                                                <div class="imgdiv" id="image_container">
+                                                                    <img src="" class="thumnail" id="thumnail3">
+                                                                    <div class="imginpdiv" id="imginpdiv3">
+                                                                        <div>
+                                                                            <div class="text-center">
+                                                                                <img src="https://frip.host/img/add.85e31315.svg" width="48" height="48">
+                                                                                <div>이미지 추가하기</div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <input id="img3" type="file" style="display: none;" accept="image/*" onchange="setThumbnail(event,3);">
+                                                                </div>
+                                                            </label>
+                                                            <div class="container"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="import">*사진은 최대 9개까지 저장이 가능하며 처음 사진은 썸네일로 사용됩니다.</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="title">
+                            <div class="title1">
+                                <div class="title2">
+                                    <div class="title3" style="font-size: 0.9rem;">함께할<br/>위치</div>
+                                </div>
+                                <div class="titlediv">
+                                    <div>
+                                        <span>
+                                            <fieldset class="" id="">
+                                                <div>
+                                                    <div class="">
+                                                    <input type="text" placeholder="제목을 입력해주세요." class="titleinp" valid="true">
+                                                    </div>
+                                                </div>
+                                            </fieldset>
+                                        </span>
+                                    </div>
+                                    <div id="map" class="mapping"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="subbut">
+        <button type="button" class="cancel">취소</button>
+        <button type="submit" class="submit">저장</button>
+    </div>
+</form>
+</body>
+<script
+        type="text/javascript"
+        src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=09118387dc78b55b2c58f3876095c5d2&libraries=services"
+></script>
+<script src="/js/mypage/kakao.js"></script>
+</html>

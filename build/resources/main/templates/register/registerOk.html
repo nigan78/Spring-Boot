@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>회원가입 완료</title>
+    <link rel='stylesheet' type='text/css' href='/css/font/font.css'>
+    <!-- 페이지 css -->
+    <link rel="stylesheet" href="/css/register/registerOk.css">
+</head>
+<body>
+<div class="FindPasswordPage">
+    <div class="Title">
+        <h3></h3>
+    </div>
+    <form class="LoginRegister" th:action="@{/login/login}">
+        <div class="text">
+            <h3>회원가입이 완료되었습니다!</h3>
+            <p>로그인 후 다양한 서비스를 이용하실 수 있습니다</p>
+
+        </div>
+        <div class="buttonWrapper">
+            <button class="Button" type="submit" >로그인</button>
+
+        </div>
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <!-- 공통 css-->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link rel="stylesheet" href="/css/inc/layout.css">
+    <!-- 페이지 css-->
+    <link rel="stylesheet" href="/css/trade/tradeDetailPage.css">
+    <!-- 공통js -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://rawgit.com/jackmoore/autosize/master/dist/autosize.min.js"></script>
+    <script src="/js/inc/layout.js"></script>
+    <title>교환해요 상세</title>
+</head>
+<body>
+    <!--공통헤더-->
+    <header th:replace="~{inc/header.html :: header}"></header>
+    <div id="detail" class="trade">
+        <main class="inner-con">
+            <section class="top">
+                <div class="img-area">
+                    <div class="img-wrap slide">
+                        <ul>
+                        </ul>
+                        <div class="arrow left" th:if="${#lists.size(trade.files) > 1}"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='50' height='50' viewBox='0 0 50 50'%3E %3Cpath fill='none' fill-rule='evenodd' stroke='%23FFF' stroke-width='2' d='M21 17l8 8.014L21.028 33'/%3E %3C/svg%3E" alt=""></div>
+                        <div class="arrow right" th:if="${#lists.size(trade.files) > 1}"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='50' height='50' viewBox='0 0 50 50'%3E %3Cpath fill='none' fill-rule='evenodd' stroke='%23FFF' stroke-width='2' d='M21 17l8 8.014L21.028 33'/%3E %3C/svg%3E" alt=""></div>
+                        <div class="page" th:if="${#lists.size(trade.files) > 1}">
+                            <span class="curr">1</span>
+                            <span class="total"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="cont-area">
+                    <div class="content-wrap">
+                        <div class="tag-area">
+                            <span th:text="${trade.tagCode}"></span>
+                            <span th:if="${trade.status == 'y'}">진행중</span>
+                            <span class="end-tag" th:if="${trade.status == 'n'}">마감</span>
+                        </div>
+                        <div class="txt-area">
+                            <div class="tit" th:text="${trade.title}"></div>
+                            <button type="button" class="util-btn">
+                                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='17' viewBox='0 0 4 17'%3E %3Cpath fill='%23999' fill-rule='evenodd' d='M1.57 14a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm0-7a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm0-7a1.5 1.5 0 110 3 1.5 1.5 0 010-3z'/%3E %3C/svg%3E" alt="더보기">
+                            </button>
+                        </div>
+                        <div class="cont" th:text="${trade.content}"></div>
+                    </div>
+                    <div class="user-area">
+                        <a href="">
+                            <div class="user-img">
+                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFkAAABZCAMAAABi1XidAAAAUVBMVEVHcEzz9Pby9Pb2+/vy8/f09/jq6/L////y9Pfz9ffy9ffz9Pfy8/fz9Pby9Pfy9Pby9Pfz9Pfy8/art8To6++wusi5ws7g5Orw8fTEzNbS1+C1FdKWAAAAEnRSTlMA5bIa8jsuC1GOZLnZzJ7Kt9TwOxZLAAADVklEQVRYw8VZ25arMAhNrdZqb1MgQPL/H3oe6kzb0ZBUJ+vwahfFLWxg41ze9t04NJfzroV2d740w9jt3Xbrj8Md5nYfjv02t1+Qtq/Vzg/XFmxrr4cVfrsGSqzpPo33BKV2+iTufoBPbCjG+7iDz2x3rBFwedj7G6yxW7Z4uhbWWZtJkqPCWlMT7BG22FjLseH6CFstAUinmz3r4mfct7Dd2oXk62/wF3abl8wAf2PD33+9xFfssyREEhk5CmXpqf8EC43B48N8iPoBHgf7t5ER0XMIgT0icrR//toKrA6iGhB9kEekKsEjBjPs00uNmAAzYnhFlwIim3A/66WxHXv59RbibddNCco6dzy51gKkr1ZSLDgGAPFofcbrlMsGYRAmPEREA4+2z5ZfSL41Y8gWopFy5FESjwQ9ZRKvt0okGbIqm0j3WTDCqmcPOAYz5ST5UMzEG5xzdxNmMjxbQN+d24OZc7TuIcDe5AyywjJfCKCzZgzd4nk0OX+L58HiuU0xN+5SKeaLO1eK+ex2lWLeubZSzK2DSpUCVsyg3uQNr2bMO7sJxhUMO+F8Nkcj5ORDm5/hbOYzSBpLQgMpALiYswZoutsFGwxoMrNiTOUd2WMBwJDZp1JBay5kGO2ZDkCWB46YQRmgM3vKA8+FIUm82V4fPcXqgxMes+mQOIcF3AtWH5oNnsRmc/3p3dndRzzyKyDCy1PkbN7oocC1fy4n0Rc4ht45576yP2NEZFEAUGFEo+R/tLyyVVA9MiJyiIERPdsk9zKL9rmFmxBJwrS1BckR83N+tmb+F76kGEKIlOHWt5k/tw3OPMVsNh9Kdqs5K2mWjZqyfXBh2YmZvOuKdtiFBU3VrpVTyd6tcXGpJH6tHWvvXiIPVZXIy4uwEiNyFFXNaSe/9A2VwOw9YjI0jR4RvWf+3vUT+sZ7IUaetAyOlFQQKPKkefDbvx/TOhIxog9RRMhMW1USkRj8m5YwpLUvYvSBAMrUO/2lSixoX996HZWw70JmUlKvmzRGDfl+sdh3giY1xsdXlGxTTrV4Seuizo3WUGTDHZDVlIlpXciPCXA0xfgsQaapNnOgOKwCAwDC4b/dJireUyregGrerSre2mreB2veNGveYWvejjfdu/8BI2K8ok7u95kAAAAASUVORK5CYII=" alt="profile-image" class="Image__DefaultImage-v97gyx-3 hVNKgp">
+                            </div>
+                            <div class="user-info">
+                                <div class="user-name" th:text="${trade.name}"></div>
+                                <div class="follow-wrap">
+                                    <div><span class="tit">팔로워</span><span class="count" th:text="${trade.follower}"></span></div>
+                                    <div><span class="tit">팔로잉</span><span class="count" th:text="${trade.following}"></span></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="follow-btn-wrap">
+                            <button type="button" class="follow-btn active" th:if="${trade.followCheck == 1}">팔로우 취소</button>
+                            <button type="button" class="follow-btn" th:unless="${trade.followCheck == 1 || trade.memberId == session.memberId}">팔로우</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="bottom reply">
+                <h2 class="sec-tit">댓글 <span class="re-cnt" th:text="${trade.reCnt}+개">2</span></h2>
+                <div class="sec-con">
+                    <ul class="reply-ul">
+                    </ul>
+
+                    <!--  댓글 입력창  -->
+                    <div class="reply-input">
+                        <textarea class="reply-textarea" placeholder="댓글을 입력해주세요."></textarea>
+                        <button type="button" class="reply-submit">작성</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!--  디테일 유틸  -->
+    <div class="detail-util-layer">
+        <div class="bg"></div>
+        <div class="layer-con">
+            <div class="inner-con">
+                <div class="deco-bar"></div>
+                <div class="layer-body">
+                    <ul>
+                        <li><a th:href="@{/trade/modify(id=${trade.id})}" ><button type="button" class="update" th:if="${trade.memberId} == ${session.memberId}">수정</button></a></li>
+                        <li><button type="button" class="delete" th:if="${trade.memberId} == ${session.memberId}">삭제</button></li>
+                        <li><button type="button" class="report">신고</button></li>
+                    </ul>
+                </div>
+            </div><!-- inner-con -->
+        </div><!-- layer-con -->
+    </div>
+
+    <div class="foot-util">
+        <div class="inner-con">
+            <button type="button" class="like" th:if="${trade.likeCheck} == 0"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"> <g clip-path="url(#clip0_2519_490)"> <mask id="mask0_2519_490" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="32" height="32"> <path d="M32 0H0V32H32V0Z" fill="white"></path> </mask> <g mask="url(#mask0_2519_490)"> <mask id="mask1_2519_490" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="32" height="32"> <path d="M32 0H0V32H32V0Z" fill="white"></path> </mask> <g mask="url(#mask1_2519_490)"> <path d="M28 12C28 16.1889 24.9781 19.7916 22.063 22.3047C20.2579 23.8469 18.2982 25.1986 16.2154 26.3381C16.2027 26.3441 16.1898 26.3505 16.1774 26.357C16.1226 26.3861 16.0613 26.4013 15.999 26.4015C15.9401 26.4015 15.882 26.3881 15.8293 26.362L15.8094 26.3511L15.784 26.3378C15.1694 26.0033 14.5659 25.649 13.9743 25.2754C12.5586 24.3847 11.2086 23.3914 9.93704 22.3049C7.02334 19.7914 4.00003 16.1887 4 12C4.00014 10.6766 4.41054 9.38568 5.17469 8.30517C5.93885 7.22466 7.01918 6.4076 8.26696 5.96651C9.51472 5.52542 10.8685 5.482 12.142 5.84222C13.4155 6.20245 14.546 6.94859 15.3778 7.97794C15.5297 8.16589 15.7584 8.2751 16 8.2751C16.2416 8.2751 16.4704 8.16589 16.6222 7.97794C17.4541 6.94859 18.5845 6.20245 19.8579 5.84222C21.1315 5.482 22.4853 5.52542 23.7331 5.96651C24.9808 6.4076 26.0611 7.22466 26.8253 8.30517C27.5894 9.38568 27.9998 10.6766 28 12Z" stroke="#333333" stroke-width="1.5" stroke-linejoin="round"></path> </g> </g> </g> <defs> <clipPath id="clip0_2519_490"> <rect width="32" height="32" fill="white"></rect> </clipPath> </defs> </svg></button>
+            <button type="button" class="like active" th:unless="${trade.likeCheck} == 0"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"> <g clip-path="url(#clip0_2519_490)"> <mask id="mask0_2519_490" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="32" height="32"> <path d="M32 0H0V32H32V0Z" fill="white"></path> </mask> <g mask="url(#mask0_2519_490)"> <mask id="mask1_2519_490" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="32" height="32"> <path d="M32 0H0V32H32V0Z" fill="white"></path> </mask> <g mask="url(#mask1_2519_490)"> <path d="M28 12C28 16.1889 24.9781 19.7916 22.063 22.3047C20.2579 23.8469 18.2982 25.1986 16.2154 26.3381C16.2027 26.3441 16.1898 26.3505 16.1774 26.357C16.1226 26.3861 16.0613 26.4013 15.999 26.4015C15.9401 26.4015 15.882 26.3881 15.8293 26.362L15.8094 26.3511L15.784 26.3378C15.1694 26.0033 14.5659 25.649 13.9743 25.2754C12.5586 24.3847 11.2086 23.3914 9.93704 22.3049C7.02334 19.7914 4.00003 16.1887 4 12C4.00014 10.6766 4.41054 9.38568 5.17469 8.30517C5.93885 7.22466 7.01918 6.4076 8.26696 5.96651C9.51472 5.52542 10.8685 5.482 12.142 5.84222C13.4155 6.20245 14.546 6.94859 15.3778 7.97794C15.5297 8.16589 15.7584 8.2751 16 8.2751C16.2416 8.2751 16.4704 8.16589 16.6222 7.97794C17.4541 6.94859 18.5845 6.20245 19.8579 5.84222C21.1315 5.482 22.4853 5.52542 23.7331 5.96651C24.9808 6.4076 26.0611 7.22466 26.8253 8.30517C27.5894 9.38568 27.9998 10.6766 28 12Z" stroke="#333333" stroke-width="1.5" stroke-linejoin="round"></path> </g> </g> </g> <defs> <clipPath id="clip0_2519_490"> <rect width="32" height="32" fill="white"></rect> </clipPath> </defs> </svg></button>
+            <a th:href="@{/trade/app/write(id=${trade.id},tradeMemberId=${trade.memberId})}" th:if="${trade.memberId} != ${session.memberId} and ${trade.status} == 'y'"><button type="button" class="app-btn">교환 신청하기</button></a>
+            <button type="button" class="app-view-btn" th:if="${trade.memberId} == ${session.memberId} and ${trade.status} == 'y'">교환 신청보기</button>
+            <button type="button" class="app-close-btn" th:if="${trade.memberId} == ${session.memberId} and ${trade.status} == 'y'">교환 마감하기</button>
+            <div class="app-end-div" th:if="${trade.status} == 'n'">마감된 교환</div>
+        </div>
+    </div>
+    <!--  신청 리스트  -->
+    <div th:replace="~{trade/app/list.html :: .appView-layer}"></div>
+
+    <!-- 공통푸터-->
+    <footer th:replace="~{inc/footer.html :: footer}"></footer>
+
+    <!--  DM  -->
+    <div th:replace="~{dm/list.html :: #chat-area}"></div>
+</body>
+<script th:inline="javascript">
+    let trade = [[${trade}]];
+    let loginId = [[${session.memberId}]];
+    let tradeId = [[${trade.id}]];
+    let tradeMemberId = [[${trade.memberId}]];
+    let tradeName = [[${trade.name}]];
+</script>
+<script src="/js/trade/tradeDetailPage.js"></script>
+</html>

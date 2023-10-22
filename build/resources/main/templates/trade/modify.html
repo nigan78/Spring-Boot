@@ -1,0 +1,248 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--  공통 css  -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link rel="stylesheet" href="/css/inc/layout.css">
+    <!-- 페이지 css-->
+    <link rel='stylesheet' type='text/css' href='/css/trade/tradeCreate.css'>
+    <!--  공통 js  -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://rawgit.com/jackmoore/autosize/master/dist/autosize.min.js"></script>
+    <script src="/js/inc/layout.js"></script>
+    <!-- 페이지 js -->
+    <script src='/js/trade/tradeCreate.js' defer></script>
+    <title>교환해요 작성</title>
+</head>
+<body>
+<header th:insert="~{inc/header.html :: header}"></header>
+<form th:action="@{/trade/modify}" method="post" name="writeForm" id="writeForm" th:object="${tradeDTO}">
+    <div>
+        <div class="top_create"><div class="tit">교환해요 수정</div></div>
+        <div class="side">
+            <div class="all">
+                <div>
+                    <div class="title">
+                        <div class="title1">
+                            <div class="title2">
+                                <div class="title3" style="font-size: 0.9rem;">제목</div>
+                            </div>
+                            <div class="titlediv">
+                                <div>
+                                    <span>
+                                        <fieldset class="">
+                                            <div>
+                                                <div class="">
+                                                    <input type="hidden" th:field="${trade.id}">
+                                                    <input type="text" th:field="${trade.title}" maxlength="255"  placeholder="제목을 입력해주세요." class="titleinp" >
+                                                    <div class="input-error"></div>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="title">
+                        <div class="title1">
+                            <div class="title2">
+                                <div class="title3" style="font-size: 0.9rem;">내용</div>
+                            </div>
+                            <div class="titlediv">
+                                <div>
+                                    <span>
+                                        <fieldset class="" id="">
+                                            <div>
+                                                <div class="">
+                                                    <textarea name="" cols="30" rows="10" maxlength="255" th:field="${trade.content}" class="contentinp" id="content"></textarea>
+                                                    <div class="input-error"></div>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="title">
+                        <div class="title1">
+                            <div class="title2">
+                                <div class="title3" style="font-size: 0.9rem;">태그</div>
+                            </div>
+                            <div class="titlediv">
+                                <div>
+                                    <span>
+                                        <fieldset class="">
+                                            <div>
+                                                <div class="trade-tag-wrap">
+                                                    <div class="trade-tag-area">
+                                                        <input type="radio" id="tag1" name="tagCode" value="의류">
+                                                        <label for="tag1">의류</label>
+                                                        <input type="radio" id="tag2" name="tagCode" value="잡화">
+                                                        <label for="tag2">잡화</label>
+                                                        <input type="radio" id="tag3" name="tagCode" value="음식">
+                                                        <label for="tag3">음식</label>
+                                                        <input type="radio" id="tag4" name="tagCode" value="전자기기">
+                                                        <label for="tag4">전자기기</label>
+                                                        <input type="radio" id="tag5" name="tagCode" value="애완용품">
+                                                        <label for="tag5">애완용품</label>
+                                                        <input type="radio" id="tag6" name="tagCode" value="출산/육아">
+                                                        <label for="tag6">출산/육아</label>
+                                                        <input type="radio" id="tag7" name="tagCode" value="굿즈/피규어">
+                                                        <label for="tag7">굿즈/피규어</label>
+                                                        <input type="radio" id="tag8" name="tagCode" value="홈/생활용품">
+                                                        <label for="tag8">홈/생활용품</label>
+                                                        <input type="radio" id="tag9" name="tagCode" value="기타">
+                                                        <label for="tag9">기타</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="title file-area">
+                        <div class="title1">
+                            <div class="title2">
+                                <div class="title3" style="font-size: 0.9rem;">사진</div>
+                            </div>
+                            <div class="input-area">
+                                <ul>
+                                    <li>
+                                        <label class="thumb" for="upload1">
+                                            <div>
+                                                <img src="" class="thumbnail">
+                                                <button class="delBtn"><i class="xi-close"></i></button>
+                                                <img src="https://frip.host/img/add.85e31315.svg" class="plus-img" width="48" height="48">
+                                                <span class="file-size"></span>
+                                            </div>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="thumb" for="upload2">
+                                            <div>
+                                                <img src="" class="thumbnail">
+                                                <button class="delBtn"><i class="xi-close"></i></button>
+                                                <img src="https://frip.host/img/add.85e31315.svg" class="plus-img" width="48" height="48">
+                                                <span class="file-size"></span>
+                                            </div>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="thumb" for="upload3">
+                                            <div>
+                                                <img src="" class="thumbnail">
+                                                <button class="delBtn"><i class="xi-close"></i></button>
+                                                <img src="https://frip.host/img/add.85e31315.svg" class="plus-img" width="48" height="48">
+                                                <span class="file-size"></span>
+                                            </div>
+                                        </label>
+                                    </li>
+                                    <li class="depth2">
+                                        <label class="thumb" for="upload4">
+                                            <div>
+                                                <img src="" class="thumbnail">
+                                                <button class="delBtn"><i class="xi-close"></i></button>
+                                                <img src="https://frip.host/img/add.85e31315.svg" class="plus-img" width="48" height="48">
+                                                <span class="file-size"></span>
+                                            </div>
+                                        </label>
+                                    </li>
+                                    <li class="depth2">
+                                        <label class="thumb" for="upload5">
+                                            <div>
+                                                <img src="" class="thumbnail">
+                                                <button class="delBtn"><i class="xi-close"></i></button>
+                                                <img src="https://frip.host/img/add.85e31315.svg" class="plus-img" width="48" height="48">
+                                                <span class="file-size"></span>
+                                            </div>
+                                        </label>
+                                    </li>
+                                    <li class="depth2">
+                                        <label class="thumb" for="upload6">
+                                            <div>
+                                                <img src="" class="thumbnail">
+                                                <button class="delBtn"><i class="xi-close"></i></button>
+                                                <img src="https://frip.host/img/add.85e31315.svg" class="plus-img" width="48" height="48">
+                                                <span class="file-size"></span>
+                                            </div>
+                                        </label>
+                                    </li>
+                                    <li class="depth3">
+                                        <label class="thumb" for="upload7">
+                                            <div>
+                                                <img src="" class="thumbnail">
+                                                <button class="delBtn"><i class="xi-close"></i></button>
+                                                <img src="https://frip.host/img/add.85e31315.svg" class="plus-img" width="48" height="48">
+                                                <span class="file-size"></span>
+                                            </div>
+                                        </label>
+                                    </li>
+                                    <li class="depth3">
+                                        <label class="thumb" for="upload8">
+                                            <div>
+                                                <img src="" class="thumbnail">
+                                                <button class="delBtn"><i class="xi-close"></i></button>
+                                                <img src="https://frip.host/img/add.85e31315.svg" class="plus-img" width="48" height="48">
+                                                <span class="file-size"></span>
+                                            </div>
+                                        </label>
+                                    </li>
+                                    <li class="depth3">
+                                        <label class="thumb" for="upload9">
+                                            <div>
+                                                <img src="" class="thumbnail">
+                                                <button class="delBtn"><i class="xi-close"></i></button>
+                                                <img src="https://frip.host/img/add.85e31315.svg" class="plus-img" width="48" height="48">
+                                                <span class="file-size"></span>
+                                            </div>
+                                        </label>
+                                    </li>
+                                </ul>
+                                <div class="img-more"><button type="button">사진 추가하기</button></div>
+                                <div class="input-error"></div>
+                                <div class="import">*사진은 최대 9개까지 저장이 가능하며 사진은 1MB 이하의 사진만 등록해주세요.</div>
+                            </div>
+                            <div class="hidden-file">
+                                <input type="file" id="upload1"  class="upload">
+                                <input type="file" id="upload2"  class="upload">
+                                <input type="file" id="upload3"  class="upload">
+                                <input type="file" id="upload4"  class="upload">
+                                <input type="file" id="upload5"  class="upload">
+                                <input type="file" id="upload6"  class="upload">
+                                <input type="file" id="upload7"  class="upload">
+                                <input type="file" id="upload8"  class="upload">
+                                <input type="file" id="upload9"  class="upload">
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="subbut">
+        <button type="button" class="cancel" onclick="history.back()">취소</button>
+        <button type="button" class="submit" id="formBtn">수정</button>
+    </div>
+</form>
+</body>
+<script th:inline="javascript">
+    let trade = [[${trade}]];
+    let files = [[${trade.files}]]
+    $("input[name=tagCode]").each(function() {
+        $(this).prop("checked", $(this).val() == `${trade.tagCode}`);
+    });
+</script>
+<script src='/js/trade/modify.js'></script>
+</html>

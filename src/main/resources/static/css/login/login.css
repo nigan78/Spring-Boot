@@ -1,0 +1,219 @@
+
+
+button, html [type="button"], [type="reset"], [type="submit"] {
+    -webkit-appearance: button;
+    appearance: button;
+}
+img { border-style: none;
+}
+::selection {
+    background-color: #b3d4fc;
+    color: #000000;
+    text-shadow: none;
+}
+*,::before,::after {
+    background-repeat: no-repeat;
+    box-sizing: inherit;
+}
+div {
+    display: block;
+}
+img {
+    overflow-clip-margin: content-box;
+    overflow: clip;
+}
+* {
+    outline: none;
+    font-family: inherit;
+}
+audio, canvas, iframe, img, svg, video {
+    vertical-align: middle;
+}
+button {
+    cursor: pointer;
+}
+a, area, button, input, label, select, textarea, [tabindex] {
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+}
+button, select {
+    text-transform: none;
+}
+button, input {
+    overflow: visible;
+}
+button, input, select, textarea {
+    background-color: transparent;
+    border-style: none;
+    color: inherit;
+    font-size: 1em;
+    margin: 0;
+}
+h2 {
+    margin: 0px;
+    padding: 0px;
+}
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+p, label {
+    margin: 0px;
+}
+/* ----------------------------------------------------------------------------------------------------------- */
+
+#app {
+    background-color: white;
+    min-height: 100%;
+    min-width: 100%;
+}
+
+.appWrapper{
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    min-height: 100vh;
+}
+.PageWrapper{
+    display: flex;
+    flex-flow: column;
+    align-content: flex-start;
+    margin: 0px auto;
+    max-width: 808px;
+    width: 100%;
+    padding: 0px;
+    min-height: 653px;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+.Title{
+    width: 100%;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    height: 50px;
+    position: relative;
+}
+.Title h3{
+    font-size: 18px;
+    line-height: 26px;
+    letter-spacing: -0.54px;
+    color: rgb(51, 51, 51);
+    text-align: center;
+    font-weight: bold;
+    margin: 0px;
+}
+
+/* 아이디 / 비밀번호 입력칸 */
+.LoginRegister{
+    width: 100%;
+    max-width: 400px;
+    margin: 0px auto 12px;
+    padding: 24px 20px;
+}
+
+.input{
+    width: 100%;
+    padding: 14px 14px 12px;
+    color: rgb(17, 17, 17);
+    font-size: 14px;
+    line-height: 22px;
+    letter-spacing: -0.42px;
+    border-radius: 3px;
+    background-color: rgb(250, 250, 250);
+    border: 1px solid rgb(238, 238, 238);
+    margin: 4px 0px 8px;
+}
+
+/* 자동로그인 / 아이디찾기 / 비밀번호찾기 */
+/* 이거 input 체크박스 */
+.autoLoginLabel{
+    font-size: 13px;
+    color: rgb(170, 170, 170);
+    margin: 5px;
+}
+.autoLogin{
+    vertical-align: -2px;
+}
+
+.FindID{
+    text-decoration: none;
+    font-size: 13px;
+    color: rgb(170, 170, 170);
+    line-height: 20px;
+    float: right;
+    border-bottom: 1px solid rgb(170, 170, 170);
+}
+.FindPW{
+    text-decoration: none;
+    font-size: 13px;
+    color: rgb(170, 170, 170);
+    line-height: 20px;
+    float: right;
+    border-bottom: 1px solid rgb(170, 170, 170);
+    margin: 0px 10px 0px ;
+}
+
+.regist{
+    text-decoration: none;
+    font-size: 13px;
+    color: rgb(170, 170, 170);
+    line-height: 20px;
+    border-bottom: 1px solid rgb(170, 170, 170);
+}
+
+.loginButton{
+    width: 100%;
+    line-height: 24px;
+    padding: 16px;
+    background-color: rgb(181, 197, 214);
+    text-align: center;
+    border-radius: 10px;
+    color: rgb(244, 244, 244);
+    font-size: 16px;
+    margin: 33px 0px 0px;
+}
+/* 카카오톡 버튼 딴데서 따온거 */
+.kakaoButton{
+    width: 100%;
+    line-height: 24px;
+    padding: 16px;
+    background-color: rgb(252, 232, 77);    text-align: center;
+    border-radius: 10px;
+    color: rgb(244, 244, 244);
+    font-size: 16px;
+    margin: 9px 0px 0px;
+}
+.width-30px {
+    width: 30px !important;
+}
+.margin-right-5 {
+    margin-right: 5px !important;
+}
+
+/* 다른 방식으로 로그인 -----------없앰 */
+.AnotherWayLogin{
+    padding-bottom: 60px;
+    text-align: center;
+    color: rgb(204, 204, 204);
+    line-height: 22px;
+}
+.AnotherWayLogin-icon{
+    padding-top: 16px;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+}
+.AnotherWayLogin > button{
+    margin: 0px 16px;
+}
+
+input:focus{
+    border: 1px solid #21BAF3;
+
+}

@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <!-- 공통 css-->
+    <link rel="stylesheet" href="/css/font/font.css">
+    <link rel="stylesheet" href="/css/inc/reset.css">
+    <link rel="stylesheet" href="/css/inc/layout.css">
+    <!-- 공통js -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="/js/inc/layout.js"></script>
+    <!-- 페이지 css (trade에서 사용) -->
+    <link rel="stylesheet" href="/css/trade/trade.css">
+    <!-- 페이지 js -->
+    <script src="/js/together/trade.js" defer></script>
+    <title>함께해요 list</title>
+</head>
+<body>
+<div id="app">
+    <div class="appWrapper">
+        <div class="SocialFeedPage">
+            <!-- 피드헤더~~~~~~ -->
+            <div class="SocialFeedPage-Header">
+                <div>
+                    <span class="SocialFeedPage-Title">함께해요</span>
+                    <button class="SocialFeedPage-button">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='17' viewBox='0 0 17 17'%3E %3Cpath fill='%23CCC' d='M8.5 0C13.194 0 17 3.806 17 8.5S13.194 17 8.5 17 0 13.194 0 8.5 3.806 0 8.5 0zm0 1.5c-3.866 0-7 3.134-7 7s3.134 7 7 7 7-3.134 7-7-3.134-7-7-7zm-.09 9.22c.613 0 .92.32.92.96 0 .64-.307.96-.92.96-.607 0-.91-.32-.91-.96 0-.64.303-.96.91-.96zm.15-5.95c.627 0 1.123.157 1.49.47.393.333.59.81.59 1.43 0 .313-.09.62-.27.92-.073.113-.163.24-.27.38l-.47.54c-.053.06-.1.12-.14.18-.107.133-.19.26-.25.38-.16.293-.223.597-.19.91H7.77c-.053-.367-.01-.717.13-1.05.053-.133.13-.273.23-.42.073-.113.167-.24.28-.38l.56-.68c.173-.247.26-.473.26-.68 0-.547-.283-.82-.85-.82-.38 0-.75.187-1.11.56l-.81-.74c.273-.313.58-.553.92-.72.367-.187.76-.28 1.18-.28z'/%3E %3C/svg%3E" alt="프립 피드란?">
+                    </button>
+                </div>
+            </div>
+            <!-- 피드 헤더아래~~~~~~~~ -->
+            <div class="SocialFeedPage-Content" style="opacity: 1; display: block">
+                <div class="FeedList" id="FeedList">
+
+
+
+                    <!-- 2 -----------------------사진 여러장인 경우-!!!!!!!!!!----------------------------------------- -->
+                    <div class="post">
+                        <div class="user-wrap">
+                            <a href="">
+                                <div class="user-img"><img src="/img/trade/피드(1).jpg" alt=""></div>
+                                <div class="usr-mid">
+                                    <div class="user-name">진서황</div>
+                                    <div class="post-date">1시간 전</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="img-wrap">
+                            <ul class="thumb-ul">
+                                <li><img src="/img/trade/피드여행(3).jpg" alt=""></li>
+                                <li><img src="/img/trade/피드여행(7).jpg" alt=""></li>
+                            </ul>
+                            <div class="arrow left"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='50' height='50' viewBox='0 0 50 50'%3E %3Cpath fill='none' fill-rule='evenodd' stroke='%23FFF' stroke-width='2' d='M21 17l8 8.014L21.028 33'/%3E %3C/svg%3E"  alt=""></div>
+                            <div class="arrow right"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='50' height='50' viewBox='0 0 50 50'%3E %3Cpath fill='none' fill-rule='evenodd' stroke='%23FFF' stroke-width='2' d='M21 17l8 8.014L21.028 33'/%3E %3C/svg%3E"  alt=""></div>
+                            <ul class="page">
+
+                            </ul>
+                        </div>
+                        <div class="con-wrap">
+                            <a href="">
+                                <div class="tit">[서울]경복궁 놀러왔어요</div>
+                                <div class="content">안녕하세요 오늘 경복궁 놀러왔어요 와 진짜 재밌다ㅎㅎㅎ 너무즐거워요</div>
+                            </a>
+                        </div>
+                        <div class="util-wrap">
+                            <div class="like">
+                                <div class="icon-wrap">
+                                    <button type="button" class="ActionGroup-heart">
+                                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='21' height='18' viewBox='0 0 21 18'%3E %3Cpath fill='none' stroke='%234E5968' stroke-width='1.5' d='M15.657.75c-1.226 0-2.379.485-3.246 1.365l-1.91 1.94-1.912-1.94C7.722 1.235 6.57.75 5.343.75s-2.378.485-3.245 1.365C1.198 3.028.75 4.227.75 5.425c0 1.199.448 2.398 1.348 3.31l8.425 8.504 8.379-8.504c.9-.912 1.348-2.111 1.348-3.31 0-1.198-.448-2.397-1.347-3.31-.867-.88-2.02-1.365-3.246-1.365z'/%3E %3C/svg%3E" alt="좋아요~">
+                                    </button>
+                                </div>
+                                <span class="count">100</span>
+                            </div>
+                            <div class="comment">
+                                <div class="icon-wrap">
+                                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='21' height='18' viewBox='0 0 21 18'%3E %3Cpath fill='none' stroke='%234E5968' stroke-width='1.5' d='M20.25.75H.75v11.818h3.842v4.015l5.9-4.015h9.758V.75z'/%3E %3C/svg%3E" alt="댓글">
+                                </div>
+                                <span class="count">30</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="post">
+                        <div class="user-wrap">
+                            <a href="">
+                                <div class="user-img"><img src="/img/trade/tradeImg/교환물건(3).jpg" alt=""></div>
+                                <div class="usr-mid">
+                                    <div class="user-name">이수희</div>
+                                    <div class="post-date">1시간 전</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="img-wrap">
+                            <ul class="thumb-ul">
+                                <li><img src="/img/trade/피드여행(8).jpg" alt=""></li>
+                            </ul>
+                        </div>
+                        <div class="con-wrap">
+                            <a href="">
+                                <div class="tit">[서울]경복궁 놀러왔어요</div>
+                                <div class="content">안녕하세요 오늘 경복궁 놀러왔어요 와 진짜 재밌다ㅎㅎㅎ</div>
+                            </a>
+                        </div>
+                        <div class="util-wrap">
+                            <div class="like">
+                                <div class="icon-wrap">
+                                    <button type="button" class="ActionGroup-heart">
+                                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='21' height='18' viewBox='0 0 21 18'%3E %3Cpath fill='none' stroke='%234E5968' stroke-width='1.5' d='M15.657.75c-1.226 0-2.379.485-3.246 1.365l-1.91 1.94-1.912-1.94C7.722 1.235 6.57.75 5.343.75s-2.378.485-3.245 1.365C1.198 3.028.75 4.227.75 5.425c0 1.199.448 2.398 1.348 3.31l8.425 8.504 8.379-8.504c.9-.912 1.348-2.111 1.348-3.31 0-1.198-.448-2.397-1.347-3.31-.867-.88-2.02-1.365-3.246-1.365z'/%3E %3C/svg%3E" alt="좋아요~">
+                                    </button>
+                                </div>
+                                <span class="count">100</span>
+                            </div>
+                            <div class="comment">
+                                <div class="icon-wrap">
+                                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='21' height='18' viewBox='0 0 21 18'%3E %3Cpath fill='none' stroke='%234E5968' stroke-width='1.5' d='M20.25.75H.75v11.818h3.842v4.015l5.9-4.015h9.758V.75z'/%3E %3C/svg%3E" alt="댓글">
+                                </div>
+                                <span class="count">30</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="post">
+                        <div class="user-wrap">
+                            <a href="">
+                                <div class="user-img"><img src="/img/trade/tradeImg/교환물건(2).jpg" alt=""></div>
+                                <div class="usr-mid">
+                                    <div class="user-name">유아람</div>
+                                    <div class="post-date">1시간 전</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="img-wrap">
+                            <ul class="thumb-ul">
+                                <li><img src="/img/trade/피드여행(4).jpg" alt=""></li>
+                                <li><img src="/img/trade/피드여행(5).jpg" alt=""></li>
+                                <li><img src="/img/trade/피드여행(6).jpg" alt=""></li>
+                            </ul>
+                            <div class="arrow left"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='50' height='50' viewBox='0 0 50 50'%3E %3Cpath fill='none' fill-rule='evenodd' stroke='%23FFF' stroke-width='2' d='M21 17l8 8.014L21.028 33'/%3E %3C/svg%3E"  alt=""></div>
+                            <div class="arrow right"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='50' height='50' viewBox='0 0 50 50'%3E %3Cpath fill='none' fill-rule='evenodd' stroke='%23FFF' stroke-width='2' d='M21 17l8 8.014L21.028 33'/%3E %3C/svg%3E"  alt=""></div>
+                            <ul class="page">
+
+                            </ul>
+                        </div>
+                        <div class="con-wrap">
+                            <a href="">
+                                <div class="tit">[서울]경복궁 놀러왔어요</div>
+                                <div class="content">안녕하세요 오늘 경복궁 놀러왔어요 와 진짜 재밌다ㅎㅎㅎ</div>
+                            </a>
+                        </div>
+                        <div class="util-wrap">
+                            <div class="like">
+                                <div class="icon-wrap">
+                                    <button type="button" class="ActionGroup-heart">
+                                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='21' height='18' viewBox='0 0 21 18'%3E %3Cpath fill='none' stroke='%234E5968' stroke-width='1.5' d='M15.657.75c-1.226 0-2.379.485-3.246 1.365l-1.91 1.94-1.912-1.94C7.722 1.235 6.57.75 5.343.75s-2.378.485-3.245 1.365C1.198 3.028.75 4.227.75 5.425c0 1.199.448 2.398 1.348 3.31l8.425 8.504 8.379-8.504c.9-.912 1.348-2.111 1.348-3.31 0-1.198-.448-2.397-1.347-3.31-.867-.88-2.02-1.365-3.246-1.365z'/%3E %3C/svg%3E" alt="좋아요~">
+                                    </button>
+                                </div>
+                                <span class="count">100</span>
+                            </div>
+                            <div class="comment">
+                                <div class="icon-wrap">
+                                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='21' height='18' viewBox='0 0 21 18'%3E %3Cpath fill='none' stroke='%234E5968' stroke-width='1.5' d='M20.25.75H.75v11.818h3.842v4.015l5.9-4.015h9.758V.75z'/%3E %3C/svg%3E" alt="댓글">
+                                </div>
+                                <span class="count">30</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="post">
+                        <div class="user-wrap">
+                            <a href="">
+                                <div class="user-img"><img src="/img/trade/피드(3).jpg" alt=""></div>
+                                <div class="usr-mid">
+                                    <div class="user-name">김서현</div>
+                                    <div class="post-date">1시간 전</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="img-wrap">
+                            <ul class="thumb-ul">
+                                <li><img src="/img/trade/피드여행(5).jpg" alt=""></li>
+                                <li><img src="/img/trade/피드여행(2).jpg" alt=""></li>
+                                <li><img src="/img/trade/피드여행(3).jpg" alt=""></li>
+                            </ul>
+                            <div class="arrow left"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='50' height='50' viewBox='0 0 50 50'%3E %3Cpath fill='none' fill-rule='evenodd' stroke='%23FFF' stroke-width='2' d='M21 17l8 8.014L21.028 33'/%3E %3C/svg%3E"  alt=""></div>
+                            <div class="arrow right"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='50' height='50' viewBox='0 0 50 50'%3E %3Cpath fill='none' fill-rule='evenodd' stroke='%23FFF' stroke-width='2' d='M21 17l8 8.014L21.028 33'/%3E %3C/svg%3E"  alt=""></div>
+                            <ul class="page">
+                            </ul>
+                        </div>
+                        <div class="con-wrap">
+                            <a href="">
+                                <div class="tit">[서울]경복궁 놀러왔어요</div>
+                                <div class="content">안녕하세요 오늘 경복궁 놀러왔어요 와 진짜 재밌다ㅎㅎㅎ</div>
+                            </a>
+                        </div>
+                        <div class="util-wrap">
+                            <div class="like">
+                                <div class="icon-wrap">
+                                    <button type="button" class="ActionGroup-heart">
+                                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='21' height='18' viewBox='0 0 21 18'%3E %3Cpath fill='none' stroke='%234E5968' stroke-width='1.5' d='M15.657.75c-1.226 0-2.379.485-3.246 1.365l-1.91 1.94-1.912-1.94C7.722 1.235 6.57.75 5.343.75s-2.378.485-3.245 1.365C1.198 3.028.75 4.227.75 5.425c0 1.199.448 2.398 1.348 3.31l8.425 8.504 8.379-8.504c.9-.912 1.348-2.111 1.348-3.31 0-1.198-.448-2.397-1.347-3.31-.867-.88-2.02-1.365-3.246-1.365z'/%3E %3C/svg%3E" alt="좋아요~">
+                                    </button>
+                                </div>
+                                <span class="count">100</span>
+                            </div>
+                            <div class="comment">
+                                <div class="icon-wrap">
+                                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='21' height='18' viewBox='0 0 21 18'%3E %3Cpath fill='none' stroke='%234E5968' stroke-width='1.5' d='M20.25.75H.75v11.818h3.842v4.015l5.9-4.015h9.758V.75z'/%3E %3C/svg%3E" alt="댓글">
+                                </div>
+                                <span class="count">30</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 이 아래는 필요한지 잘 모르겠음  -->
+    <div class="FloatingButtonWrapper"></div>
+    <footer class="Footer-Wrapper"></footer>
+</div>
+</div>
+</body>
+</html>

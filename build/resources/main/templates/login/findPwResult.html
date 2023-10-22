@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>임시비밀번호 페이지</title>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <!-- 공통 css-->
+    <link rel="stylesheet" href="/css/font/font.css">
+    <link rel="stylesheet" href="/css/inc/reset.css">
+    <link rel="stylesheet" href="/css/inc/layout.css">
+    <!-- 공통js -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="/js/inc/layout.js"></script>
+    <!-- 페이지 css -->
+    <link rel="stylesheet" href="/css/login/findResult.css">
+</head>
+<body>
+<div class="FindPasswordPage">
+    <div class="Title">
+        <h3></h3>
+    </div>
+    <form class="LoginRegister" th:action="@{/login/login}">
+        <div class="text">
+            <h2 class="TemporaryPW" id="TemporaryPW">비밀번호 변경이 완료 되었습니다.</h2>
+        </div>
+        <div class="buttonWrapper">
+            <button class="Button" type="submit" >로그인</button>
+        </div>
+    </form>
+</div>
+</body>
+</html>

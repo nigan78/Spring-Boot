@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/inc/layout.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <title>마이페이지</title>
+    <link rel='stylesheet' type='text/css' href='/css/mypage/mypage.css'>
+    <link rel='stylesheet' type='text/css' href='/css/inc/reset.css'>
+    <link rel='stylesheet' type='text/css' href='/css/font/font.css'>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="/js/inc/layout.js"></script>
+    <script src="js/mypage/backend/mypage.js"></script>
+</head>
+
+<body>
+<header th:insert="~{inc/header.html :: header}"></header>
+<div class="mypage">
+    <div class="my">
+        <a class="mya" href="/my/profile"><img
+                src="https://res.cloudinary.com/frientrip/image/fetch/c_fill,dpr_2,f_auto,h_64,q_auto,w_64/https://k.kakaocdn.net/dn/dpk9l1/btqmGhA2lKL/Oz0wDuJn1YV2DIn92f6DVK/img_110x110.jpg"
+                class="myimg">
+            <div class="">
+                <div class="myname" th:text="${id}">임종민</div>
+            </div>
+        </a>
+    </div>
+    <div class="mymiddel">
+        <a href="/mypage/follow">
+            <div class="namediv">팔로잉</div>
+            <div class="numdiv" th:text="${fingcount}"></div>
+        </a>
+        <a href="/mypage/follow">
+            <div class="namediv">팔로워</div>
+            <div class="numdiv" th:text="${fercount}"></div>
+        </a>
+        <a href="/mypage/feedList">
+            <div class="namediv">피드</div>
+            <div class="numdiv" th:text="${feedcount}"></div>
+        </a>
+        <a href="/mypage/myTogetherList">
+            <div class="namediv">함께해요</div>
+            <div class="numdiv" th:text="${together}"></div>
+        </a>
+        <a href="/mypage/myTradeList">
+            <div class="namediv">교환해요</div>
+            <div class="numdiv" th:text="${trade}"></div>
+        </a>
+    </div>
+    <hr class="fhr">
+    <div class="">
+        <div class="my-list">
+            <div class="my-tit">내 설정</div>
+            <a href="/mypage/myupdate">
+                <div class="maindiv">
+                    <div class="middiv">
+                        <div class="info">개인정보 수정</div>
+                    </div>
+                </div>
+            </a>
+            <a href="/mypage/follow">
+                <div class="maindiv">
+                    <div class="middiv">
+                        <div class="info">팔로잉/팔로워 목록</div>
+                    </div>
+                </div>
+            </a>
+            <a href="/setting/list">
+                <div class="maindiv">
+                    <div class="middiv">
+                        <div class="info">설정</div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <hr size="32" type="Line" class="ohr">
+        <div class="my-list">
+            <div class="my-tit">내 활동</div>
+            <a href="/mypage/feedList">
+                <div class="maindiv">
+                    <div class="middiv">
+                        <div class="info">피드</div>
+                        <div></div>
+                    </div>
+                </div>
+            </a>
+            <a href="/mypage/myTogetherList">
+                <div class="maindiv">
+                    <div class="middiv">
+                        <div class="info">나의 함께해요</div>
+                    </div>
+                </div>
+            </a>
+            <a href="/mypage/myTradeList">
+                <div class="maindiv">
+                    <div class="middiv">
+                        <div class="info">나의 교환해요</div>
+                    </div>
+                </div>
+            </a>
+            <a href="/mypage/adAllow">
+                <div class="maindiv">
+                    <div class="middiv">
+                        <div class="info">광고신청 내역</div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

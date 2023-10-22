@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <!-- 공통 css-->
+    <link rel="stylesheet" href="/css/font/font.css">
+    <link rel="stylesheet" href="/css/inc/reset.css">
+    <link rel="stylesheet" href="/css/inc/layout.css">
+    <!-- 페이지 css-->
+    <link rel="stylesheet" href="/css/dm/layout.css">
+    <!-- 공통js -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="/js/inc/layout.js"></script>
+    <title>dm 리스트</title>
+</head>
+<body>
+    <div id="chat-area">
+        <div class="chat-btn">
+            <button type="button"><i class="xi-message-o"></i></button>
+        </div>
+        <div id="chat">
+            <div class="dm-head">
+                <div class="chat-tit">DM</div>
+                <button type="button" class="refresh-btn"><i class="xi-refresh"></i></button>
+            </div>
+            <div class="chat-wrap">
+                <ul class="chat-list-ul">
+<!--                    <li>-->
+<!--                        <a href="">-->
+<!--                            <div class="img-wrap"><img alt="[서울마곡] 다이어트, 유산소에 최고 스쿼시 썸네일" class="Image__StyledImage-v97gyx-1 VUNpu" width="192" src="https://res.cloudinary.com/frientrip/image/upload/ar_1:1,c_fill,dpr_2,f_auto,q_auto,w_310/product_banner_1640162215903_26686"></div>-->
+<!--                            <div class="con-wrap">-->
+<!--                                <div class="user-name">임종민</div>-->
+<!--                                <div class="dm-con">안녕하세요 임종민입니다.</div>-->
+<!--                            </div>-->
+<!--                        </a>-->
+<!--                    </li>-->
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+<script th:inline="javascript">
+    let feeds = [[${lists}]];
+</script>
+</html>
